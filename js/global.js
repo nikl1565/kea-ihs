@@ -7,7 +7,7 @@ function start() {
 
     const globalmenuContainer = document.querySelector(".js-globalmenu");
     const globalmenuTemplate = document.querySelector(".js-globalmenu-template").content;
-    const jsonUrl = "http://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages";
+    const jsonUrl = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages";
 
 
     async function fetchData() {
@@ -23,14 +23,15 @@ function start() {
         console.log("show menupunkter")
         menupunkter.forEach(menupunkt => {
 
-            const template = globalmenuTemplate.cloneNode(true);
+            if (menupunkt.parent == 0 && menupunkt.slug != "forside") {
+                const template = globalmenuTemplate.cloneNode(true);
 
-            template.querySelector(".js-globalmenu_menupunkt").textContent = menupunkt.title.rendered;
+                template.querySelector(".js-globalmenu_menupunkt").textContent = menupunkt.title.rendered;
+                template.querySelector(".js-globalmenu_menupunkt").href = `${menupunkt.slug}.html`;
 
-            globalmenuContainer.appendChild(template);
-
+                globalmenuContainer.appendChild(template);
+            }
         });
-
     }
 
     fetchData();
