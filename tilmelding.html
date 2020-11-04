@@ -12,10 +12,10 @@
 
     <main>
 
-        <section class="tilmelding">
-            <h1>Tilmelding</h1>
+        <section class="css_tilmelding">
+            <h1>Tilmeld dig til en uforgelmmelig oplevelse!</h1>
 
-            <section class="tilmelding_formular">
+            <section class="css_tilmelding_formular">
                 <form action="#">
                     <select id="valg" name="valg">
                         <option value="" disabled selected>Vælg booking, forløb eller kursus</option>
@@ -37,17 +37,18 @@
 
                     </select>
 
+                    <label for="fornavn" class="tilmelding_formular_placering">Fornavn</label>
+                    <input type="text" name="fornavn" placeholder="Fornavn" class="tilmelding_formular_placering">
 
-                    <label for="fornavn">Fornavn</label>
-                    <input type="text" name="fornavn">
+                    <div>
+                        <label for="efternavn" class="tilmelding_formular_placering">Efternavn</label>
+                        <input type="text" name="efternavn" placeholder="Efternavn" class="tilmelding_formular_placering">
+                    </div>
 
-                    <label for="efternavn">Efternavn</label>
-                    <input type="text" name="efternavn">
+                    <label for="cpr_nummer" class="tilmelding_formular_placering">CPR-Nummer</label>
+                    <input type="text" name="cpr_nummer" placeholder="CPR-nummer" class="tilmelding_formular_placering">
 
-
-                    <label for="lname">CPR-Nummer</label>
-                    <input type="text" name="enavn">
-
+                    <label for="gender" class="tilmelding_formular_placering">Køn</label>
                     <input type="radio" id="mand" name="gender" value="Mand">
                     <label for="mand">Mand</label>
                     <input type="radio" id="kvinde" name="gender" value="Kvinde">
@@ -56,28 +57,26 @@
                     <label for="andet">Andet</label>
 
 
-                    <label for="email">Email adresse</label>
-                    <input type="text" name="email">
+                    <label for="telefon" class="tilmelding_formular_placering">Telefon nummer</label>
+                    <input type="text" name="telefon" placeholder="Telefonnummer" class="tilmelding_formular_placering">
+
+                    <label for="adresse" class="tilmelding_formular_placering">Adresse</label>
+                    <input type="text" name="adresse" placeholder="Adresse" class="tilmelding_formular_placering">
 
 
-                    <label for="telefon">Telefon nummer</label>
-                    <input type="text" name="telefon">
+                    <label for="kommune" class="tilmelding_formular_placering">Kommune</label>
+                    <input type="text" name="kommune" placeholder="Kommune" class="tilmelding_formular_placering">
 
-                    <label for="kommune">Kommune</label>
-                    <input type="text" name="kommune">
-
-                    <label for="post_nr">Post nr.</label>
-                    <input type="text" name="post_nr">
+                    <label for="post_nr" class="tilmelding_formular_placering">Post nummer</label>
+                    <input type="text" name="post_nr" placeholder="Post nummer" class="tilmelding_formular_placering">
 
 
-
-
-
-
+                    <label for="email" class="tilmelding_formular_placering">Email adresse</label>
+                    <input type="text" name="email" placeholder="E-mail" class="tilmelding_formular_placering">
 
 
 
-                    <input type="submit" value="Tilmeld">
+                    <input type="submit" value="Tilmeld mig!">
                 </form>
 
             </section>
@@ -91,4 +90,6 @@
 
 
     <script src="tilmelding.js"></script>
-</body></html>
+</body>
+
+</html>

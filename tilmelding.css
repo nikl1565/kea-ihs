@@ -3,15 +3,16 @@
     margin: 0;
 }
 
-.tilmelding {
+.css_tilmelding {
     max-width: 1200px;
     margin: 100px auto;
 
 }
 
-
-label,
-input {
+.tilmelding_formular_placering {
     display: block;
     margin: 10px 0;
 }
+
+
+div {}
