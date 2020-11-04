@@ -20,7 +20,12 @@ function start() {
     }
 
     function show(menupunkter) {
-        console.log("show menupunkter")
+        console.log("show menupunkter");
+        console.log(menupunkter.length);
+
+        menupunkter.sort((a, b) => a.menu_order - b.menu_order);
+
+
         menupunkter.forEach(menupunkt => {
 
             if (menupunkt.parent == 0 && menupunkt.slug != "forside") {
