@@ -3,10 +3,10 @@ window.addEventListener("DOMContentLoaded", start);
 
 
 function start() {
-    console.log("nået start");
+    //    console.log("nået start");
 
-    const globalmenuContainer = document.querySelector(".js-globalmenu");
-    const globalmenuTemplate = document.querySelector(".js-globalmenu-template").content;
+    const globalmenuContainer = document.querySelector(".js_globalmenu");
+    const globalmenuTemplate = document.querySelector(".js_globalmenu_template").content;
     const jsonUrl = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages";
 
 
@@ -14,14 +14,13 @@ function start() {
         const response = await fetch(jsonUrl);
         const jsonData = await response.json();
         json = jsonData;
-        console.log(json);
+        //        console.log(json);
         show(jsonData);
-        //        addEventlistenersToButtons();
     }
 
     function show(menupunkter) {
-        console.log("show menupunkter");
-        console.log(menupunkter.length);
+        //        console.log("show menupunkter");
+        //        console.log(menupunkter.length);
 
         menupunkter.sort((a, b) => a.menu_order - b.menu_order);
 
@@ -31,8 +30,8 @@ function start() {
             if (menupunkt.parent == 0 && menupunkt.slug != "forside") {
                 const template = globalmenuTemplate.cloneNode(true);
 
-                template.querySelector(".js-globalmenu_menupunkt").textContent = menupunkt.title.rendered;
-                template.querySelector(".js-globalmenu_menupunkt").href = `${menupunkt.slug}.html`;
+                template.querySelector(".js_globalmenu_menupunkt").textContent = menupunkt.title.rendered;
+                template.querySelector(".js_globalmenu_menupunkt").href = `${menupunkt.slug}.html`;
 
                 globalmenuContainer.appendChild(template);
             }
