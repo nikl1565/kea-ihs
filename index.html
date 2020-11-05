@@ -34,7 +34,7 @@
             function showForside(forside) {
                 console.log(forside);
 
-
+                document.querySelector(".js_splash_section").style.backgroundImage = `url(${forside[0].splash_section.guid})`;
                 document.querySelector(".js_forside_content").innerHTML = forside[0].content.rendered;
             }
 
