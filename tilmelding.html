@@ -6,10 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tilmelding</title>
     <link rel="stylesheet" href="tilmelding.css">
+    <link rel="stylesheet" href="css/global.css">
 </head>
 
 <body>
+    <header>
+        <div class="css_header_width">
 
+            <div class="css_header_logo">
+                <a href="index.html">
+                    <img src="https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-content/uploads/2020/11/logo_mindre-1.png" alt="Logo for Idrætshøjskolen Sønderborg" class="css_header_logo_image">
+                </a>
+            </div>
+
+            <div class="css_header_burger_icon js_header_burger_icon">☰</div>
+
+            <nav class="js_globalmenu css_globalmenu css_globalmenu_hidden js_globalmenu_hidden">
+            </nav>
+        </div>
+    </header>
+
+    <template class="js_globalmenu_template">
+        <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
+    </template>
     <main>
 
         <section class="css_tilmelding">
@@ -90,6 +109,7 @@
 
 
     <script src="tilmelding.js"></script>
+    <script src="js/global.js"></script>
 </body>
 
 </html>
