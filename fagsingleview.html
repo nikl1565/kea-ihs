@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINGLEVIEW</title>
+    <link rel="stylesheet" href="css/global.css">
+
+    <style>
+        body {
+            font-family: sans-serif;
+            color: #3c3c3c;
+        }
+
+        img {
+            width: 80%;
+
+
+        }
+
+        .ret {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<header>
+        <div class="css_header_width">
+
+            <div class="css_header_logo">
+                <a href="index.html">
+                    <img src="https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-content/uploads/2020/11/logo_mindre-1.png" alt="Logo for Idrætshøjskolen Sønderborg" class="css_header_logo_image">
+                </a>
+            </div>
+
+            <div class="css_header_burger_icon js_header_burger_icon">☰</div>
+
+            <nav class="js_globalmenu css_globalmenu css_globalmenu_hidden js_globalmenu_hidden">
+            </nav>
+        </div>
+    </header>
+
+    <template class="js_globalmenu_template">
+        <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
+    </template>
+<body>
+
+
+    <!--
+    <section class="ret">
+        <h2></h2>
+        <div></div>
+        <img src="" alt="">
+        <p id="short_text"></p>
+        <p id="price"></p>
+    </section>
+-->
+
+    <article class="css_fag">
+        <h3 class="js_fag_titel"></h3>
+        <p class="js_fag_beskrivelse"></p>
+        <img src="" alt="" class="billede">
+    </article>
+
+
+
+
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+        let fag;
+        document.addEventListener("DOMContentLoaded", getFag);
+        async function getFag() {
+
+            let url = "http://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/fag/" + id;
+            let jsonData = await fetch(url);
+            fag = await jsonData.json();
+            //console.log("LOADING DONE",Fag);
+            //            showDishes();
+
+            document.querySelector(".js_fag_titel").textContent = fag.title.rendered;
+            document.querySelector(".js_fag_beskrivelse").textContent = fag.fag_om_beskrivelse;
+            document.querySelector(".billede").src = fag.splash_thumbnail.guid;
+            document.querySelector(".css_fag").addEventListener("click", function() {
+                window.history.back();
+
+            });
+        }
+
+    </script>
+    <script src="js/global.js"></script>
+</body>
+
+</html>
