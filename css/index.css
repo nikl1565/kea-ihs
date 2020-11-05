@@ -1,0 +1,83 @@
+/*GLOBAL*/
+
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+img,
+svg,
+video
+    {
+    width: 100%;
+    height: auto;
+    max-width: 1100px;
+}
+/*GLOBAL*/
+
+/*HOJSKOLE*/
+
+main {
+    max-width: 1120px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(136, 136, 136, 0.45);
+}
+
+/***SPLASHSECTION***/
+
+.css_forside_splash_section {
+}
+
+.css_forside_splash_section {
+}
+
+.css_forside_splashfilter {
+}
+
+/***SPLASHSECTION***/
+
+
+/**TEXT**/
+
+h1 {
+    text-align: left;
+    max-width: 1100px;
+    font-size: 40px;
+    font-family: sans-serif;
+    color: black;
+    margin-bottom: 10px;
+
+    z-index: 1;
+}
+
+/**TEXT**/
+
+/***VIDEO***/
+
+.css_splash_splashvideo {
+    padding: 0px 20px;
+}
+
+/***VIDEO***/
+
+/**** BUTTON ****/
+
+.css_forside_button_link {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: white;
+    background-color: #528b8b;
+}
+
+.css_forside_button_grouped {
+    margin-left: 20vw;
+    margin-top: 30px;
+}
+
+/**** BUTTON ****/
+
+/*HOJSKOLE*/

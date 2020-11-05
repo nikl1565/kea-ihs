@@ -5,14 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Højskole|Idrætshøjskolen Sønderborg</title>
-    <link rel="stylesheet" href="css/hojskole.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
     <header></header>
     <main>
 
-
+    <section class="js_splash_section css_forside_splash_section">
+    <div class="css_forside_splashfilter">
+    <h1 class="js_forside_title">Velkommen til Idrætshøjskolen Sønderborg</h1>
+    <video class="js_splash_video css_splash_video" src="" autoplay muted loop></video>
+    </div>
+    </section>
 
 
         <section class="js_forside_content">
@@ -34,7 +39,7 @@
             function showForside(forside) {
                 console.log(forside);
 
-
+                document.querySelector(".js_splash_video").src = forside[0].splash_section.guid;
                 document.querySelector(".js_forside_content").innerHTML = forside[0].content.rendered;
             }
 
