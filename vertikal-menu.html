@@ -18,7 +18,11 @@
     <main>
         <aside>
             <nav class="css_side_navigation js_side_navigation">
-                <!--
+            </nav>
+        </aside>
+    </main>
+
+    <!--
                 <div class="css_side_navigation_gruppe">
 
                     <a class="css_side_navigation_link" href="#">Alle fag</a>
@@ -45,11 +49,6 @@
                     </ul>
                 </div>
 -->
-            </nav>
-        </aside>
-    </main>
-
-
 
 
 
@@ -90,13 +89,7 @@
         let sideNavigationListItemTemplate = document.querySelector(".js_side_navigation_list_item_template").content;
 
 
-
-
-
         document.addEventListener("DOMContentLoaded", start);
-
-
-
 
         function start() {
             createVerticalMenu(urlRouteCategory, urlRouteCategoryParameter);
@@ -157,21 +150,33 @@
 
                 // For hver underkategori
                 for (const child of childs) {
-                    console.log('Underkategori: ', child);
 
                     let templateListItem = sideNavigationListItemTemplate.cloneNode(true);
 
                     templateListItem.querySelector(".js_side_navigation_list_item").textContent = child.name;
 
-                    templateList.querySelector(".js_side_navigation_list").appendChild(templateListItem);
-
+                    // Hvis der er posts
                     if (child.count > 0) {
                         let childs = await getData(urlRouteFag, `?${urlRouteCategory}=${child.id}`);
+
+                        for (const child of childs) {
+
+                            console.log(child);
+
+                            let templateLink = sideNavigationLinkTemplate.cloneNode(true);
+
+                            templateLink.querySelector(".js_side_navigation_link").href = `${child.slug}.html`;
+                            templateLink.querySelector(".js_side_navigation_link").textContent = child.title.rendered;
+
+                            templateListItem.appendChild(templateLink);
+
+                        }
                     }
+
+                    templateList.querySelector(".js_side_navigation_list").appendChild(templateListItem);
                 }
 
                 sideNavigationContainer.appendChild(templateList);
-                console.log(templateList);
             }
         }
     </script>
