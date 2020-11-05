@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        footer,
+        header {
+            padding: 60px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <aside>
+            <nav class="css_side_navigation js_side_navigation">
+                <!--
+                <div class="css_side_navigation_gruppe">
+
+                    <a class="css_side_navigation_link" href="#">Alle fag</a>
+
+                    <ul class="css_side_navigation_liste js_side_navigation_list">
+                        <li class="css_side_navigation_list_item">
+
+                            <a class="css_side_navigation_link" href="#">Almene fag</a>
+
+                            <ul class="css_side_navigation_liste js_side_navigation_list">
+                                <li class="css_side_navigation_list_item">
+
+                                    <a class="css_side_navigation_link" href="#">Livsværdier</a>
+
+                                </li>
+                                <li class="css_side_navigation_list_item">
+
+                                    <a class="css_side_navigation_link" href="#">Krop og sundhed</a>
+
+                                </li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </div>
+-->
+            </nav>
+        </aside>
+    </main>
+
+
+
+
+
+
+    <template class="js_side_navigation_link_template">
+
+        <a class="css_side_navigation_link js_side_navigation_link" href="#"></a>
+
+    </template>
+
+    <template class="js_side_navigation_list_template">
+        <ul class="css_side_navigation_liste js_side_navigation_list"></ul>
+    </template>
+
+    <template class="js_side_navigation_list_item_template">
+        <li class="css_side_navigation_list_item js_side_navigation_list_item"></li>
+    </template>
+
+
+
+    <script>
+        let baseUrl = 'https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/';
+        let urlRouteFag = 'fag';
+        let urlRouteCategory = 'categories';
+        let urlRoutePosts = 'posts';
+        let urlRouteCategoryParameter = '?include=9';
+
+
+        // Container
+        let sideNavigationContainer = document.querySelector(".js_side_navigation");
+
+        // Templates
+        // Link
+        let sideNavigationLinkTemplate = document.querySelector(".js_side_navigation_link_template").content;
+        // List
+        let sideNavigationListTemplate = document.querySelector(".js_side_navigation_list_template").content;
+        // List item
+        let sideNavigationListItemTemplate = document.querySelector(".js_side_navigation_list_item_template").content;
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+
+
+        function start() {
+            createVerticalMenu(urlRouteCategory, urlRouteCategoryParameter);
+        }
+
+
+
+
+
+        async function getData(urlRoute, urlParameter) {
+            console.log('getData');
+
+            if (urlRoute === 'category') {
+                urlRoute = 'categories';
+            }
+
+            let response = await fetch(`${baseUrl}${urlRoute}${urlParameter}`);
+
+            let data = await response.json();
+
+            return data;
+        }
+
+
+
+
+
+        async function createVerticalMenu(urlRoute, urlParameter) {
+            let mainCategory = await getData(urlRoute, urlParameter);
+            console.log('mainCategory', mainCategory);
+
+            // Hent templaten til links og klon den
+            let templateLink = sideNavigationLinkTemplate.cloneNode(true);
+
+            // Indsæt data i templaten
+            templateLink.querySelector(".js_side_navigation_link").href = `${mainCategory[0].slug}.html`;
+            templateLink.querySelector(".js_side_navigation_link").textContent = mainCategory[0].name;
+
+            sideNavigationContainer.appendChild(templateLink);
+
+            // Hvis kategorien indeholder posts
+            if (mainCategory[0].count === 0) {
+                console.log('ingen posts!');
+            } else {
+                console.log(`der er ${mainCategory[0].count} posts!`);
+            }
+
+            // Hent data  ned i en array
+            let childs = await getData(mainCategory[0].taxonomy, `?parent=${mainCategory[0].id}`);
+            console.log(childs);
+            console.log(childs.length);
+
+            // Hvis der er 1 underkategori eller flere
+            if (childs.length > 0) {
+                console.log('Der er underkategorier!');
+
+                let templateList = sideNavigationListTemplate.cloneNode(true);
+
+                // For hver underkategori
+                for (const child of childs) {
+                    console.log('Underkategori: ', child);
+
+                    let templateListItem = sideNavigationListItemTemplate.cloneNode(true);
+
+                    templateListItem.querySelector(".js_side_navigation_list_item").textContent = child.name;
+
+                    templateList.querySelector(".js_side_navigation_list").appendChild(templateListItem);
+
+                    if (child.count > 0) {
+                        let childs = await getData(urlRouteFag, `?${urlRouteCategory}=${child.id}`);
+                    }
+                }
+
+                sideNavigationContainer.appendChild(templateList);
+                console.log(templateList);
+            }
+        }
+    </script>
+</body></html>
