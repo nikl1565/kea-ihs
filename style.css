@@ -1,0 +1,108 @@
+/* <!-------splash billede------> */
+
+#section {
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 40px;
+}
+
+.splash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash img {
+    max-height: 450px;
+    box-shadow: 1px 3px 4px grey;
+    border-radius: 5px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+
+
+
+/*----- beskrivelse / reviews----*/
+
+.container {
+    margin: 0 10%;
+}
+
+#section {
+    margin-top: 80px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+@media (max-width: 550px) {
+    .container {
+        display: flex;
+        margin-top: 45px;
+        flex-flow: column nowrap;
+    }
+}
+
+
+
+
+.info-1 {
+    max-width: 400px;
+    margin-right: 50px;
+}
+
+@media (max-width: 550px) {
+    .info-1 {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.tekst-1 h2 {
+    margin-top: 0;
+}
+
+.picture-1 {
+    width: 100%;
+}
+
+
+
+@media (max-width: 550px) {
+    .picture-1 {
+        margin-top: 30px;
+        width: 100%;
+    }
+}
+
+.picture-1 img {
+    width: 100%;
+}
+
+
+/*
+@media (max-width: 550px) {
+  .knap {
+    padding: 10px 15px;
+  }
+}*/
+
+
+.knap {
+    padding: 10px 60px;
+    margin-top: 20px;
+    /* fjerner hvide kant/border */
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 2px 3px 3px grey;
+}
