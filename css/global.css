@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+html {
+    /*    Nulstiller fontsize, så den er 10px. Dermed kan vi bruge rem til lettere at definere fontstørrelse */
+    font-size: 62.5%;
+}
 
 img {
     width: 100%
@@ -12,39 +16,58 @@ img {
 /* Header */
 header {
     background-color: #E0E0E0;
+    position: sticky;
+    top: 0;
 }
 
 .css_header_width {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 5vw 0;
     height: 100%;
+
 }
 
 .css_header_logo {
-    padding: 20px 0 50px 0;
+    /*    padding: 20px 0 50px 0;*/
+    display: flex;
+    justify-content: center;
 }
 
 .css_header_logo_image {
-    width: 8vw;
+    width: 100px;
+    display: inline-block
+}
+
+.css_header_burger_icon {
+    display: inline-block;
+    font-size: 3.5rem;
 }
 
 .css_globalmenu {}
 
-
 .css_globalmenu_menupunkt {
-    padding: 15px 15px 0 15px;
-    margin: 0 2px;
-    border: 0px solid black;
-    border-radius: 10px 10px 0px 0px;
-    background-color: white;
+    display: block;
+    margin: 3vw 0 3vw 8vw;
+    font-size: 1.5rem;
+
+    /*    Hvis vi skal have tab menu */
+    /*    display: inline-block;*/
 }
 
+
+
+/* Class til at skjule menuen */
 .css_globalmenu_hidden {
     display: none;
 }
 
 
 @media only screen and (min-width: 730px) {
+    .css_header_width {
+        padding: 2vw 0 0 0;
+    }
+
     .css_header_burger_icon {
         display: none;
     }
@@ -52,4 +75,23 @@ header {
     .css_globalmenu {
         display: block;
     }
+
+    .css_header_logo {
+        padding: 20px 0 50px 0;
+    }
+
+    .css_header_logo_image {
+        width: 8vw;
+    }
+
+
+    .css_globalmenu_menupunkt {
+        padding: 15px 15px 0 15px;
+        margin: 0 2px;
+        border: 0px solid black;
+        border-radius: 10px 10px 0px 0px;
+        background-color: white;
+        display: inline-block;
+    }
+
 }
