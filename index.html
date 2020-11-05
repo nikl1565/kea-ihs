@@ -4,14 +4,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IHS - Idrætshøjskolen Sønderborg</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Højskole|Idrætshøjskolen Sønderborg</title>
+    <link rel="stylesheet" href="css/hojskole.css">
 </head>
 
 <body>
-    <h1>test</h1>
-    <nav></nav>
+    <header></header>
+    <main>
+
+
+
+
+        <section class="js_forside_content">
+
+        </section>
+
+
+        <script>
+            //Venter på DOMContent er loaded, starter hentData, opretter JSON-url som variabel.
+            document.addEventListener("DOMContentLoaded", hentData);
+            var url = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=forside";
+
+            async function hentData() {
+                const respons = await fetch(url);
+                const forside = await respons.json();
+                showForside(forside);
+            }
+
+            function showForside(forside) {
+                console.log(forside);
+
+
+                document.querySelector(".js_forside_content").innerHTML = forside[0].content.rendered;
+            }
+
+        </script>
+    </main>
+
     <script src="script.js"></script>
+
 </body>
 
 </html>

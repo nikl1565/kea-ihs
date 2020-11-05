@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilmelding</title>
+    <link rel="stylesheet" href="tilmelding.css">
+</head>
+
+<body>
+
+    <main>
+
+        <section class="css_tilmelding">
+            <h1>Tilmeld dig til en uforgelmmelig oplevelse!</h1>
+
+            <section class="css_tilmelding_formular">
+                <form action="#">
+                    <select id="valg" name="valg">
+                        <option value="" disabled selected>Vælg booking, forløb eller kursus</option>
+                        <optgroup label="Book Rundvisning">
+                            <option value="book_rundvisning">Book Rundvisning</option>
+                        </optgroup>
+
+
+                        <optgroup label="Højskole forløb">
+                            <option value="forlob_forar">Forårsforløb, 2021</option>
+                            <option value="forlob_efterår">Efterårsforløb, 2021</option>
+                        </optgroup>
+
+                        <optgroup label="Ugekurser">
+                            <option value="ugekursus_1">Ugekursus 1</option>
+                            <option value="ugekursus_2">Ugekursus 2</option>
+                            <option value="ugekursus_3">Ugekursus 3</option>
+                        </optgroup>
+
+                    </select>
+
+                    <label for="fornavn" class="tilmelding_formular_placering">Fornavn</label>
+                    <input type="text" name="fornavn" placeholder="Dit fornavn" class="tilmelding_formular_placering">
+
+                    <div>
+                        <label for="efternavn" class="tilmelding_formular_placering">Efternavn</label>
+                        <input type="text" name="efternavn" placeholder="Dit efternavn" class="tilmelding_formular_placering">
+                    </div>
+
+                    <label for="cpr_nummer" class="tilmelding_formular_placering">CPR-Nummer</label>
+                    <input type="text" name="cpr_nummer" placeholder="Dit CPR-nummer" class="tilmelding_formular_placering">
+
+                    <label for="gender" class="tilmelding_formular_placering">Køn</label>
+                    <input type="radio" id="mand" name="gender" value="Mand">
+                    <label for="mand">Mand</label>
+                    <input type="radio" id="kvinde" name="gender" value="Kvinde">
+                    <label for="kvinde">Kvinde</label>
+                    <input type="radio" id="andet" name="gender" value="Anden">
+                    <label for="andet">Andet</label>
+
+
+                    <label for="telefon" class="tilmelding_formular_placering">Telefon nummer</label>
+                    <input type="text" name="telefon" placeholder="Dit telefonnummer" class="tilmelding_formular_placering">
+
+                    <label for="adresse" class="tilmelding_formular_placering">Adresse</label>
+                    <input type="text" name="adresse" placeholder="Din adresse" class="tilmelding_formular_placering">
+
+
+                    <label for="kommune" class="tilmelding_formular_placering">Kommune</label>
+                    <input type="text" name="kommune" placeholder="Din kommune" class="tilmelding_formular_placering">
+
+                    <label for="post_nr" class="tilmelding_formular_placering">Post nummer</label>
+                    <input type="text" name="post_nr" placeholder="Dit post nummer" class="tilmelding_formular_placering">
+
+
+                    <label for="email" class="tilmelding_formular_placering">Email adresse</label>
+                    <input type="text" name="email" placeholder="Din e-mail" class="tilmelding_formular_placering">
+
+
+
+                    <input type="submit" value="Tilmeld mig!">
+                </form>
+
+            </section>
+
+        </section>
+
+
+    </main>
+
+
+
+
+    <script src="tilmelding.js"></script>
+</body>
+
+</html>
