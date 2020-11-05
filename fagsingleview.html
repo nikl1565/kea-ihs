@@ -24,8 +24,9 @@
 
     </style>
 </head>
+
 <body>
-<header>
+    <header>
         <div class="css_header_width">
 
             <div class="css_header_logo">
@@ -71,7 +72,7 @@
         document.addEventListener("DOMContentLoaded", getFag);
         async function getFag() {
 
-            let url = "http://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/fag/" + id;
+            let url = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/fag/" + id;
             let jsonData = await fetch(url);
             fag = await jsonData.json();
             //console.log("LOADING DONE",Fag);

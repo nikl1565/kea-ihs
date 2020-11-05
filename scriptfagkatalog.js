@@ -7,9 +7,9 @@
 
         document.addEventListener("DOMContentLoaded", start);
         //henter kategorier ned
-        const urlKategorier = "http://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/categories?parent=9";
+        const urlKategorier = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/categories?parent=9";
         //henter fag ned
-        const urlFag = "http://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/fag";
+        const urlFag = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/fag";
 
         //const popup = document.querySelector("#popup");
 
@@ -73,7 +73,7 @@
                 klon.querySelector(".js_fag_titel").textContent = fag.title.rendered;
                 klon.querySelector(".js_fag_beskrivelse").textContent = fag.fag_om_beskrivelse;
                 klon.querySelector(".billede").src = fag.splash_thumbnail.guid;
-                klon.querySelector(".js_fag_billede").addEventListener("click", function() {
+                klon.querySelector(".js_fag_billede").addEventListener("click", function () {
                     fagClick(fag.id);
                 });
 
