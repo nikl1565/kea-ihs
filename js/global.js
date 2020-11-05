@@ -9,6 +9,7 @@ function start() {
     const globalmenuTemplate = document.querySelector(".js_globalmenu_template").content;
     const jsonUrl = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages";
 
+    document.querySelector(".js_header_burger_icon").addEventListener("click", toggleHeaderBurgerIcon);
 
     async function fetchData() {
         const response = await fetch(jsonUrl);
@@ -36,6 +37,21 @@ function start() {
                 globalmenuContainer.appendChild(template);
             }
         });
+    }
+
+    function toggleHeaderBurgerIcon() {
+        console.log("toggle menu");
+
+        document.querySelector(".js_globalmenu").classList.toggle("css_globalmenu_hidden");
+
+        let isHidden = document.querySelector(".js_globalmenu").classList.contains("css_globalmenu_hidden");
+
+        if (isHidden == true) {
+            document.querySelector(".js_header_burger_icon").textContent = "☰";
+        } else {
+            document.querySelector(".js_header_burger_icon").textContent = "×";
+        }
+
     }
 
     fetchData();

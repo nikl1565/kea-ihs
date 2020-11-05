@@ -14,17 +14,17 @@ header {
     background-color: #E0E0E0;
 }
 
-.header_width {
+.css_header_width {
     max-width: 1200px;
     margin: 0 auto;
     height: 100%;
 }
 
-.header_logo {
+.css_header_logo {
     padding: 20px 0 50px 0;
 }
 
-.header_logo_image {
+.css_header_logo_image {
     width: 8vw;
 }
 
@@ -37,4 +37,19 @@ header {
     border: 0px solid black;
     border-radius: 10px 10px 0px 0px;
     background-color: white;
+}
+
+.css_globalmenu_hidden {
+    display: none;
+}
+
+
+@media only screen and (min-width: 730px) {
+    .css_header_burger_icon {
+        display: none;
+    }
+
+    .css_globalmenu {
+        display: block;
+    }
 }
