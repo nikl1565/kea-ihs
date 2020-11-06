@@ -9,7 +9,7 @@
         //henter kategorier ned
         const urlKategorier = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/categories?parent=9";
         //henter fag ned
-        const urlFag = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/fag";
+        const urlFag = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/fag?per_page=100";
 
         //const popup = document.querySelector("#popup");
 
