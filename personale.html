@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faciliteter</title>
+    <link rel="stylesheet" href="stylefagkatalog.css">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        /*popup vindue*/
+        #popup {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: azure;
+            /*            background: rgba(255, 0, 0, 0.4);*/
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="css_header_width">
+
+            <div class="css_header_logo">
+                <a href="index.html">
+                    <img src="https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-content/uploads/2020/11/logo_mindre-1.png" alt="Logo for Idrætshøjskolen Sønderborg" class="css_header_logo_image">
+                </a>
+            </div>
+
+            <div class="css_header_burger_icon js_header_burger_icon">☰</div>
+
+            <nav class="js_globalmenu css_globalmenu css_globalmenu_hidden js_globalmenu_hidden">
+            </nav>
+        </div>
+    </header>
+
+    <main class="css_maxwidth">
+
+        <section id="popup">
+
+            <article>
+                <p id="close">x</p>
+                <img src="" alt="" class="billede js_personale_billede">
+                <h2 class="js_personale_navn"></h2>
+                <h3 class="js_personale_titel"></h3>
+                <p class="js_personale_tekst"></p>
+            </article>
+
+        </section>
+
+        <h1 class="css_fagkatalog_title">Personale</h1>
+
+        <section class="js_liste">
+        </section>
+
+        <template class="js_kategori_template">
+            <div class="css_kategori">
+                <h2 class="js_kategori_titel"></h2>
+                <div class="js_kategori_personalecontainer fag"></div>
+            </div>
+        </template>
+
+
+        <template class="js_personale_template">
+            <article class="css_fag">
+                <img src="" alt="" class="billede js_personale_billede">
+                <h2 class="js_personale_navn"></h2>
+                <h3 class="js_personale_titel"></h3>
+            </article>
+        </template>
+
+        <template class="js_globalmenu_template">
+            <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
+        </template>
+
+
+
+
+    </main>
+
+
+    <script src="scriptpersonale.js"></script>
+    <script src="js/global.js"></script>
+</body>
+
+</html>
