@@ -34,7 +34,8 @@ html {
     --p-font-weight: 400;
 
     /*    Font størrelser*/
-    --h1-font-size: 3.7rem;
+    --h1-font-size: 4rem;
+    --h1-font-size-white: 5rem;
     --h1-forside-velkommen-font-size: 3.7rem;
     --h1-forside-ihs-font-size: 3.7rem;
     --h2-font-size: 2.7rem;
@@ -151,6 +152,11 @@ h1 {
     line-height: var(--h1-font-line-height);
     color: var(--h1-font-color-blue);
     text-transform: var(--text-transform-uppercase);
+}
+
+.h1_white {
+    color: var(--h1-font-color-white);
+    font-size: var(--h1-font-size-white);
 }
 
 .forside-h1-velkommen {

@@ -7,12 +7,12 @@
 
 img,
 svg,
-video
-    {
+video {
     width: 100%;
     height: auto;
     max-width: 1100px;
 }
+
 /*GLOBAL*/
 
 /*HOJSKOLE*/
@@ -25,14 +25,11 @@ main {
 
 /***SPLASHSECTION***/
 
-.css_forside_splash_section {
-}
+.css_forside_splash_section {}
 
-.css_forside_splash_section {
-}
+.css_forside_splash_section {}
 
-.css_forside_splashfilter {
-}
+.css_forside_splashfilter {}
 
 /***SPLASHSECTION***/
 
@@ -42,9 +39,6 @@ main {
 h1 {
     text-align: left;
     max-width: 1100px;
-    font-size: 40px;
-    font-family: sans-serif;
-    color: black;
     margin-bottom: 10px;
 
     z-index: 1;
