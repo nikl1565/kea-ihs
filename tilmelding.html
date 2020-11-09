@@ -40,12 +40,12 @@
     </template>
     <main class="css_maxwidth">
 
-        <section class="css_tilmelding">
-            <h1>Tilmeld dig til en uforgelmmelig oplevelse!</h1>
+        <section class="css_tilmelding css_maxwidth">
+            <h1 class="css_tilmelding_titel">Tilmeld dig til en uforgelmmelig oplevelse!</h1>
 
             <section class="css_tilmelding_formular">
                 <form action="#">
-                    <select id="valg" name="valg">
+                    <select id="valg" class="css_tilmelding_filter" name="valg">
                         <option value="" disabled selected>Vælg booking, forløb eller kursus</option>
                         <optgroup label="Book Rundvisning">
                             <option value="book_rundvisning">Book Rundvisning</option>
@@ -62,52 +62,105 @@
                             <option value="ugekursus_2">Ugekursus 2</option>
                             <option value="ugekursus_3">Ugekursus 3</option>
                         </optgroup>
-
                     </select>
 
-                    <label for="fornavn" class="tilmelding_formular_placering">Fornavn</label>
-                    <input type="text" name="fornavn" placeholder="Dit fornavn" class="tilmelding_formular_placering">
+                    <div class="input_flex">
+                        <div class="css_tilmelding_flex">
+                            <label for="fornavn" class="tilmelding_formular_placering css_tilmelding_label">Fornavn</label>
+                            <input type="text" name="fornavn" placeholder="Dit fornavn" class="tilmelding_formular_placering css_tilmelding_input">
+                        </div>
 
-                    <div>
-                        <label for="efternavn" class="tilmelding_formular_placering">Efternavn</label>
-                        <input type="text" name="efternavn" placeholder="Dit efternavn" class="tilmelding_formular_placering">
+                        <div class="css_tilmelding_flex">
+                            <label for="efternavn" class="tilmelding_formular_placering css_tilmelding_label">Efternavn</label>
+                            <input type="text" name="efternavn" placeholder="Dit efternavn" class="tilmelding_formular_placering css_tilmelding_input">
+                        </div>
                     </div>
 
-                    <label for="cpr_nummer" class="tilmelding_formular_placering">CPR-Nummer</label>
-                    <input type="text" name="cpr_nummer" placeholder="Dit CPR-nummer" class="tilmelding_formular_placering">
-
-                    <label for="gender" class="tilmelding_formular_placering">Køn</label>
-                    <input type="radio" id="mand" name="gender" value="Mand">
-                    <label for="mand">Mand</label>
-                    <input type="radio" id="kvinde" name="gender" value="Kvinde">
-                    <label for="kvinde">Kvinde</label>
-                    <input type="radio" id="andet" name="gender" value="Anden">
-                    <label for="andet">Andet</label>
 
 
-                    <label for="telefon" class="tilmelding_formular_placering">Telefon nummer</label>
-                    <input type="text" name="telefon" placeholder="Dit telefonnummer" class="tilmelding_formular_placering">
-
-                    <label for="adresse" class="tilmelding_formular_placering">Adresse</label>
-                    <input type="text" name="adresse" placeholder="Din adresse" class="tilmelding_formular_placering">
-
-
-                    <label for="kommune" class="tilmelding_formular_placering">Kommune</label>
-                    <input type="text" name="kommune" placeholder="Din kommune" class="tilmelding_formular_placering">
-
-                    <label for="post_nr" class="tilmelding_formular_placering">Post nummer</label>
-                    <input type="text" name="post_nr" placeholder="Dit post nummer" class="tilmelding_formular_placering">
+                    <div class="input_flex">
+                        <div class="css_tilmelding_flex">
+                            <label for="cpr_nummer" class="tilmelding_formular_placering css_tilmelding_label">CPR-Nummer</label>
+                            <input type="text" name="cpr_nummer" placeholder="Dit CPR-nummer" class="tilmelding_formular_placering css_tilmelding_input">
+                        </div>
 
 
-                    <label for="email" class="tilmelding_formular_placering">Email adresse</label>
-                    <input type="text" name="email" placeholder="Din e-mail" class="tilmelding_formular_placering">
+                        <div class="css_tilmelding_flex">
+                            <label for="gender" class="tilmelding_formular_placering css_tilmelding_label">Køn</label>
+                            <input class="css_tilmelding_kryds" type="radio" id="mand" name="gender" value="Mand">
+                            <label for="mand">Mand</label>
+                            <input type="radio" id="kvinde" name="gender" value="Kvinde">
+                            <label for="kvinde">Kvinde</label>
+                            <input type="radio" id="andet" name="gender" value="Anden">
+                            <label for="andet">Andet</label>
+                        </div>
+                    </div>
+
+                    <div class="input_flex">
+                        <div class="css_tilmelding_flex">
+                            <label for="telefon" class="tilmelding_formular_placering css_tilmelding_label">Telefon nummer</label>
+                            <input type="text" name="telefon" placeholder="Dit telefonnummer" class="tilmelding_formular_placering css_tilmelding_input">
+
+                        </div>
+
+                        <div class="css_tilmelding_flex">
+                            <label for="adresse" class="tilmelding_formular_placering css_tilmelding_label">Adresse</label>
+                            <input type="text" name="adresse" placeholder="Din adresse" class="tilmelding_formular_placering css_tilmelding_input">
+
+                        </div>
+                    </div>
+
+                    <div class="input_flex">
+                        <div class="css_tilmelding_flex">
+                            <label for="kommune" class="tilmelding_formular_placering css_tilmelding_label">Kommune</label>
+                            <input type="text" name="kommune" placeholder="Din kommune" class="tilmelding_formular_placering css_tilmelding_input">
+
+                        </div>
+
+                        <div class="css_tilmelding_flex">
+                            <label for="post_nr" class="tilmelding_formular_placering css_tilmelding_label">Post nummer</label>
+                            <input type="text" name="post_nr" placeholder="Dit post nummer" class="tilmelding_formular_placering css_tilmelding_input">
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="input_flex">
+                        <div class="css_tilmelding_flex">
+                            <label for="email" class="tilmelding_formular_placering css_tilmelding_label">E-mail adresse</label>
+                            <input type="text" name="email" placeholder="Din e-mail" class="tilmelding_formular_placering css_tilmelding_input">
+
+                        </div>
+                        <div class="css_tilmelding_flex">
+
+                        </div>
+                    </div>
+
+                    <input class="css_tilmelding_cta" type="submit" value="Tilmeld mig!">
 
 
 
-                    <input type="submit" value="Tilmeld mig!">
                 </form>
 
             </section>
+
+            <div class="info">
+                <div class="tekst-1">
+                    <h2>Bankoplysninger</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.
+                    </p>
+
+
+                </div>
+                <div class="tekst-2">
+                    <h2>Støttemuligheder</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.
+                    </p>
+                </div>
+            </div>
 
         </section>
 
@@ -115,70 +168,68 @@
     </main>
 
 
-  <!--FOOTER-->
-  <footer class="footerstyling">
-      <!--FOOTER COLUMN WRAPPER-->
-      <div class="footerinfo">
-          <!--FOOTER COLUMN-->
-          <div class="footercolumn">
-              <h3 class="footer_title">Idrætshøjskolen Sønderborg</h3>
-              <ul>
-                  <li><a class="footer_link" href="https://g.page/IdraetshojskolenSoenderborg?share" target="_blank">Frihedsallé 42, 6400 Sønderborg</a></li>
-                  <li><a class="footer_link" href="tel:+45 74 42 18 48">Tlf: +45 74 42 18 48</a></li>
-                  <li><a class="footer_link" href="mailto:info@ihs.dk">Email: info@ihs.dk</a></li>
-                  <li><a class="footer_link" href="tilmelding.html">CVR 35902619</a></li>
-              </ul>
-          </div>
-          <!---->
-          <!---->
-          <div class="footercolumn">
-              <h3 class="footer_title">Information</h3>
-                  <ul>
-                      <li><a class="footer_link" href="kontakt.html">Kontakt os</a></li>
-                      <li><a class="footer_link" href="om-os.html">Om IHS</a></li>
-                      <li><a class="footer_link" href="faciliteter.html">Faciliteter</a></li>
-                      <li><a class="footer_link" href="hojskole.html">Højskole</a></li>
-                      <li><a class="footer_link" href="tilmelding.html">Tilmelding</a></li>
-                  </ul>
+    <!--FOOTER-->
+    <footer class="footerstyling">
+        <!--FOOTER COLUMN WRAPPER-->
+        <div class="footerinfo">
+            <!--FOOTER COLUMN-->
+            <div class="footercolumn">
+                <h3 class="footer_title">Idrætshøjskolen Sønderborg</h3>
+                <ul>
+                    <li><a class="footer_link" href="https://g.page/IdraetshojskolenSoenderborg?share" target="_blank">Frihedsallé 42, 6400 Sønderborg</a></li>
+                    <li><a class="footer_link" href="tel:+45 74 42 18 48">Tlf: +45 74 42 18 48</a></li>
+                    <li><a class="footer_link" href="mailto:info@ihs.dk">Email: info@ihs.dk</a></li>
+                    <li><a class="footer_link" href="tilmelding.html">CVR 35902619</a></li>
+                </ul>
+            </div>
+            <!---->
+            <!---->
+            <div class="footercolumn">
+                <h3 class="footer_title">Information</h3>
+                <ul>
+                    <li><a class="footer_link" href="kontakt.html">Kontakt os</a></li>
+                    <li><a class="footer_link" href="om-os.html">Om IHS</a></li>
+                    <li><a class="footer_link" href="faciliteter.html">Faciliteter</a></li>
+                    <li><a class="footer_link" href="hojskole.html">Højskole</a></li>
+                    <li><a class="footer_link" href="tilmelding.html">Tilmelding</a></li>
+                </ul>
 
-          </div>
-          <!---->
+            </div>
+            <!---->
 
-          <!---->
-          <div class="footercolumn_socials">
-              <!--SOCIAL MEDIA BOX-->
-              <div class="socialmediabox">
-                  <!--FOOTER SOCIALMEDIA LINK-->
-                  <a href="https://www.facebook.com/IdraetshojskolenSonderborg" target="_blank">
-                      <img class="socials_icon" src="img/Icon%20awesome-facebook-square.png" alt="facebook social icon">
-                  </a>
-                  <!---->
-                  <!---->
-                  <a href="https://www.instagram.com/ihsdk/?fbclid=IwAR35I1pmBi6GI6dRpSTMFwYtApVikTzpml37icfrFNqVE5tB_fxcxXPmZnY" target="_blank">
-                      <img class="socials_icon" src="img/Icon%20awesome-instagram.png" alt="instagram social icon">
-                  </a>
+            <!---->
+            <div class="footercolumn_socials">
+                <!--SOCIAL MEDIA BOX-->
+                <div class="socialmediabox">
+                    <!--FOOTER SOCIALMEDIA LINK-->
+                    <a href="https://www.facebook.com/IdraetshojskolenSonderborg" target="_blank">
+                        <img class="socials_icon" src="img/Icon%20awesome-facebook-square.png" alt="facebook social icon">
+                    </a>
+                    <!---->
+                    <!---->
+                    <a href="https://www.instagram.com/ihsdk/?fbclid=IwAR35I1pmBi6GI6dRpSTMFwYtApVikTzpml37icfrFNqVE5tB_fxcxXPmZnY" target="_blank">
+                        <img class="socials_icon" src="img/Icon%20awesome-instagram.png" alt="instagram social icon">
+                    </a>
 
-                  <a href="https://www.youtube.com/channel/UC3_GXsm6rzkw2L8Ni9p5Vlw" target="_blank">
-                      <img class="socials_icon" src="img/Icon%20awesome-youtube.png" alt="youtube social icon">
-                  </a>
-                  <!---->
-              </div>
-              <!---->
-              <!--FIND SMILEY WRAPPER-->
-              <a href="https://www.hojskolerne.dk/">
-                  <img class="footer_delafhojskolerne" src="img/del_af_hojskolerne.png" alt="del af hojskolerne">
-              </a>
-              <!---->
-          </div>
-          <!---->
-          <!--END FOOTER COLUMN-->
-      </div>
-      <!--END FOOTER COLUMN WRAPPER-->
-  </footer>
-  <!---->
+                    <a href="https://www.youtube.com/channel/UC3_GXsm6rzkw2L8Ni9p5Vlw" target="_blank">
+                        <img class="socials_icon" src="img/Icon%20awesome-youtube.png" alt="youtube social icon">
+                    </a>
+                    <!---->
+                </div>
+                <!---->
+                <!--FIND SMILEY WRAPPER-->
+                <a href="https://www.hojskolerne.dk/">
+                    <img class="footer_delafhojskolerne" src="img/del_af_hojskolerne.png" alt="del af hojskolerne">
+                </a>
+                <!---->
+            </div>
+            <!---->
+            <!--END FOOTER COLUMN-->
+        </div>
+        <!--END FOOTER COLUMN WRAPPER-->
+    </footer>
+    <!---->
 
     <script src="js/tilmelding.js"></script>
     <script src="js/global.js"></script>
-</body>
-
-</html>
+</body></html>
