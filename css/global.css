@@ -1,3 +1,4 @@
+/* Generelt for alt */
 * {
     box-sizing: border-box;
     margin: 0 auto;
@@ -8,6 +9,88 @@ html {
     font-size: 62.5%;
 }
 
+:root {
+    /*    Font skrifttyper */
+    --h1-forside-velkommen-font-family: 'Cookie', cursive;
+    --h1-forside-ihs-font-family: 'Anton', sans-serif;
+    --font-family: proxima-nova, sans-serif;
+
+    /*    Font weights */
+    --font-weight-black: 900;
+    --font-weight-extrabold: 800;
+    --font-weight-bold: 700;
+    --font-weight-semi-bold: 600;
+    --font-weight-medium: 500;
+    --font-weight-regular: 400;
+    --font-weight-light: 300;
+    --font-weight-thin: 100;
+
+
+    --cta-font-weight: 700;
+    --h1-font-weight: 900;
+    --h1-forside-velkommen-font-weight: 900;
+    --h1-forside-ihs-font-weight: 900;
+    --h2-font-weight: 900;
+    --h3-font-weight: 700;
+    --p-font-weight: 400;
+
+    /*    Font størrelser*/
+    --h1-font-size: 3.7rem;
+    --h1-forside-velkommen-font-size: 3.7rem;
+    --h1-forside-ihs-font-size: 3.7rem;
+    --h2-font-size: 2.7rem;
+    --h3-font-size: 2.2rem;
+    --p-font-size: 1.7rem;
+    /*             Denne  størrese skal jo nok overskrives nogle steder med noget mindre */
+    --cta-text-font-size: 1.7rem;
+
+    /*    Font farver*/
+    --h1-font-color: #0c1f4b;
+    --h1-forside-velkommen-font-color: #0c1f4b;
+    --h1-forside-ihs-font-color: #0c1f4b;
+    --h2-font-color: #0c1f4b;
+    --h3-font-color: #0c1f4b;
+    --p-font-color: #0c1f4b;
+    --cta-primary-text-font-color: #ffffff;
+    --cta-secondary-text-font-color: #0c1f4b;
+
+    /*    Font linjehøjde */
+    --h1-font-line-height: 1.6;
+    --h1-forside-velkommen-font-line-height: 1.6;
+    --h1-forside-ihs-font-line-height: 1.6;
+    --h2-font-line-height: 1.6;
+    --h3-font-line-height: 1.6;
+    --p-font-line-height: 1.6;
+
+    /*    Text transform */
+    --text-transform-uppercase: uppercase;
+    --text-transform-capitalize: capitalize;
+
+    /*    Farver */
+    --primary-color: #0c1f4b;
+    --secondary-color: #3a4a6d;
+    --white: #ffffff;
+    --body-color: #F7F7F7;
+
+    /*    CTA knapper*/
+    /*        Primære knapper*/
+    --cta-primary-background-color: #0c1f4b;
+    --cta-primary-border-radius: 3px;
+    --cta-primary-box-shadow: 1.5px 1.5px 3px rgba(16, 31, 72, 0.22);
+    /*             Denne padding skal jo nok overskrives nogle steder med noget mindre */
+    --cta-primary-padding: 10px;
+
+
+    /*        Sekundære knapper*/
+    --cta-secondary-background-color: #ffffff;
+    --cta-secondary-border: 1px solid #0c1f4b;
+    --cta-secondary-border-radius: 3px;
+    --cta-secondary-box-shadow: 1.5px 1.5px 3px rgba(16, 31, 72, 0.22);
+    /*             Denne padding skal jo nok overskrives nogle steder med noget mindre */
+    --cta-secondary-padding: 10px;
+
+}
+
 img {
     width: 100%
 }
@@ -15,6 +98,92 @@ img {
 .css_maxwidth {
     max-width: 1100px;
 }
+
+/* Style tile til tekst og knapper */
+
+h1 {
+    font-family: var(--font-family);
+    font-weight: var(--h1-font-weight);
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-font-line-height);
+    color: var(--h1-font-color);
+    text-transform: var(--text-transform-uppercase);
+}
+
+.forside-h1-velkommen {
+    font-family: var(--h1-forside-velkommen-font-family);
+    font-weight: var(--h1-forside-velkommen-font-weight);
+    font-size: var(--h1-forside-velkommen-font-size);
+    line-height: var(--h1-forside-velkommen-font-line-height);
+    color: var(--h1-forside-velkommen-font-color);
+    text-transform: none;
+}
+
+.forside-h1-ihs {
+    font-family: var(--h1-forside-ihs-font-family);
+    font-weight: var(--h1-forside-ihs-font-weight);
+    font-size: var(--h1-forside-ihs-font-size);
+    line-height: var(--h1-forside-ihs-font-line-height);
+    color: var(--h1-forside-ihs-font-color);
+}
+
+h2 {
+    font-family: var(--font-family);
+    font-weight: var(--h2-font-weight);
+    font-size: var(--h2-font-size);
+    line-height: var(--h1-font-line-height);
+    color: var(--h2-font-color);
+    text-transform: var(--text-transform-capitalize);
+}
+
+
+h3 {
+    font-family: var(--font-family);
+    font-weight: var(--h3-font-weight);
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-font-line-height);
+    color: var(--h3-font-color);
+    text-transform: var(--text-transform-uppercase);
+}
+
+
+p {
+    font-family: var(--font-family);
+    font-weight: var(--p-font-weight);
+    font-size: var(--p-font-size);
+    line-height: var(--p-font-line-height);
+    color: var(--p-font-color);
+}
+
+.cta-primary {
+    background-color: var(--cta-primary-background-color);
+    border-radius: var(--cta-primary-border-radius);
+    box-shadow: var(--cta-primary-box-shadow);
+    padding: var(--cta-primary-padding);
+
+    /*    Tekst */
+    font-family: var(--font-family);
+    font-size: var(--cta-text-font-size);
+    font-weight: var(--cta-font-weight);
+    color: var(--cta-primary-text-font-color);
+    text-decoration: none;
+}
+
+.cta-secondary {
+    background-color: var(--cta-secondary-background-color);
+    border: var(--cta-secondary-border);
+    border-radius: var(--cta-secondary-border-radius);
+    box-shadow: var(--cta-secondary-box-shadow);
+    padding: var(--cta-secondary-padding);
+
+    /*    Tekst */
+    font-family: var(--font-family);
+    font-size: var(--cta-text-font-size);
+    font-weight: var(--cta-font-weight);
+    color: var(--cta-secondary-text-font-color);
+    text-decoration: none;
+}
+
 /* Header */
 header {
     background-color: #E0E0E0;
