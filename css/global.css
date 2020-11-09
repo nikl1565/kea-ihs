@@ -385,7 +385,8 @@ header {
 /*FOOTER*/
 
 footer {
-    margin-top: 70px;
+    margin-top: 90px;
+    border-top: 40px solid #e7e7e8;
     display: flex;
     flex-wrap: wrap;
     background-color: #3A4A6D;
