@@ -117,7 +117,7 @@
 
             function constructMenu(menuItems) {
                 console.log('constructMenu', menuItems);
-
+                let submenuIndex;
                 var nav_html = '';
 
                 for (let i = 0; i < menuItems.length; i++) {
@@ -157,11 +157,11 @@
                     if (target.classList.contains("list__link-arrow")) {
                         element.preventDefault();
 
-//                        if (targetSubmenu.classList.contains("is-open")) {
-//                            targetSubmenu.style.height = `0px`;
-//                        } else {
-//                            targetSubmenu.style.height = `${buttonHeight}px`;
-//                        }
+                        if (targetSubmenu.classList.contains("is-open")) {
+                            targetSubmenu.style.height = `0px`;
+                        } else {
+                            targetSubmenu.style.height = `${buttonHeight}px`;
+                        }
                         submenuButton.parentNode.querySelector(".list__submenu").classList.toggle("is-open");
                     }
                     console.log(`Du klikkede på `, target);
