@@ -232,13 +232,11 @@ header {
 .css_header_width {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 5vw 0;
     height: 100%;
 
 }
 
 .css_header_logo {
-    /*    padding: 20px 0 50px 0;*/
     display: flex;
     justify-content: center;
 }
@@ -285,10 +283,6 @@ header {
         padding-bottom: 15px;
     }
 
-    .css_header_width {
-        padding: 2vw 0 0 0;
-    }
-
     .css_header_burger_icon {
         display: none;
     }
@@ -298,13 +292,12 @@ header {
     }
 
     .css_header_logo {
-        padding: 20px 0 50px 0;
-
+        padding: 20px 0;
         display: block;
     }
 
     .css_header_logo_image {
-        width: 8vw;
+        width: 10vw;
     }
 
 
