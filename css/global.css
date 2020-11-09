@@ -25,17 +25,26 @@ html {
     --font-weight-light: 300;
     --font-weight-thin: 100;
 
+
+    --cta-font-weight: 700;
+    --h1-font-weight: 900;
+    --h2-font-weight: 900;
+    --h3-font-weight: 700;
+
     /*    Font størrelser*/
     --h1-font-size: 3.7rem;
     --h2-font-size: 2.7rem;
     --h3-font-size: 2.2rem;
     --p-font-size: 1.7rem;
+    --cta-text-font-size: 1.7rem;
 
     /*    Font farver*/
     --h1-font-color: #0c1f4b;
     --h2-font-color: #0c1f4b;
     --h3-font-color: #0c1f4b;
     --p-font-color: #0c1f4b;
+    --cta-primary-text-font-color: #ffffff;
+    --cta-secondary-text-font-color: #0c1f4b;
 
     /*    Font linjehøjde */
     --h1-font-line-height: 1.6;
@@ -52,6 +61,22 @@ html {
     --secondary-color: #3a4a6d;
     --white: #ffffff;
     --body-color: #F7F7F7;
+
+    /*    CTA knapper*/
+    /*        Primære knapper*/
+    --cta-primary-background-color: #0c1f4b;
+    --cta-primary-border-radius: 3px;
+    --cta-primary-box-shadow: 1.5px 1.5px 3px rgba(16, 31, 72, 0.22);
+    --cta-primary-padding: 10px;
+
+
+    /*        Sekundære knapper*/
+    --cta-secondary-background-color: #ffffff;
+    --cta-secondary-border: 1px solid #0c1f4b;
+    --cta-secondary-border-radius: 3px;
+    --cta-secondary-box-shadow: 1.5px 1.5px 3px rgba(16, 31, 72, 0.22);
+    --cta-secondary-padding: 10px;
+
 }
 
 img {
@@ -62,11 +87,11 @@ img {
     max-width: 1100px;
 }
 
-/* Style tile til tekst*/
+/* Style tile til tekst og knapper */
 
 h1 {
     font-family: var(--font-family);
-    font-weight: var(--font-weight-black);
+    font-weight: var(--h1-font-weight);
     font-size: var(--h1-font-size);
     line-height: var(--h1-font-line-height);
     color: var(--h1-font-color);
@@ -75,7 +100,7 @@ h1 {
 
 h2 {
     font-family: var(--font-family);
-    font-weight: var(--font-weight-black);
+    font-weight: var(--h2-font-weight);
     font-size: var(--h2-font-size);
     line-height: var(--h1-font-line-height);
     color: var(--h2-font-color);
@@ -85,7 +110,7 @@ h2 {
 
 h3 {
     font-family: var(--font-family);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--h3-font-weight);
     font-size: var(--h3-font-size);
     line-height: var(--h3-font-line-height);
     color: var(--h3-font-color);
@@ -101,7 +126,34 @@ p {
     color: var(--p-font-color);
 }
 
+.cta-primary {
+    background-color: var(--cta-primary-background-color);
+    border-radius: var(--cta-primary-border-radius);
+    box-shadow: var(--cta-primary-box-shadow);
+    padding: var(--cta-primary-padding);
 
+    /*    Tekst */
+    font-family: var(--font-family);
+    font-size: var(--cta-text-font-size);
+    font-weight: var(--cta-font-weight);
+    color: var(--cta-primary-text-font-color);
+    text-decoration: none;
+}
+
+.cta-secondary {
+    background-color: var(--cta-secondary-background-color);
+    border: var(--cta-secondary-border);
+    border-radius: var(--cta-secondary-border-radius);
+    box-shadow: var(--cta-secondary-box-shadow);
+    padding: var(--cta-secondary-padding);
+
+    /*    Tekst */
+    font-family: var(--font-family);
+    font-size: var(--cta-text-font-size);
+    font-weight: var(--cta-font-weight);
+    color: var(--cta-secondary-text-font-color);
+    text-decoration: none;
+}
 
 /* Header */
 header {
