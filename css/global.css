@@ -1,3 +1,4 @@
+/* Generelt for alt */
 * {
     box-sizing: border-box;
     margin: 0 auto;
@@ -9,7 +10,6 @@ html {
 }
 
 :root {
-
     /*    Font skrifttyper */
     --h1-forside-font-family-velkommen: 'Cookie', cursive;
     --h1-forside-font-family-ihs: 'Anton', sans-serif;
@@ -28,17 +28,24 @@ html {
     /*    Font størrelser*/
     --h1-font-size: 3.7rem;
     --h2-font-size: 2.7rem;
+    --h3-font-size: 2.2rem;
     --p-font-size: 1.7rem;
 
     /*    Font farver*/
     --h1-font-color: #0c1f4b;
     --h2-font-color: #0c1f4b;
+    --h3-font-color: #0c1f4b;
     --p-font-color: #0c1f4b;
 
     /*    Font linjehøjde */
     --h1-font-line-height: 1.6;
     --h2-font-line-height: 1.6;
+    --h3-font-line-height: 1.6;
     --p-font-line-height: 1.6;
+
+    /*    Text transform */
+    --text-transform-uppercase: uppercase;
+    --text-transform-capitalize: capitalize;
 
     /*    Farver */
     --primary-color: #0c1f4b;
@@ -54,6 +61,47 @@ img {
 .css_maxwidth {
     max-width: 1100px;
 }
+
+/* Style tile til tekst*/
+
+h1 {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-black);
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-font-line-height);
+    color: var(--h1-font-color);
+    text-transform: var(--text-transform-uppercase);
+}
+
+h2 {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-black);
+    font-size: var(--h2-font-size);
+    line-height: var(--h1-font-line-height);
+    color: var(--h2-font-color);
+    text-transform: var(--text-transform-capitalize);
+}
+
+
+h3 {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-font-line-height);
+    color: var(--h3-font-color);
+    text-transform: var(--text-transform-uppercase);
+}
+
+
+p {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--p-font-size);
+    line-height: var(--p-font-line-height);
+    color: var(--p-font-color);
+}
+
+
 
 /* Header */
 header {
