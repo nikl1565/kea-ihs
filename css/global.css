@@ -40,6 +40,7 @@ html {
     --h2-font-size: 2.7rem;
     --h3-font-size: 2.2rem;
     --p-font-size: 1.7rem;
+    --a-font-size: 1.7rem;
     /*             Denne  størrese skal jo nok overskrives nogle steder med noget mindre */
     --cta-text-font-size: 1.7rem;
 
@@ -63,6 +64,7 @@ html {
     --h2-font-line-height: 1.6;
     --h3-font-line-height: 1.6;
     --p-font-line-height: 1.6;
+    --a-font-line-height: 1.6;
 
     /*    Text transform */
     --text-transform-uppercase: uppercase;
@@ -195,12 +197,19 @@ p {
 }
 
 a {
+    font-family: var(--font-family);
     color: var(--a-font-color);
     text-decoration: none;
+    font-size: var(--a-font-size);
+    line-height: var(--a-font-line-height);
 }
 
 a:hover {
     color: var(--a-font-color-hover);
+}
+
+.footer_link:hover {
+    color: var(--tertiary-color);
 }
 
 .cta-primary {
