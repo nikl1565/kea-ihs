@@ -46,9 +46,11 @@
  .css_fag_single_titel {
      text-align: center;
      max-width: 1100px;
+/*
      font-size: 4rem;
      font-family: sans-serif;
      color: white;
+*/
 
      z-index: 1;
  }
