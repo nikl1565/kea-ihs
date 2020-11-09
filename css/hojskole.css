@@ -7,11 +7,11 @@
 
 img,
 svg,
-video
-    {
+video {
     width: 100%;
     max-width: 1100px;
 }
+
 /*GLOBAL*/
 
 /*HOJSKOLE*/
@@ -20,7 +20,6 @@ main {
     max-width: 1120px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 0 5px rgba(136, 136, 136, 0.45);
 }
 
 /***SPLASHSECTION***/
@@ -57,9 +56,7 @@ h1 {
 
 /***VIDEO***/
 
-.css_hojskole_splashvideo {
-
-}
+.css_hojskole_splashvideo {}
 
 /***VIDEO***/
 
