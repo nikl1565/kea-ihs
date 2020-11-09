@@ -30,12 +30,14 @@ html {
     --h1-font-weight: 900;
     --h2-font-weight: 900;
     --h3-font-weight: 700;
+    --p-font-weight: 400;
 
     /*    Font størrelser*/
     --h1-font-size: 3.7rem;
     --h2-font-size: 2.7rem;
     --h3-font-size: 2.2rem;
     --p-font-size: 1.7rem;
+    /* Denne skal jo nok overskrives nogle steder med noget mindre */
     --cta-text-font-size: 1.7rem;
 
     /*    Font farver*/
@@ -67,6 +69,7 @@ html {
     --cta-primary-background-color: #0c1f4b;
     --cta-primary-border-radius: 3px;
     --cta-primary-box-shadow: 1.5px 1.5px 3px rgba(16, 31, 72, 0.22);
+    /* Denne padding skal jo nok overskrives nogle steder med noget mindre */
     --cta-primary-padding: 10px;
 
 
@@ -75,6 +78,7 @@ html {
     --cta-secondary-border: 1px solid #0c1f4b;
     --cta-secondary-border-radius: 3px;
     --cta-secondary-box-shadow: 1.5px 1.5px 3px rgba(16, 31, 72, 0.22);
+    /* Denne padding skal jo nok overskrives nogle steder med noget mindre */
     --cta-secondary-padding: 10px;
 
 }
@@ -120,7 +124,7 @@ h3 {
 
 p {
     font-family: var(--font-family);
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--p-font-weight);
     font-size: var(--p-font-size);
     line-height: var(--p-font-line-height);
     color: var(--p-font-color);
