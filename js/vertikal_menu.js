@@ -1,9 +1,55 @@
- let baseUrl = 'https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/';
-        let urlRouteFag = 'fag';
-        let urlRouteCategory = 'categories';
-        let urlRoutePosts = 'posts';
-        let urlRouteCategoryParameter = '?include=9';
+        /*****
 
+        get Menu
+
+        *****/
+
+        let pageUrl = window.location.pathname;
+        console.log(pageUrl);
+        let htmlName = pageUrl.substring(pageUrl.lastIndexOf('/') + 1).replace('.html', '');
+        console.log(htmlName);
+        const pageName = htmlName;
+
+        /*****
+
+        Globale variabler
+
+        *****/
+
+        // website url (index page)
+        let baseUrl = 'https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/';
+        let apiRoute;
+
+        // API route
+        let apiRouteMenu = 'wp-api-menus/v2/';
+        let apiRouteContent = 'wp/v2/';
+
+        // Routes
+        let urlRoutePage = 'page';
+        let urlRouteCategories = 'category';
+        let urlRoutePosts = 'posts';
+        let urlRouteMenu = 'menus';
+
+        // Parameters
+        let parameterGetOneHundred = '?per_page=100';
+
+        // Post types
+        let urlRouteFacilitet = 'facilitet';
+        let urlRouteFag = 'fag';
+        let urlRoutePersonale = 'person';
+
+        // pages, categories and posts data
+        let pages;
+        let categories;
+        let fag;
+        let personale;
+        let faciliteter;
+
+        /*****
+
+        Globale templates og containers
+
+        *****/
 
         // Container
         let sideNavigationContainer = document.querySelector(".js_side_navigation");
@@ -20,90 +66,106 @@
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
-            createVerticalMenu(urlRouteCategory, urlRouteCategoryParameter);
+            getMenu(pageName);
         }
 
-
-
-
-
         async function getData(urlRoute, urlParameter) {
-            console.log('getData');
 
             if (urlRoute === 'category') {
                 urlRoute = 'categories';
+                apiRoute = apiRouteContent;
+            } else if (urlRoute === 'post') {
+                urlRoute = 'posts';
+                apiRoute = apiRouteContent;
+            } else if (urlRoute === 'page') {
+                urlRoute = 'pages';
+                apiRoute = apiRouteContent;
+            } else if (urlRoute === 'nav_menu') {
+                urlRoute = 'menus/';
+            } else if (urlRoute === pageName) {
+                urlRoute = 'menus';
+                apiRoute = apiRouteMenu;
+            } else {
+                apiRoute = apiRouteContent;
             }
 
-            let response = await fetch(`${baseUrl}${urlRoute}${urlParameter}`);
+            let response = await fetch(`${baseUrl}${apiRoute}${urlRoute}${urlParameter}`);
 
             let data = await response.json();
 
             return data;
         }
 
+        async function getMenu(menuName) {
+            console.log('createMenu');
 
+            // Hent menu
+            let menu = await getData(menuName, '');
+            console.log('menuName', menuName);
 
+            // Hent menu detaljer
+            let menuDetails = await getData(menu[0].taxonomy, menu[0].ID);
+            console.log('menuDetails', menuDetails);
 
-
-        async function createVerticalMenu(urlRoute, urlParameter) {
-            let mainCategory = await getData(urlRoute, urlParameter);
-            console.log('mainCategory', mainCategory);
-
-            // Hent templaten til links og klon den
-            let templateLink = sideNavigationLinkTemplate.cloneNode(true);
-
-            // Indsæt data i templaten
-            templateLink.querySelector(".js_side_navigation_link").href = `${mainCategory[0].slug}.html`;
-            templateLink.querySelector(".js_side_navigation_link").textContent = mainCategory[0].name;
-
-            sideNavigationContainer.appendChild(templateLink);
-
-            // Hvis kategorien indeholder posts
-            if (mainCategory[0].count === 0) {
-                console.log('ingen posts!');
-            } else {
-                console.log(`der er ${mainCategory[0].count} posts!`);
+            if (menuDetails.items.length > 0) {
+                createMenu(menuDetails.items);
             }
 
-            // Hent data  ned i en array
-            let childs = await getData(mainCategory[0].taxonomy, `?parent=${mainCategory[0].id}`);
-            console.log(childs);
-            console.log(childs.length);
+        }
 
-            // Hvis der er 1 underkategori eller flere
-            if (childs.length > 0) {
-                console.log('Der er underkategorier!');
+        function createMenu(menuItems) {
 
-                let templateList = sideNavigationListTemplate.cloneNode(true);
+            function constructMenu(menuItems) {
+                console.log('constructMenu', menuItems);
 
-                // For hver underkategori
-                for (const child of childs) {
+                var nav_html = '';
 
-                    let templateListItem = sideNavigationListItemTemplate.cloneNode(true);
+                for (let i = 0; i < menuItems.length; i++) {
+                    let title = menuItems[i]['title'];
+                    let href = `${menuItems[i]['title']}.html`;
+                    href = href.toLowerCase();
+                    let submenu = menuItems[i]['children'];
 
-                    templateListItem.querySelector(".js_side_navigation_list_item").textContent = child.name;
+                    if (submenu != null) {
+                        nav_html += `<li class="list__item"><a class="list__link has-submenu" href="${href}">${title} <span class="list__link-arrow">Pil</span></a>`;
+                        nav_html += '<ul class="list__submenu">';
 
-                    // Hvis der er posts
-                    if (child.count > 0) {
-                        let childs = await getData(urlRouteFag, `?${urlRouteCategory}=${child.id}`);
 
-                        for (const child of childs) {
-
-                            console.log(child);
-
-                            let templateLink = sideNavigationLinkTemplate.cloneNode(true);
-
-                            templateLink.querySelector(".js_side_navigation_link").href = `${child.slug}.html`;
-                            templateLink.querySelector(".js_side_navigation_link").textContent = child.title.rendered;
-
-                            templateListItem.appendChild(templateLink);
-
-                        }
+                        nav_html += constructMenu(submenu);
+                        nav_html += '</ul>';
+                    } else {
+                        nav_html += `<li class="list__item"><a class="list__link" href="${href}">${title}</a>`;
                     }
-
-                    templateList.querySelector(".js_side_navigation_list").appendChild(templateListItem);
+                    nav_html += '</li>';
                 }
-
-                sideNavigationContainer.appendChild(templateList);
+                return nav_html;
             }
+
+            sideNavigationContainer.innerHTML = `<ul class="list">${constructMenu(menuItems)}</ul>`;
+
+            let submenuButtons = document.querySelectorAll(".list__link.has-submenu");
+
+            submenuButtons.forEach(submenuButton => {
+                let buttonHeight = submenuButton.offsetHeight;
+                console.log(buttonHeight);
+                submenuButton.addEventListener("click", function (element) {
+                    // Hvad der er blevet klikket på
+                    let target = element.target;
+                    let targetSubmenu = submenuButton.parentNode.querySelector(".list__submenu");
+
+                    // Hvis det er vores pil, så stop a linket i at sende os til en anden side
+                    if (target.classList.contains("list__link-arrow")) {
+                        element.preventDefault();
+
+//                        if (targetSubmenu.classList.contains("is-open")) {
+//                            targetSubmenu.style.height = `0px`;
+//                        } else {
+//                            targetSubmenu.style.height = `${buttonHeight}px`;
+//                        }
+                        submenuButton.parentNode.querySelector(".list__submenu").classList.toggle("is-open");
+                    }
+                    console.log(`Du klikkede på `, target);
+
+                });
+            });
         }
