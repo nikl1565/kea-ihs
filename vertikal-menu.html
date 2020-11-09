@@ -6,11 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="">
+
+    <!--    Fonts -->
+    <!--             Adobe fonts - bruges til al tekst på hjemmesiden -->
+    <link rel="stylesheet" href="https://use.typekit.net/ypc2vza.css">
+    <!--             Google fonts - bruges til forsidens splash velkomst -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cookie&display=swap" rel="stylesheet">
+
+
+
     <style>
         footer,
         header {
             padding: 60px 0;
         }
+
     </style>
 </head>
 
@@ -70,11 +80,60 @@
 
 
     <script>
+        /*****
+
+        Menu
+
+        *****/
+        const verticalMenuList = [{
+                name: 'Fagkatalog',
+                taxonomy: 'category',
+                type: ''
+            },
+            {
+                name: 'Det praktiske',
+                taxonomy: 'page',
+                type: ''
+            },
+            {
+                name: 'Debatten',
+                taxonomy: 'post',
+                type: 'fag'
+            }
+        ];
+        const menuName = 'hojskole';
+
+        /*****
+
+        Globale variabler
+
+        *****/
+
+        // website url (index page)
         let baseUrl = 'https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/';
-        let urlRouteFag = 'fag';
+
+        // Routes
+        let urlRoutePage = 'page';
         let urlRouteCategory = 'categories';
         let urlRoutePosts = 'posts';
+
+        // Post types
+        let urlRouteFacilitet = 'facilitet';
+        let urlRouteFag = 'fag';
+        let urlRoutePersonale = 'person';
+
         let urlRouteCategoryParameter = '?include=9';
+
+        // pages, categories and posts data
+        let pages;
+        let categories;
+        let fag;
+
+        /*****
+
+        Globale templates og containers
+
+        *****/
 
         // Container
         let sideNavigationContainer = document.querySelector(".js_side_navigation");
@@ -91,8 +150,7 @@
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
-            createVerticalMenu(urlRouteCategory, urlRouteCategoryParameter);
-            verticalMenuAssembly();
+            createMenu(verticalMenuList);
         }
 
         async function getData(urlRoute, urlParameter) {
@@ -100,91 +158,52 @@
 
             if (urlRoute === 'category') {
                 urlRoute = 'categories';
+            } else if (urlRoute === 'post') {
+                urlRoute = 'posts';
+            } else if (urlRoute === 'page') {
+                urlRoute = 'pages';
             }
 
             let response = await fetch(`${baseUrl}${urlRoute}${urlParameter}`);
 
             let data = await response.json();
 
+            console.log(data);
             return data;
         }
 
-        async function createVerticalMenu(urlRoute, urlParameter) {
-            let mainCategory = await getData(urlRoute, urlParameter);
-            console.log('mainCategory', mainCategory);
-
-            // Hent templaten til links og klon den
-            let templateLink = sideNavigationLinkTemplate.cloneNode(true);
-
-            // Indsæt data i templaten
-            templateLink.querySelector(".js_side_navigation_link").href = `${mainCategory[0].slug}.html`;
-            templateLink.querySelector(".js_side_navigation_link").textContent = mainCategory[0].name;
-
-            sideNavigationContainer.appendChild(templateLink);
-
-            // Hvis kategorien indeholder posts
-            if (mainCategory[0].count === 0) {
-                console.log('ingen posts!');
-            } else {
-                console.log(`der er ${mainCategory[0].count} posts!`);
-            }
-
-            // Hent data  ned i en array
-            let childs = await getData(mainCategory[0].taxonomy, `?parent=${mainCategory[0].id}`);
-            console.log(childs);
-            console.log(childs.length);
-
-            // Hvis der er 1 underkategori eller flere
-            if (childs.length > 0) {
-                console.log('Der er underkategorier!');
-
-                let templateList = sideNavigationListTemplate.cloneNode(true);
-
-                // For hver underkategori
-                for (const child of childs) {
-
-                    let templateListItem = sideNavigationListItemTemplate.cloneNode(true);
-
-                    templateListItem.querySelector(".js_side_navigation_list_item").textContent = child.name;
-
-                    // Hvis der er posts
-                    if (child.count > 0) {
-                        let childs = await getData(urlRouteFag, `?${urlRouteCategory}=${child.id}`);
-
-                        for (const child of childs) {
-
-                            console.log(child);
-
-                            let templateLink = sideNavigationLinkTemplate.cloneNode(true);
-
-                            if (child.type === 'fag') {
-                                console.log('et fag!');
-                                templateLink.querySelector(".js_side_navigation_link").href = `fagsingleview.html?id=${child.id}`;
-                            } else {
-                                templateLink.querySelector(".js_side_navigation_link").href = `${child.slug}.html`;
-                            }
-
-                            templateLink.querySelector(".js_side_navigation_link").textContent = child.title.rendered;
-
-                            templateListItem.appendChild(templateLink);
-
-                        }
-                    }
-
-                    templateList.querySelector(".js_side_navigation_list").appendChild(templateListItem);
-                }
-
-                sideNavigationContainer.appendChild(templateList);
-            }
-        }
-
-        async function verticalMenuAssembly() {
+        async function createMenu(menuItems) {
             console.log('verticalMenuAssembly');
+
+            // Hent alt data asynkront
+            pages = await getData(urlRoutePage, '');
+            categories = await getData(urlRouteCategory, '');
+            fag = await getData(urlRouteFag, '');
 
             // Templates
             let templateList = sideNavigationListTemplate.content;
             let templateLink = sideNavigationLinkTemplate.content;
             let templateLinkItem = sideNavigationListItemTemplate.content;
+
+            console.log('menuItems', menuItems);
+
+            for (topMenuItem in menuItems) {
+
+                topMenuItem = menuItems[topMenuItem];
+                console.log(topMenuItem);
+
+
+                // 1. Hent post / category / page ned
+                let menuItemData;
+
+
+                // 2. Tjek om der er counts (posts) osv osv.
+
+            }
+
         }
+
     </script>
-</body></html>
+</body>
+
+</html>

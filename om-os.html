@@ -4,11 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faciliteter</title>
+    <title>Højskole | Idrætshøjskolen Sønderborg</title>
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/stylefagkatalog.css">
+    <link rel="stylesheet" href="css/hojskole.css">
+
 
     <!--    Fonts -->
     <!--             Adobe fonts - bruges til al tekst på hjemmesiden -->
@@ -16,20 +17,9 @@
     <!--             Google fonts - bruges til forsidens splash velkomst -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cookie&display=swap" rel="stylesheet">
 
-    <style>
-        /*popup vindue*/
-        #popup {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: azure;
-            /*            background: rgba(255, 0, 0, 0.4);*/
-            display: none;
-        }
 
-    </style>
+
+
 </head>
 
 <body>
@@ -48,50 +38,47 @@
             </nav>
         </div>
     </header>
+    <main class="max_width">
 
-    <main class="css_maxwidth">
+        <aside>
+            <nav class="css_side_navigation js_side_navigation">
+            </nav>
+        </aside>
 
-        <section id="popup">
-
-            <article>
-                <p id="close">x</p>
-                <img src="" alt="" class="billede js_personale_billede">
-                <h2 class="js_personale_navn"></h2>
-                <h3 class="js_personale_titel"></h3>
-                <p class="js_personale_tekst"></p>
-            </article>
-
-        </section>
-
-        <h1 class="css_grid_title">Personale</h1>
-
-        <section class="js_liste">
-        </section>
-
-        <template class="js_kategori_template">
-            <div class="css_kategori">
-                <h2 class="js_kategori_titel"></h2>
-                <div class="js_kategori_personalecontainer fag"></div>
+        <section class="js_splash_section css_hojskole_splash_section">
+            <div class="css_hojskole_splashfilter">
+                <h1 class="js_om_title">test</h1>
             </div>
-        </template>
+        </section>
 
 
-        <template class="js_personale_template">
-            <article class="css_fag">
-                <img src="" alt="" class="billede js_personale_billede">
-                <h2 class="js_personale_navn"></h2>
-                <h3 class="js_personale_titel css_personale_titel"></h3>
-            </article>
+
+        <section class="js_om_content css_hojskole_content">
+
+        </section>
+
+        <template class="js_side_navigation_link_template">
+
+            <a class="css_side_navigation_link js_side_navigation_link" href="#"></a>
+
         </template>
+
+        <template class="js_side_navigation_list_template">
+            <ul class="css_side_navigation_liste js_side_navigation_list"></ul>
+        </template>
+
+        <template class="js_side_navigation_list_item_template">
+            <li class="css_side_navigation_list_item js_side_navigation_list_item"></li>
+        </template>
+
 
         <template class="js_globalmenu_template">
             <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
         </template>
 
+        </main>
 
-    </main>
-
-      <!--FOOTER-->
+          <!--FOOTER-->
   <footer class="footerstyling">
       <!--FOOTER COLUMN WRAPPER-->
       <div class="footerinfo">
@@ -153,8 +140,26 @@
   </footer>
   <!---->
 
-    <script src="js/scriptpersonale.js"></script>
-    <script src="js/global.js"></script>
-</body>
+        <script>
+            //Venter på DOMContent er loaded, starter hentData, opretter JSON-url som variabel.
+            document.addEventListener("DOMContentLoaded", hentData);
+            const url = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=om-os";
 
-</html>
+            async function hentData() {
+                const respons = await fetch(url);
+                const hojskole = await respons.json();
+                showOmOs(hojskole);
+            }
+
+            function showOmOs(hojskole) {
+                console.log(hojskole);
+                document.querySelector(".js_splash_section").style.backgroundImage = `url(${hojskole[0].splash_section.guid})`;
+                document.querySelector(".js_om_title").textContent = hojskole[0].title.rendered;
+                document.querySelector(".js_om_content").innerHTML = hojskole[0].content.rendered;
+            }
+
+        </script>
+        <script src="js/vertikal_menu.js"></script>
+        <script src="js/global.js"></script>
+</body></html>
+
