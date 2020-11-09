@@ -26,8 +26,8 @@
             </nav>
         </div>
     </header>
+    <main class="max_width">
 
-  <main class="max_width">
         <aside>
             <nav class="css_side_navigation js_side_navigation">
             </nav>
@@ -35,20 +35,15 @@
 
         <section class="js_splash_section css_hojskole_splash_section">
             <div class="css_hojskole_splashfilter">
-                <h1 class="js_hojskole_title">test</h1>
+                <h1 class="js_om_title">test</h1>
             </div>
         </section>
 
 
-        <section class="js_hojskole_content css_hojskole_content">
+
+        <section class="js_om_content css_hojskole_content">
 
         </section>
-
-        <template class="js_side_navigation_container_template">
-
-            <!-- Mangler, hvis den skal bruges -->
-
-        </template>
 
         <template class="js_side_navigation_link_template">
 
@@ -74,19 +69,19 @@
         <script>
             //Venter på DOMContent er loaded, starter hentData, opretter JSON-url som variabel.
             document.addEventListener("DOMContentLoaded", hentData);
-            const url = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=hojskole";
+            const url = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=om-os";
 
             async function hentData() {
                 const respons = await fetch(url);
                 const hojskole = await respons.json();
-                showHojskole(hojskole);
+                showOmOs(hojskole);
             }
 
-            function showHojskole(hojskole) {
+            function showOmOs(hojskole) {
                 console.log(hojskole);
                 document.querySelector(".js_splash_section").style.backgroundImage = `url(${hojskole[0].splash_section.guid})`;
-                document.querySelector(".js_hojskole_title").textContent = hojskole[0].title.rendered;
-                document.querySelector(".js_hojskole_content").innerHTML = hojskole[0].content.rendered;
+                document.querySelector(".js_om_title").textContent = hojskole[0].title.rendered;
+                document.querySelector(".js_om_content").innerHTML = hojskole[0].content.rendered;
             }
 
         </script>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SINGLEVIEW</title>
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/stylefagkatalog.css">
     <style>
         body {
             font-family: sans-serif;
@@ -42,6 +43,7 @@
         </div>
     </header>
 
+<main class="css_maxwidth">
     <template class="js_globalmenu_template">
         <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
     </template>
@@ -55,14 +57,19 @@
         <p id="price"></p>
     </section>
 -->
+    <section class="js_splash_section css_splash_section">
+    <div class="css_hojskole_splashfilter">
+    <h1 class="js_fag_titel css_fag_single_titel"></h1>
+    </div>
+    </section>
 
     <article class="css_fag">
-        <h3 class="js_fag_titel"></h3>
-        <p class="js_fag_beskrivelse"></p>
-        <img src="" alt="" class="billede">
+        <iframe class="js_vimeo_embed css_video_embed" title="vimeo-player" src="" width="380" height="220" frameborder="0" allowfullscreen></iframe>
+        <p class="js_fag_beskrivelse css_fag_beskrivelse"></p>
+        <div class="fag_galleri"></div>
     </article>
 
-
+</main>
 
 
     <script>
@@ -78,9 +85,11 @@
             //console.log("LOADING DONE",Fag);
             //            showDishes();
 
+            document.querySelector(".js_splash_section").style.backgroundImage = `url(${fag.splash_section.guid})`;
             document.querySelector(".js_fag_titel").textContent = fag.title.rendered;
-            document.querySelector(".js_fag_beskrivelse").textContent = fag.fag_om_beskrivelse;
-            document.querySelector(".billede").src = fag.splash_thumbnail.guid;
+            document.querySelector(".js_vimeo_embed").src = fag.fag_vimeo_embed;
+            document.querySelector(".js_fag_beskrivelse").innerHTML = fag.fag_om_beskrivelse;
+            document.querySelector(".fag_galleri").innerHTML = fag.fag_galleri.guid;
             document.querySelector(".css_fag").addEventListener("click", function() {
                 window.history.back();
 

@@ -12,7 +12,9 @@ img {
     width: 100%
 }
 
-
+.css_maxwidth {
+    max-width: 1100px;
+}
 /* Header */
 header {
     background-color: #E0E0E0;
@@ -21,7 +23,7 @@ header {
 }
 
 .css_header_width {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 5vw 0;
     height: 100%;
