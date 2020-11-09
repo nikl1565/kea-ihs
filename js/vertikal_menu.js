@@ -139,7 +139,7 @@
                         let categoryDetails = categories.find(category => category.id === objectId);
                         console.log('categoryDetails', categoryDetails);
 
-                        if (categoryDetails != '') {
+                        if (categoryDetails.indtast_target_link != '') {
                             href = categoryDetails.indtast_target_link;
                         }
                     }
