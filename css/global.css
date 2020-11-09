@@ -219,6 +219,9 @@ a:hover {
 }
 
 .cta-primary {
+    display: inline-block;
+    vertical-align: middle;
+
     background-color: var(--cta-primary-background-color);
     border-radius: var(--cta-primary-border-radius);
     box-shadow: var(--cta-primary-box-shadow);
@@ -230,9 +233,13 @@ a:hover {
     font-weight: var(--cta-font-weight);
     color: var(--cta-primary-text-font-color);
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .cta-secondary {
+    display: inline-block;
+    vertical-align: middle;
+
     background-color: var(--cta-secondary-background-color);
     border: var(--cta-secondary-border);
     border-radius: var(--cta-secondary-border-radius);
@@ -245,6 +252,7 @@ a:hover {
     font-weight: var(--cta-font-weight);
     color: var(--cta-secondary-text-font-color);
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 /*         Header */
@@ -253,6 +261,7 @@ header {
     position: sticky;
     top: 0;
     margin-bottom: 20px;
+    z-index: 1;
 }
 
 .css_header_width {
