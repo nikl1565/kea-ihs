@@ -5,8 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Højskole|Idrætshøjskolen Sønderborg</title>
-    <link rel="stylesheet" href="css/index.css">
+    <!-- Fonts -->
+    <!--             Adobe fonts - bruges til al tekst på hjemmesiden -->
+    <link rel="stylesheet" href="https://use.typekit.net/ypc2vza.css">
+    <!--             Google fonts - bruges til forsidens splash velkomst -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cookie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -26,23 +32,23 @@
         </div>
     </header>
 
-<main class="css_maxwidth">
-    <section class="js_splash_section css_forside_splash_section">
-    <div class="css_forside_splashfilter">
-    <h1 class="js_forside_title">Velkommen til Idrætshøjskolen Sønderborg</h1>
-    <video class="js_splash_video css_splash_video" src="" autoplay muted loop></video>
-    </div>
-    </section>
+    <main class="css_maxwidth">
+        <section class="js_splash_section css_forside_splash_section">
+            <div class="css_forside_splashfilter">
+                <h1 class="js_forside_title"><span class="forside-h1-velkommen">Velkommen til</span> <span class="forside-h1-ihs">Idrætshøjskolen Sønderborg</span></h1>
+                <video class="js_splash_video css_splash_video" src="" autoplay muted loop></video>
+            </div>
+        </section>
 
 
         <section class="js_forside_content">
         </section>
 
 
-    <template class="js_globalmenu_template">
-        <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
-    </template>
-      
+        <template class="js_globalmenu_template">
+            <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
+        </template>
+
         <script>
             //Venter på DOMContent er loaded, starter hentData, opretter JSON-url som variabel.
             document.addEventListener("DOMContentLoaded", hentData);
@@ -60,12 +66,8 @@
                 document.querySelector(".js_splash_video").src = forside[0].splash_section.guid;
                 document.querySelector(".js_forside_content").innerHTML = forside[0].content.rendered;
             }
-
         </script>
     </main>
 
-<script src="js/global.js"></script>
-    <script src="script.js"></script>
-</body>
-
-</html>
+    <script src="js/global.js"></script>
+</body></html>
