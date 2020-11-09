@@ -44,7 +44,8 @@
             alle_kategorier.forEach(kategori => {
                 let klon = kategoriTemplate.cloneNode(true).content;
 
-                klon.querySelector(".js_kategori_titel").textContent = kategori.name;
+                klon.querySelector(".js_kategori_titel_link").textContent = kategori.name;
+                klon.querySelector(".js_kategori_titel_link").href = `#${kategori.slug}`;
                 klon.querySelector(".js_kategori_fagcontainer").dataset.id = kategori.id;
                 console.log(klon);
 
