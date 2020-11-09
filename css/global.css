@@ -113,6 +113,12 @@ img {
     padding-right: 20px;
 }
 
+<<<<<<< HEAD
+.css_grid_title {
+    margin-top: 20px;
+    max-width: 90%;
+    text-align: center;
+=======
 /* Style tile til tekst og knapper */
 
 h1 {
@@ -195,6 +201,7 @@ p {
     font-weight: var(--cta-font-weight);
     color: var(--cta-secondary-text-font-color);
     text-decoration: none;
+>>>>>>> master
 }
 
 /* Header */
