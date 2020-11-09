@@ -348,7 +348,7 @@ footer {
     margin: 50px 40px;
     justify-content: space-between;
     place-content: center;
-    color: var(--white);
+
 }
 
 /*FOOTER COLUMN*/
@@ -363,15 +363,19 @@ footer {
     list-style-type: none;
     margin: 0;
     padding: 0;
-
 }
 
 .footercolumn li {
     padding: 5px;
 }
 
+.footer_title {
+    color: var(--white);
+}
+
 .footer_link {
     text-decoration: none;
+    color: var(--white);
 }
 
 /*SOCIAL MEDIA BOX*/
