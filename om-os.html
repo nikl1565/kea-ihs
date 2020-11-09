@@ -4,17 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tilmelding</title>
+    <title>Højskole | Idrætshøjskolen Sønderborg</title>
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/tilmelding.css">
+    <link rel="stylesheet" href="css/hojskole.css">
+
 
     <!--    Fonts -->
     <!--             Adobe fonts - bruges til al tekst på hjemmesiden -->
     <link rel="stylesheet" href="https://use.typekit.net/ypc2vza.css">
     <!--             Google fonts - bruges til forsidens splash velkomst -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cookie&display=swap" rel="stylesheet">
+
+
+
 
 </head>
 
@@ -34,88 +38,47 @@
             </nav>
         </div>
     </header>
+    <main class="max_width">
 
-    <template class="js_globalmenu_template">
-        <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
-    </template>
-    <main class="css_maxwidth">
+        <aside>
+            <nav class="css_side_navigation js_side_navigation">
+            </nav>
+        </aside>
 
-        <section class="css_tilmelding">
-            <h1>Tilmeld dig til en uforgelmmelig oplevelse!</h1>
-
-            <section class="css_tilmelding_formular">
-                <form action="#">
-                    <select id="valg" name="valg">
-                        <option value="" disabled selected>Vælg booking, forløb eller kursus</option>
-                        <optgroup label="Book Rundvisning">
-                            <option value="book_rundvisning">Book Rundvisning</option>
-                        </optgroup>
-
-
-                        <optgroup label="Højskole forløb">
-                            <option value="forlob_forar">Forårsforløb, 2021</option>
-                            <option value="forlob_efterår">Efterårsforløb, 2021</option>
-                        </optgroup>
-
-                        <optgroup label="Ugekurser">
-                            <option value="ugekursus_1">Ugekursus 1</option>
-                            <option value="ugekursus_2">Ugekursus 2</option>
-                            <option value="ugekursus_3">Ugekursus 3</option>
-                        </optgroup>
-
-                    </select>
-
-                    <label for="fornavn" class="tilmelding_formular_placering">Fornavn</label>
-                    <input type="text" name="fornavn" placeholder="Dit fornavn" class="tilmelding_formular_placering">
-
-                    <div>
-                        <label for="efternavn" class="tilmelding_formular_placering">Efternavn</label>
-                        <input type="text" name="efternavn" placeholder="Dit efternavn" class="tilmelding_formular_placering">
-                    </div>
-
-                    <label for="cpr_nummer" class="tilmelding_formular_placering">CPR-Nummer</label>
-                    <input type="text" name="cpr_nummer" placeholder="Dit CPR-nummer" class="tilmelding_formular_placering">
-
-                    <label for="gender" class="tilmelding_formular_placering">Køn</label>
-                    <input type="radio" id="mand" name="gender" value="Mand">
-                    <label for="mand">Mand</label>
-                    <input type="radio" id="kvinde" name="gender" value="Kvinde">
-                    <label for="kvinde">Kvinde</label>
-                    <input type="radio" id="andet" name="gender" value="Anden">
-                    <label for="andet">Andet</label>
-
-
-                    <label for="telefon" class="tilmelding_formular_placering">Telefon nummer</label>
-                    <input type="text" name="telefon" placeholder="Dit telefonnummer" class="tilmelding_formular_placering">
-
-                    <label for="adresse" class="tilmelding_formular_placering">Adresse</label>
-                    <input type="text" name="adresse" placeholder="Din adresse" class="tilmelding_formular_placering">
-
-
-                    <label for="kommune" class="tilmelding_formular_placering">Kommune</label>
-                    <input type="text" name="kommune" placeholder="Din kommune" class="tilmelding_formular_placering">
-
-                    <label for="post_nr" class="tilmelding_formular_placering">Post nummer</label>
-                    <input type="text" name="post_nr" placeholder="Dit post nummer" class="tilmelding_formular_placering">
-
-
-                    <label for="email" class="tilmelding_formular_placering">Email adresse</label>
-                    <input type="text" name="email" placeholder="Din e-mail" class="tilmelding_formular_placering">
-
-
-
-                    <input type="submit" value="Tilmeld mig!">
-                </form>
-
-            </section>
-
+        <section class="js_splash_section css_hojskole_splash_section">
+            <div class="css_hojskole_splashfilter">
+                <h1 class="js_om_title">test</h1>
+            </div>
         </section>
 
 
-    </main>
+
+        <section class="js_om_content css_hojskole_content">
+
+        </section>
+
+        <template class="js_side_navigation_link_template">
+
+            <a class="css_side_navigation_link js_side_navigation_link" href="#"></a>
+
+        </template>
+
+        <template class="js_side_navigation_list_template">
+            <ul class="css_side_navigation_liste js_side_navigation_list"></ul>
+        </template>
+
+        <template class="js_side_navigation_list_item_template">
+            <li class="css_side_navigation_list_item js_side_navigation_list_item"></li>
+        </template>
 
 
-  <!--FOOTER-->
+        <template class="js_globalmenu_template">
+            <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
+        </template>
+
+        </main>
+
+          <!--FOOTER-->
   <footer class="footerstyling">
       <!--FOOTER COLUMN WRAPPER-->
       <div class="footerinfo">
@@ -177,8 +140,26 @@
   </footer>
   <!---->
 
-    <script src="js/tilmelding.js"></script>
-    <script src="js/global.js"></script>
-</body>
+        <script>
+            //Venter på DOMContent er loaded, starter hentData, opretter JSON-url som variabel.
+            document.addEventListener("DOMContentLoaded", hentData);
+            const url = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=om-os";
 
-</html>
+            async function hentData() {
+                const respons = await fetch(url);
+                const hojskole = await respons.json();
+                showOmOs(hojskole);
+            }
+
+            function showOmOs(hojskole) {
+                console.log(hojskole);
+                document.querySelector(".js_splash_section").style.backgroundImage = `url(${hojskole[0].splash_section.guid})`;
+                document.querySelector(".js_om_title").textContent = hojskole[0].title.rendered;
+                document.querySelector(".js_om_content").innerHTML = hojskole[0].content.rendered;
+            }
+
+        </script>
+        <script src="js/vertikal_menu.js"></script>
+        <script src="js/global.js"></script>
+</body></html>
+

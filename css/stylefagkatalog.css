@@ -1,0 +1,119 @@
+ body {
+     font-family: sans-serif;
+     color: #3c3c3c;
+ }
+
+ .overskrift,
+ nav {
+     margin: 0 auto;
+ }
+
+ /*splash*/
+
+ .css_splash_section {
+     background-size: cover;
+     width: 100%;
+     height: 225px;
+     z-index: -1;
+     margin-bottom: 10px;
+ }
+
+ .css_hojskole_splashfilter {
+     background: rgba(0, 0, 0, 0.4);
+     padding-top: 40px;
+     height: 100%;
+     width: 100%;
+     z-index: 0;
+ }
+
+ /*splash*/
+
+ .css_fag > * {
+    margin: 0 auto;
+}
+
+ .fag {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+     grid-gap: 20px;
+ }
+
+ .billede {
+     width: 100%;
+ }
+
+ /*text*/
+ .css_fag_single_titel {
+     text-align: center;
+     max-width: 1100px;
+     font-size: 4rem;
+     font-family: sans-serif;
+     color: white;
+
+     z-index: 1;
+ }
+
+ .css_fagkatalog_title {
+     margin-top: 20px;
+     max-width: 90%;
+ }
+
+ .css_fag_titel {
+     color: white;
+     background-color: #3a4a6d;
+     text-transform: uppercase;
+    margin-top: 0px;
+     padding: 10px;
+     text-align: center;
+     font-size: 2rem;
+ }
+
+ h2 {
+     margin-top: 10px;
+     margin-bottom: 20px;
+     max-width: 90%;
+ }
+
+ /*text*/
+ .css_fag_beskrivelse {
+     font-size: 1.5rem;
+     max-width: 800px;
+     margin-bottom: 10px;
+ }
+
+ .filter_nav {
+     display: flex;
+ }
+
+ .filter_nav h3 {
+     margin-right: 12px;
+     cursor: pointer;
+ }
+
+ .ret {
+     cursor: pointer;
+
+ }
+
+ .valgt {
+
+     color: orangered;
+ }
+
+ /*text*/
+
+ /*video*/
+
+ .css_video_embed {
+     display: flex;
+     margin-bottom: 10px;
+ }
+
+ /*mediaquery*/
+
+ @media only screen and (min-width: 1100px) {
+     .css_video_embed {
+         width: 800px;
+         height: 450px;
+     }
+ }
