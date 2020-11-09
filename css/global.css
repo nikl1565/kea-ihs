@@ -74,6 +74,7 @@ html {
     --tertiary-color: #607bb7;
     --white: #ffffff;
     --body-color: #F7F7F7;
+    --main-color: #ffffff;
 
     /*    CTA knapper*/
     /*        Primære knapper*/
@@ -118,6 +119,14 @@ img {
 
 .css_maxwidth {
     max-width: 1100px;
+}
+
+body {
+    background-color: var(--body-color);
+}
+
+main {
+    background-color: var(--main-color);
 }
 
 /*         Style tile til tekst og knapper */
@@ -217,11 +226,11 @@ header {
     background-color: var(--global-menu-background-color);
     position: sticky;
     top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .css_header_width {
-    max-width: 1100px;
+    max-width: 1120px;
     margin: 0 auto;
     padding: 5vw 0;
     height: 100%;
@@ -270,7 +279,12 @@ header {
 }
 
 /* Media query til menuen */
-@media only screen and (min-width: 730px) {
+@media only screen and (min-width: 1000px) {
+    header {
+        margin-bottom: 40px;
+        padding-bottom: 15px;
+    }
+
     .css_header_width {
         padding: 2vw 0 0 0;
     }
@@ -285,6 +299,8 @@ header {
 
     .css_header_logo {
         padding: 20px 0 50px 0;
+
+        display: block;
     }
 
     .css_header_logo_image {
@@ -293,7 +309,7 @@ header {
 
 
     .css_globalmenu_menupunkt {
-        padding: 15px 15px 0 15px;
+        padding: 15px 20px 0 0px;
         margin: 0 2px;
         border: 0px solid black;
         border-radius: 10px 10px 0px 0px;
