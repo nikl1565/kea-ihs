@@ -82,6 +82,8 @@ html {
     /*    CTA knapper*/
     /*        Primære knapper*/
     --cta-primary-background-color: #0c1f4b;
+    --cta-primary-text-color: #ffffff;
+    --cta-primary-text-color-hover: #607bb7;
     --cta-primary-border-radius: 3px;
     --cta-primary-box-shadow: 1.5px 1.5px 3px rgba(16, 31, 72, 0.22);
     /*             Denne padding skal jo nok overskrives nogle steder med noget mindre */
@@ -90,6 +92,8 @@ html {
 
     /*        Sekundære knapper*/
     --cta-secondary-background-color: #ffffff;
+    --cta-secondary-text-color: #0c1f4b;
+    --cta-secondary-text-color-hover: #607bb7;
     --cta-secondary-border: 1px solid #0c1f4b;
     --cta-secondary-border-radius: 3px;
     --cta-secondary-box-shadow: 1.5px 1.5px 3px rgba(16, 31, 72, 0.22);
@@ -232,6 +236,10 @@ a:hover {
     text-decoration: none;
 }
 
+.cta-primary:hover {
+    color: var(--cta-primary-text-color-hover);
+}
+
 .cta-secondary {
     background-color: var(--cta-secondary-background-color);
     border: var(--cta-secondary-border);
@@ -245,6 +253,10 @@ a:hover {
     font-weight: var(--cta-font-weight);
     color: var(--cta-secondary-text-font-color);
     text-decoration: none;
+}
+
+.cta-secondary:hover {
+    color: var(--cta-secondary-text-color-hover);
 }
 
 /*         Header */
