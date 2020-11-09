@@ -8,6 +8,27 @@ html {
     font-size: 62.5%;
 }
 
+:root {
+
+
+    /*    Font størrelser*/
+    --h1-font-size: 3.7rem;
+    --h2-font-size: 2.7rem;
+    --p-font-size: 1.7rem;
+
+    /*    Font farver*/
+    --h1-font-color: #0c1f4b;
+    --h2-font-color: #0c1f4b;
+    --p-font-color: #0c1f4b;
+
+    /*    Font linjehøjde */
+    --h1-font-line-height: 1.6;
+    --h2-font-line-height: 1.6;
+    --p-font-line-height: 1.6;
+
+
+}
+
 img {
     width: 100%
 }
@@ -15,6 +36,7 @@ img {
 .css_maxwidth {
     max-width: 1100px;
 }
+
 /* Header */
 header {
     background-color: #E0E0E0;

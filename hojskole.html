@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,19 @@
     <link rel="stylesheet" href="css/hojskole.css">
     <link rel="stylesheet" href="css/global.css">
 
+    <!--    Fonts -->
+    <!--             Adobe fonts - bruges til al tekst på hjemmesiden -->
+    <link rel="stylesheet" href="https://use.typekit.net/ypc2vza.css">
+    <!--             Google fonts - bruges til forsidens splash velkomst -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cookie&display=swap" rel="stylesheet">
+
+
+
+
 </head>
 
 <body>
-<header>
+    <header>
         <div class="css_header_width">
 
             <div class="css_header_logo">
@@ -25,67 +35,68 @@
             </nav>
         </div>
     </header>
-<main class="max_width">
+    <main class="max_width">
 
-    <aside>
-        <nav class="css_side_navigation js_side_navigation">
-        </nav>
-    </aside>
+        <aside>
+            <nav class="css_side_navigation js_side_navigation">
+            </nav>
+        </aside>
 
-    <section class="js_splash_section css_hojskole_splash_section">
-    <div class="css_hojskole_splashfilter">
-    <h1 class="js_hojskole_title">test</h1>
-    </div>
-    </section>
-
-
-
-   <section class="js_hojskole_content css_hojskole_content">
-
-   </section>
-  
-      <template class="js_side_navigation_link_template">
-
-        <a class="css_side_navigation_link js_side_navigation_link" href="#"></a>
-
-    </template>
-
-    <template class="js_side_navigation_list_template">
-        <ul class="css_side_navigation_liste js_side_navigation_list"></ul>
-    </template>
-
-    <template class="js_side_navigation_list_item_template">
-        <li class="css_side_navigation_list_item js_side_navigation_list_item"></li>
-    </template>
-  
-  
-    <template class="js_globalmenu_template">
-        <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
-    </template>
+        <section class="js_splash_section css_hojskole_splash_section">
+            <div class="css_hojskole_splashfilter">
+                <h1 class="js_hojskole_title">test</h1>
+            </div>
+        </section>
 
 
 
-    <script>
-        //Venter på DOMContent er loaded, starter hentData, opretter JSON-url som variabel.
-        document.addEventListener("DOMContentLoaded", hentData);
-        const url = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=hojskole";
+        <section class="js_hojskole_content css_hojskole_content">
 
-        async function hentData() {
-            const respons = await fetch(url);
-            const hojskole = await respons.json();
-            showHojskole(hojskole);
-        }
+        </section>
 
-        function showHojskole(hojskole) {
-            console.log(hojskole);
-            document.querySelector(".js_splash_section").style.backgroundImage = `url(${hojskole[0].splash_section.guid})`;
-            document.querySelector(".js_hojskole_title").textContent = hojskole[0].title.rendered;
-            document.querySelector(".js_hojskole_content").innerHTML = hojskole[0].content.rendered;
-        }
+        <template class="js_side_navigation_link_template">
 
-    </script>
-    <script src="js/vertikal_menu.js"></script>
-    <script src="js/global.js"></script>
-</main>
+            <a class="css_side_navigation_link js_side_navigation_link" href="#"></a>
+
+        </template>
+
+        <template class="js_side_navigation_list_template">
+            <ul class="css_side_navigation_liste js_side_navigation_list"></ul>
+        </template>
+
+        <template class="js_side_navigation_list_item_template">
+            <li class="css_side_navigation_list_item js_side_navigation_list_item"></li>
+        </template>
+
+
+        <template class="js_globalmenu_template">
+            <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
+        </template>
+
+
+
+        <script>
+            //Venter på DOMContent er loaded, starter hentData, opretter JSON-url som variabel.
+            document.addEventListener("DOMContentLoaded", hentData);
+            const url = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=hojskole";
+
+            async function hentData() {
+                const respons = await fetch(url);
+                const hojskole = await respons.json();
+                showHojskole(hojskole);
+            }
+
+            function showHojskole(hojskole) {
+                console.log(hojskole);
+                document.querySelector(".js_splash_section").style.backgroundImage = `url(${hojskole[0].splash_section.guid})`;
+                document.querySelector(".js_hojskole_title").textContent = hojskole[0].title.rendered;
+                document.querySelector(".js_hojskole_content").innerHTML = hojskole[0].content.rendered;
+            }
+
+        </script>
+        <script src="js/vertikal_menu.js"></script>
+        <script src="js/global.js"></script>
+    </main>
 </body>
+
 </html>
