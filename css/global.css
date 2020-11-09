@@ -11,8 +11,8 @@ html {
 
 :root {
     /*    Font skrifttyper */
-    --h1-forside-font-family-velkommen: 'Cookie', cursive;
-    --h1-forside-font-family-ihs: 'Anton', sans-serif;
+    --h1-forside-velkommen-font-family: 'Cookie', cursive;
+    --h1-forside-ihs-font-family: 'Anton', sans-serif;
     --font-family: proxima-nova, sans-serif;
 
     /*    Font weights */
@@ -37,7 +37,7 @@ html {
     --h2-font-size: 2.7rem;
     --h3-font-size: 2.2rem;
     --p-font-size: 1.7rem;
-    /* Denne skal jo nok overskrives nogle steder med noget mindre */
+    /*             Denne  størrese skal jo nok overskrives nogle steder med noget mindre */
     --cta-text-font-size: 1.7rem;
 
     /*    Font farver*/
@@ -69,7 +69,7 @@ html {
     --cta-primary-background-color: #0c1f4b;
     --cta-primary-border-radius: 3px;
     --cta-primary-box-shadow: 1.5px 1.5px 3px rgba(16, 31, 72, 0.22);
-    /* Denne padding skal jo nok overskrives nogle steder med noget mindre */
+    /*             Denne padding skal jo nok overskrives nogle steder med noget mindre */
     --cta-primary-padding: 10px;
 
 
@@ -78,7 +78,7 @@ html {
     --cta-secondary-border: 1px solid #0c1f4b;
     --cta-secondary-border-radius: 3px;
     --cta-secondary-box-shadow: 1.5px 1.5px 3px rgba(16, 31, 72, 0.22);
-    /* Denne padding skal jo nok overskrives nogle steder med noget mindre */
+    /*             Denne padding skal jo nok overskrives nogle steder med noget mindre */
     --cta-secondary-padding: 10px;
 
 }
@@ -100,6 +100,14 @@ h1 {
     line-height: var(--h1-font-line-height);
     color: var(--h1-font-color);
     text-transform: var(--text-transform-uppercase);
+}
+
+.forside-h1-velkommen {
+    font-family: var(--h1-forside-velkommen-font-family);
+}
+
+.forside-h1-ihs {
+    font-family: var(--h1-forside-ihs-font-family);
 }
 
 h2 {
