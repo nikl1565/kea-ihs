@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faciliteter</title>
 
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/stylefagkatalog.css">
+
     <!--    Fonts -->
     <!--             Adobe fonts - bruges til al tekst på hjemmesiden -->
     <link rel="stylesheet" href="https://use.typekit.net/ypc2vza.css">
     <!--             Google fonts - bruges til forsidens splash velkomst -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cookie&display=swap" rel="stylesheet">
 
-
-
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/stylefagkatalog.css">
     <style>
         /*popup vindue*/
         #popup {
@@ -29,6 +28,7 @@
             /*            background: rgba(255, 0, 0, 0.4);*/
             display: none;
         }
+
     </style>
 </head>
 
@@ -63,7 +63,7 @@
 
         </section>
 
-        <h1 class="css_fagkatalog_title">Personale</h1>
+        <h1 class="css_grid_title">Personale</h1>
 
         <section class="js_liste">
         </section>
@@ -80,15 +80,13 @@
             <article class="css_fag">
                 <img src="" alt="" class="billede js_personale_billede">
                 <h2 class="js_personale_navn"></h2>
-                <h3 class="js_personale_titel"></h3>
+                <h3 class="js_personale_titel css_personale_titel"></h3>
             </article>
         </template>
 
         <template class="js_globalmenu_template">
             <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
         </template>
-
-
 
 
     </main>
@@ -99,7 +97,7 @@
       <div class="footerinfo">
           <!--FOOTER COLUMN-->
           <div class="footercolumn">
-              <h3>Idrætshøjskolen Sønderborg</h3>
+              <h3 class="footer_title">Idrætshøjskolen Sønderborg</h3>
               <ul>
                   <li><a class="footer_link" href="https://g.page/IdraetshojskolenSoenderborg?share" target="_blank">Frihedsallé 42, 6400 Sønderborg</a></li>
                   <li><a class="footer_link" href="tel:+45 74 42 18 48">Tlf: +45 74 42 18 48</a></li>
@@ -110,7 +108,7 @@
           <!---->
           <!---->
           <div class="footercolumn">
-              <h3>Information</h3>
+              <h3 class="footer_title">Information</h3>
                   <ul>
                       <li><a class="footer_link" href="kontakt.html">Kontakt os</a></li>
                       <li><a class="footer_link" href="om-os.html">Om IHS</a></li>
@@ -157,4 +155,6 @@
 
     <script src="js/scriptpersonale.js"></script>
     <script src="js/global.js"></script>
-</body></html>
+</body>
+
+</html>

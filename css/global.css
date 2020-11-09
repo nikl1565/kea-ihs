@@ -1,7 +1,6 @@
-/* Generelt for alt */
+/*          Generelt for alt */
 * {
     box-sizing: border-box;
-    margin: 0 auto;
 }
 
 html {
@@ -35,22 +34,27 @@ html {
     --p-font-weight: 400;
 
     /*    Font størrelser*/
-    --h1-font-size: 3.7rem;
+    --h1-font-size: 4rem;
+    --h1-font-size-white: 5rem;
     --h1-forside-velkommen-font-size: 3.7rem;
     --h1-forside-ihs-font-size: 3.7rem;
     --h2-font-size: 2.7rem;
     --h3-font-size: 2.2rem;
     --p-font-size: 1.7rem;
+    --a-font-size: 1.7rem;
     /*             Denne  størrese skal jo nok overskrives nogle steder med noget mindre */
     --cta-text-font-size: 1.7rem;
 
     /*    Font farver*/
-    --h1-font-color: #0c1f4b;
+    --h1-font-color-blue: #0c1f4b;
+    --h1-font-color-white: #ffffff;
     --h1-forside-velkommen-font-color: #0c1f4b;
     --h1-forside-ihs-font-color: #0c1f4b;
     --h2-font-color: #0c1f4b;
     --h3-font-color: #0c1f4b;
     --p-font-color: #0c1f4b;
+    --a-font-color: #607bb7;
+    --a-font-color-hover: #1742a7;
     --cta-primary-text-font-color: #ffffff;
     --cta-secondary-text-font-color: #0c1f4b;
 
@@ -61,6 +65,7 @@ html {
     --h2-font-line-height: 1.6;
     --h3-font-line-height: 1.6;
     --p-font-line-height: 1.6;
+    --a-font-line-height: 1.6;
 
     /*    Text transform */
     --text-transform-uppercase: uppercase;
@@ -69,8 +74,10 @@ html {
     /*    Farver */
     --primary-color: #0c1f4b;
     --secondary-color: #3a4a6d;
+    --tertiary-color: #607bb7;
     --white: #ffffff;
     --body-color: #F7F7F7;
+    --main-color: #ffffff;
 
     /*    CTA knapper*/
     /*        Primære knapper*/
@@ -92,13 +99,19 @@ html {
     /*    Menu styling */
     /*            Globalmenu */
     --global-menu-font-color: #0c1f4b;
-    --global-menu-font-size: 2.7rem;
+    --global-menu-font-color-hover: #607bb7;
+    --global-menu-font-size: 1.7rem;
     --global-menu-font-line-height: 1.6;
     --global-menu-background-color: #ffffff;
 
 
     /*            Burgermenu */
-
+    --vertical-menu-font-color-main: #0c1f4b;
+    --vertical-menu-font-color-sub: #3a4a6d;
+    --vertical-menu-font-color-hover: #607bb7;
+    --vertical-menu-font-size: 1.5rem;
+    --vertical-menu-font-line-height: 1.3;
+    --vertical-menu-background-color: #ffffff;
 
 }
 
@@ -113,6 +126,22 @@ img {
     padding-right: 20px;
 }
 
+body {
+    background-color: var(--body-color);
+}
+
+main {
+    background-color: var(--main-color);
+}
+
+/*         Style tile til tekst og knapper */
+
+.css_grid_title {
+    margin-top: 20px;
+    max-width: 90%;
+    text-align: center;
+}
+
 /* Style tile til tekst og knapper */
 
 h1 {
@@ -120,10 +149,16 @@ h1 {
     font-weight: var(--h1-font-weight);
     font-size: var(--h1-font-size);
     line-height: var(--h1-font-line-height);
-    color: var(--h1-font-color);
+    color: var(--h1-font-color-blue);
     text-transform: var(--text-transform-uppercase);
 }
 
+.h1_white {
+    color: var(--h1-font-color-white);
+    font-size: var(--h1-font-size-white);
+}
+
+/* Header */
 .forside-h1-velkommen {
     font-family: var(--h1-forside-velkommen-font-family);
     font-weight: var(--h1-forside-velkommen-font-weight);
@@ -150,7 +185,6 @@ h2 {
     text-transform: var(--text-transform-capitalize);
 }
 
-
 h3 {
     font-family: var(--font-family);
     font-weight: var(--h3-font-weight);
@@ -166,6 +200,22 @@ p {
     font-size: var(--p-font-size);
     line-height: var(--p-font-line-height);
     color: var(--p-font-color);
+}
+
+a {
+    font-family: var(--font-family);
+    color: var(--a-font-color);
+    text-decoration: none;
+    font-size: var(--a-font-size);
+    line-height: var(--a-font-line-height);
+}
+
+a:hover {
+    color: var(--a-font-color-hover);
+}
+
+.footer_link:hover {
+    color: var(--tertiary-color);
 }
 
 .cta-primary {
@@ -197,23 +247,22 @@ p {
     text-decoration: none;
 }
 
-/* Header */
+/*         Header */
 header {
     background-color: var(--global-menu-background-color);
     position: sticky;
     top: 0;
+    margin-bottom: 20px;
 }
 
 .css_header_width {
-    max-width: 1100px;
+    max-width: 1120px;
     margin: 0 auto;
-    padding: 5vw 0;
     height: 100%;
 
 }
 
 .css_header_logo {
-    /*    padding: 20px 0 50px 0;*/
     display: flex;
     justify-content: center;
 }
@@ -226,6 +275,7 @@ header {
 .css_header_burger_icon {
     display: inline-block;
     font-size: 3.5rem;
+    color: var(--primary-color);
 }
 
 .css_globalmenu_menupunkt {
@@ -235,11 +285,16 @@ header {
     font-family: var(--font-family);
     font-size: var(--global-menu-font-size);
     color: var(--global-menu-font-color);
-
-    /*    Hvis vi skal have tab menu */
-    /*    display: inline-block;*/
+    text-transform: var(--text-transform-uppercase);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
 }
 
+.css_globalmenu_menupunkt:hover,
+.list__link.has-submenu:hover,
+.list__link:hover {
+    color: var(--global-menu-font-color-hover);
+}
 
 
 /* Class til at skjule menuen */
@@ -248,9 +303,10 @@ header {
 }
 
 /* Media query til menuen */
-@media only screen and (min-width: 730px) {
-    .css_header_width {
-        padding: 2vw 0 0 0;
+@media only screen and (min-width: 1000px) {
+    header {
+        margin-bottom: 40px;
+        padding-bottom: 15px;
     }
 
     .css_header_burger_icon {
@@ -262,16 +318,17 @@ header {
     }
 
     .css_header_logo {
-        padding: 20px 0 50px 0;
+        padding: 20px 0;
+        display: block;
     }
 
     .css_header_logo_image {
-        width: 8vw;
+        width: 10vw;
     }
 
 
     .css_globalmenu_menupunkt {
-        padding: 15px 15px 0 15px;
+        padding: 15px 20px 0 0px;
         margin: 0 2px;
         border: 0px solid black;
         border-radius: 10px 10px 0px 0px;
@@ -282,12 +339,7 @@ header {
 }
 
 
-/*****
-
-Vertikal menu
-
-*****/
-
+/*            Vertikal menu */
 .css_side_navigation {
     display: flex;
     flex-direction: column;
@@ -300,13 +352,21 @@ Vertikal menu
 
 .list__link {
     text-decoration: none;
-    color: green;
     display: block;
     padding: 5px;
+
+    font-family: var(--font-family);
+    font-size: var(--vertical-menu-font-size);
+    color: var(--vertical-menu-font-color-sub);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--vertical-menu-font-line-height);
 }
 
 .list__link.has-submenu {
-    color: red;
+    font-family: var(--font-family);
+    font-size: var(--vertical-menu-font-size);
+    color: var(--vertical-menu-font-color-main);
+    line-height: var(--vertical-menu-font-line-height);
 }
 
 .list,
@@ -331,8 +391,7 @@ Vertikal menu
 /*FOOTER*/
 
 footer {
-    margin-top: 100px;
-    border-top: 50px solid #eaeaea;
+    margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
     background-color: #3A4A6D;
@@ -345,10 +404,9 @@ footer {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: 50px 40px;
+    margin: 40px 40px;
     justify-content: space-between;
     place-content: center;
-    color: var(--white);
 }
 
 /*FOOTER COLUMN*/
@@ -363,15 +421,19 @@ footer {
     list-style-type: none;
     margin: 0;
     padding: 0;
-
 }
 
 .footercolumn li {
     padding: 5px;
 }
 
+.footer_title {
+    color: var(--white);
+}
+
 .footer_link {
     text-decoration: none;
+    color: var(--white);
 }
 
 /*SOCIAL MEDIA BOX*/
@@ -379,14 +441,14 @@ footer {
 .socialmediabox {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 
 /*FOOTER SOCIALMEDIA LINK*/
 
-.socials_icon a {
-    align-content: center;
-    align-items: center;
+.socialmediabox a {
+    margin: 0;
 }
 
 .footersocialicon {
@@ -415,4 +477,5 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+
 /**********************************************/

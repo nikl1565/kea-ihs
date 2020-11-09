@@ -145,7 +145,7 @@
                     }
 
                     if (submenu != null) {
-                        nav_html += `<li class="list__item"><a class="list__link has-submenu" href="${href}">${title} <span class="list__link-arrow">Pil</span></a>`;
+                        nav_html += `<li class="list__item"><a class="list__link has-submenu" href="${href}">${title} <span class="list__link-arrow">⌄</span></a>`;
                         nav_html += '<ul class="list__submenu">';
 
 
@@ -175,8 +175,6 @@
                     // Hvis det er vores pil, så stop a linket i at sende os til en anden side
                     if (target.classList.contains("list__link-arrow")) {
                         element.preventDefault();
-
-                        // Animation til 3. iteration
                         //                        if (targetSubmenu.classList.contains("is-open")) {
                         //                            targetSubmenu.style.height = `0px`;
                         //                        } else {
