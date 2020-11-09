@@ -142,6 +142,8 @@
                         if (categoryDetails.indtast_target_link != '') {
                             href = categoryDetails.indtast_target_link;
                         }
+                    } else if (typeLabel === 'Custom Link') {
+                        href = menuItems[i]['url'];
                     }
 
                     if (submenu != null) {
