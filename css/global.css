@@ -95,3 +95,48 @@ header {
     }
 
 }
+
+
+/*****
+
+Vertikal menu
+
+*****/
+
+.css_side_navigation {
+    display: flex;
+    flex-direction: column;
+}
+
+.css_side_navigation_link,
+.css_side_navigation_liste {
+    margin: 0;
+}
+
+.list__link {
+    text-decoration: none;
+    color: green;
+    display: block;
+    padding: 5px;
+}
+
+.list__link.has-submenu {
+    color: red;
+}
+
+.list,
+.list__submenu {
+    list-style: none;
+    padding: 0;
+}
+
+.list__submenu {
+    height: 0;
+    padding-left: 15px;
+    overflow: hidden;
+    transition: height .2s ease-in-out;
+}
+
+.list__submenu.is-open {
+    height: auto;
+}
