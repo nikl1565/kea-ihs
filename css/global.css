@@ -385,8 +385,7 @@ header {
 /*FOOTER*/
 
 footer {
-    margin-top: 100px;
-    border-top: 50px solid #eaeaea;
+    margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
     background-color: #3A4A6D;
@@ -399,10 +398,9 @@ footer {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: 50px 40px;
+    margin: 40px 40px;
     justify-content: space-between;
     place-content: center;
-
 }
 
 /*FOOTER COLUMN*/
@@ -437,7 +435,7 @@ footer {
 .socialmediabox {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 
