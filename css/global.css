@@ -45,7 +45,8 @@ html {
     --cta-text-font-size: 1.7rem;
 
     /*    Font farver*/
-    --h1-font-color: #0c1f4b;
+    --h1-font-color-blue: #0c1f4b;
+    --h1-font-color-white: #ffffff;
     --h1-forside-velkommen-font-color: #0c1f4b;
     --h1-forside-ihs-font-color: #0c1f4b;
     --h2-font-color: #0c1f4b;
@@ -136,7 +137,7 @@ h1 {
     font-weight: var(--h1-font-weight);
     font-size: var(--h1-font-size);
     line-height: var(--h1-font-line-height);
-    color: var(--h1-font-color);
+    color: var(--h1-font-color-blue);
     text-transform: var(--text-transform-uppercase);
 }
 
