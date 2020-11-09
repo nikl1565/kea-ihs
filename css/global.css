@@ -1,7 +1,6 @@
 /* Generelt for alt */
 * {
     box-sizing: border-box;
-    margin: 0 auto;
 }
 
 html {
@@ -355,7 +354,7 @@ footer {
     margin: 50px 40px;
     justify-content: space-between;
     place-content: center;
-    color: var(--white);
+
 }
 
 /*FOOTER COLUMN*/
@@ -370,15 +369,19 @@ footer {
     list-style-type: none;
     margin: 0;
     padding: 0;
-
 }
 
 .footercolumn li {
     padding: 5px;
 }
 
+.footer_title {
+    color: var(--white);
+}
+
 .footer_link {
     text-decoration: none;
+    color: var(--white);
 }
 
 /*SOCIAL MEDIA BOX*/
@@ -391,9 +394,8 @@ footer {
 
 /*FOOTER SOCIALMEDIA LINK*/
 
-.socials_icon a {
-    align-content: center;
-    align-items: center;
+.socialmediabox a {
+    margin: 0;
 }
 
 .footersocialicon {
