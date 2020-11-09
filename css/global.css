@@ -113,6 +113,7 @@ html {
     --vertical-menu-background-color: #ffffff;
 
 
+    > > > > > > > master
 }
 
 img {
@@ -153,6 +154,7 @@ h1 {
     text-transform: var(--text-transform-uppercase);
 }
 
+/* Header */
 .forside-h1-velkommen {
     font-family: var(--h1-forside-velkommen-font-family);
     font-weight: var(--h1-forside-velkommen-font-weight);
