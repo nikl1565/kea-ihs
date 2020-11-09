@@ -231,6 +231,7 @@ header {
 
     font-family: var(--font-family);
     font-size: var(--global-menu-font-size);
+    color: var(--global-menu-font-color);
 
     /*    Hvis vi skal have tab menu */
     /*    display: inline-block;*/
