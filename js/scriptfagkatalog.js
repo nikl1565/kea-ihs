@@ -45,6 +45,7 @@
                 let klon = kategoriTemplate.cloneNode(true).content;
 
                 klon.querySelector(".js_kategori_titel").textContent = kategori.name;
+                klon.querySelector(".js_kategori_titel").id = kategori.slug;
                 klon.querySelector(".js_kategori_fagcontainer").dataset.id = kategori.id;
                 console.log(klon);
 
@@ -80,6 +81,13 @@
                 container.appendChild(klon);
 
             });
+
+            if (window.location.hash) {
+                let hash = window.location.hash.replace('#', '');
+                console.log(hash);
+                var top = document.getElementById(hash).offsetTop;
+                window.scrollTo(0, top);
+            }
         }
 
 

@@ -97,6 +97,9 @@
         }
 
         async function getMenu(menuName) {
+            categories = await getData(urlRouteCategories, parameterGetOneHundred);
+            console.log('Categories', categories);
+
             console.log('createMenu');
 
             // Hent menu
@@ -125,6 +128,21 @@
                     let href = `${menuItems[i]['title']}.html`;
                     href = href.toLowerCase();
                     let submenu = menuItems[i]['children'];
+                    let typeLabel = menuItems[i]['type_label'];
+                    let objectType = menuItems[i]['object'];
+
+                    if (typeLabel === 'fag') {
+                        href = `fagsingleview.html?id=${menuItems[i]['object_id']}`;
+                    } else if (typeLabel === 'Category') {
+                        let objectId = menuItems[i]['object_id'];
+
+                        let categoryDetails = categories.find(category => category.id === objectId);
+                        console.log('categoryDetails', categoryDetails);
+
+                        if (categoryDetails.indtast_target_link != '') {
+                            href = categoryDetails.indtast_target_link;
+                        }
+                    }
 
                     if (submenu != null) {
                         nav_html += `<li class="list__item"><a class="list__link has-submenu" href="${href}">${title} <span class="list__link-arrow">⌄</span></a>`;
@@ -134,6 +152,7 @@
                         nav_html += constructMenu(submenu);
                         nav_html += '</ul>';
                     } else {
+                        // Link til fagsingleview.html hvis det er en post, som har post typen "fag".
                         nav_html += `<li class="list__item"><a class="list__link" href="${href}">${title}</a>`;
                     }
                     nav_html += '</li>';
@@ -156,7 +175,6 @@
                     // Hvis det er vores pil, så stop a linket i at sende os til en anden side
                     if (target.classList.contains("list__link-arrow")) {
                         element.preventDefault();
-
                         //                        if (targetSubmenu.classList.contains("is-open")) {
                         //                            targetSubmenu.style.height = `0px`;
                         //                        } else {
