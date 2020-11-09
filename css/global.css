@@ -1,7 +1,6 @@
 /* Generelt for alt */
 * {
     box-sizing: border-box;
-    margin: 0 auto;
 }
 
 html {
@@ -388,9 +387,8 @@ footer {
 
 /*FOOTER SOCIALMEDIA LINK*/
 
-.socials_icon a {
-    align-content: center;
-    align-items: center;
+.socialmediabox a {
+    margin: 0;
 }
 
 .footersocialicon {
