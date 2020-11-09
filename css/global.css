@@ -108,6 +108,9 @@ img {
 
 .css_maxwidth {
     max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 <<<<<<< HEAD
@@ -329,3 +332,94 @@ Vertikal menu
 .list__submenu.is-open {
     height: auto;
 }
+
+/********************FOOTER********************/
+
+/*FOOTER*/
+
+footer {
+    margin-top: 100px;
+    border-top: 50px solid #eaeaea;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #3A4A6D;
+}
+
+
+/*FOOTER COLUMN WRAPPER*/
+
+.footerinfo {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 50px 40px;
+    justify-content: space-between;
+    place-content: center;
+    color: var(--white);
+}
+
+/*FOOTER COLUMN*/
+
+.footercolumn {
+    flex-basis: 350px;
+    padding: 10px;
+    width: inherit;
+}
+
+.footercolumn ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.footercolumn li {
+    padding: 5px;
+}
+
+.footer_link {
+    text-decoration: none;
+}
+
+/*SOCIAL MEDIA BOX*/
+
+.socialmediabox {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*FOOTER SOCIALMEDIA LINK*/
+
+.socials_icon a {
+    align-content: center;
+    align-items: center;
+}
+
+.footersocialicon {
+    display: flex;
+    align-items: center;
+}
+
+/*
+.footersocialicon:hover {
+    border-radius: 50%;
+    background-color: #3ea01a;
+}*/
+
+.socials_icon {
+    height: 30px;
+    width: auto;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+
+/*FIND SMILEY WRAPPER*/
+
+.footer_delafhojskolerne {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/**********************************************/
