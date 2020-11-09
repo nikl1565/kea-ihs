@@ -89,6 +89,17 @@ html {
     /*             Denne padding skal jo nok overskrives nogle steder med noget mindre */
     --cta-secondary-padding: 10px;
 
+    /*    Menu styling */
+    /*            Globalmenu */
+    --global-menu-font-color: #0c1f4b;
+    --global-menu-font-size: 2.7rem;
+    --global-menu-font-line-height: 1.6;
+    --global-menu-background-color: #ffffff;
+
+
+    /*            Burgermenu */
+
+
 }
 
 img {
@@ -146,7 +157,6 @@ h3 {
     text-transform: var(--text-transform-uppercase);
 }
 
-
 p {
     font-family: var(--font-family);
     font-weight: var(--p-font-weight);
@@ -186,7 +196,7 @@ p {
 
 /* Header */
 header {
-    background-color: #E0E0E0;
+    background-color: var(--global-menu-background-color);
     position: sticky;
     top: 0;
 }
@@ -215,12 +225,12 @@ header {
     font-size: 3.5rem;
 }
 
-.css_globalmenu {}
-
 .css_globalmenu_menupunkt {
     display: block;
     margin: 3vw 0 3vw 8vw;
-    font-size: 1.5rem;
+
+    font-family: var(--font-family);
+    font-size: var(--global-menu-font-size);
 
     /*    Hvis vi skal have tab menu */
     /*    display: inline-block;*/
@@ -233,7 +243,7 @@ header {
     display: none;
 }
 
-
+/* Media query til menuen */
 @media only screen and (min-width: 730px) {
     .css_header_width {
         padding: 2vw 0 0 0;
