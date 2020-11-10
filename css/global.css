@@ -450,7 +450,7 @@ header {
     min-width: 240px
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1000px) {
     .css_two_column {
         display: flex;
     }
