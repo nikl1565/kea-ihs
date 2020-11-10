@@ -374,10 +374,14 @@ header {
 }
 
 .css_header_burger_icon {
-    display: inline-block;
-    font-size: 3.5rem;
     color: var(--primary-color);
     cursor: pointer;
+    vertical-align: middle;
+    display: block;
+}
+
+.css_header_burger_icon > svg {
+    display: block;
 }
 
 .css_globalmenu_menupunkt {
@@ -427,7 +431,7 @@ header {
 
     .css_globalmenu {
         display: block;
-        margin: 0 auto;
+        text-align: center;
     }
 
     .css_header_logo {
@@ -549,8 +553,9 @@ header {
         background-color: var(--main-color);
         min-height: 200px;
         padding: 20px;
-  }
+    }
 }
+
 /**********POP UP***********/
 
 #popup {

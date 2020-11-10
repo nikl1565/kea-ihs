@@ -132,7 +132,7 @@
                     let objectType = menuItems[i]['object'];
 
                     if (typeLabel === 'fag') {
-                        href = `fagsingleview.html?id=${menuItems[i]['object_id']}`;
+                        href = `fag.html?id=${menuItems[i]['object_id']}`;
                     } else if (typeLabel === 'facilitet') {
 
                     } else if (typeLabel === 'Category') {

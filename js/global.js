@@ -1,15 +1,15 @@
 window.addEventListener("DOMContentLoaded", start);
 
-        let meta;
+let meta;
 
-        let pageUrl = window.location.pathname;
-        console.log(pageUrl);
-        let htmlName = pageUrl.substring(pageUrl.lastIndexOf('/') + 1).replace('.html', '');
-        console.log(htmlName);
-        const pageName = htmlName;
+let pageUrl = window.location.pathname;
+console.log(pageUrl);
+let htmlName = pageUrl.substring(pageUrl.lastIndexOf('/') + 1).replace('.html', '');
+console.log(htmlName);
+const pageName = htmlName;
 
-        //henter url med SEO
-        const urlMeta = `https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=${pageName}`;
+//henter url med SEO
+const urlMeta = `https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=${pageName}`;
 
 function start() {
     //    console.log("nået start");
@@ -29,13 +29,13 @@ function start() {
     }
 
 
-        async function hentMeta () {
-            const respons = await fetch(urlMeta);
-            meta = await respons.json();
+    async function hentMeta() {
+        const respons = await fetch(urlMeta);
+        meta = await respons.json();
 
-            console.log(meta);
-            getMeta();
-        }
+        console.log(meta);
+        getMeta();
+    }
 
     function show(menupunkter) {
         //        console.log("show menupunkter");
@@ -66,9 +66,9 @@ function start() {
         let isHidden = document.querySelector(".js_globalmenu").classList.contains("css_globalmenu_hidden");
 
         if (isHidden == true) {
-            document.querySelector(".js_header_burger_icon").textContent = "☰";
+            document.querySelector(".js_header_burger_icon").innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
         } else {
-            document.querySelector(".js_header_burger_icon").textContent = "×";
+            document.querySelector(".js_header_burger_icon").innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
         }
 
     }
@@ -77,8 +77,8 @@ function start() {
     fetchData();
 }
 
-function getMeta () {
-            document.querySelector(".js_meta_title").textContent =  meta[0].seo_titel;
-            document.querySelector(".js_meta_description").content =  meta[0].seo_beskrivelse;
-            document.querySelector(".js_meta_tags").content =  meta[0].seo_tag;
+function getMeta() {
+    document.querySelector(".js_meta_title").textContent = meta[0].seo_titel;
+    document.querySelector(".js_meta_description").content = meta[0].seo_beskrivelse;
+    document.querySelector(".js_meta_tags").content = meta[0].seo_tag;
 }
