@@ -415,6 +415,55 @@ header {
     height: auto;
 }
 
+/**********POP UP***********/
+
+#popup {
+    display: flex;
+    position: fixed;
+    overflow-y: scroll;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f7f7f7;
+    /*            background: rgba(255, 0, 0, 0.4);*/
+    display: none;
+}
+
+.css_popup_max_width {
+    max-width: 400px;
+    margin: 150px auto;
+}
+
+/*
+.css_button_fixed {
+    position: fixed;
+
+}
+*/
+
+.css_close {
+    font-size: 4rem;
+    text-align: end;
+    /*
+    width: 20px;
+    height: 20px;
+*/
+
+    margin: 10px;
+    /*    background-image: url(img/luk.svg);*/
+}
+
+.css_close:hover {
+    color: white;
+}
+
+@media only screen and (min-width: 1000px) {
+    .css_popup_max_width {
+        margin: 200px auto;
+    }
+}
+
 /********************FOOTER********************/
 
 /*FOOTER*/
