@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SINGLEVIEW</title>
+    <title class="js_meta_title">Fagkatalog | Idrætshøjskolen Sønderborg</title>
+    <meta class="js_meta_description" name="description" content="">
+    <meta class="js_meta_tags" name="keywords" content="">
 
     <!--    Fonts -->
     <!--             Adobe fonts - bruges til al tekst på hjemmesiden -->
@@ -74,7 +76,7 @@
         <article class="css_fag">
             <iframe class="js_vimeo_embed css_video_embed" title="vimeo-player" src="" width="256" height="144" frameborder="0" allowfullscreen></iframe>
             <p class="js_fag_beskrivelse css_fag_beskrivelse"></p>
-            <div class="fag_galleri"></div>
+            <!--            <div class="fag_galleri"></div>-->
         </article>
 
     </main>
@@ -153,11 +155,15 @@
             //console.log("LOADING DONE",Fag);
             //            showDishes();
 
+            document.querySelector(".js_meta_title").textContent =  fag.fag_meta_titel;
+            document.querySelector(".js_meta_description").content =  fag.fag_meta_beskrivelse;
+            document.querySelector(".js_meta_tags").content =  fag.fag_meta_tag;
+
             document.querySelector(".js_splash_section").style.backgroundImage = `url(${fag.splash_section.guid})`;
             document.querySelector(".js_fag_titel").textContent = fag.title.rendered;
             document.querySelector(".js_vimeo_embed").src = fag.fag_vimeo_embed;
             document.querySelector(".js_fag_beskrivelse").innerHTML = fag.fag_om_beskrivelse;
-            document.querySelector(".fag_galleri").innerHTML = fag.fag_galleri.guid;
+            //            document.querySelector(".fag_galleri").innerHTML = fag.fag_galleri.guid;
             document.querySelector(".css_fag").addEventListener("click", function() {
                 window.history.back();
 

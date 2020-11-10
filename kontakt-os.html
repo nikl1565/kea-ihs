@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tilmelding</title>
+    <title class="js_meta_title">Kontakt | Idrætshøjskolen Sønderborg</title>
+    <meta class="js_meta_description" name="description" content="">
+    <meta class="js_meta_tags" name="keywords" content="">
     <!--    Fonts -->
     <!--             Adobe fonts - bruges til al tekst på hjemmesiden -->
     <link rel="stylesheet" href="https://use.typekit.net/ypc2vza.css">
@@ -37,7 +39,7 @@
     </template>
     <main class="css_maxwidth">
 
-
+<section class="kontakt_background_wrapper">
         <!--KONTAKT TLF TIDER-->
         <h1 class="css_grid_title">Kontakt</h1>
         <div class="css_sectionwrapper_kontakt">
@@ -83,24 +85,24 @@
                 <div class="css_kontakt_formular">
                     <!--FORM KONTAKT-->
                     <!--<form action="/action_page.php">-->
-                    <form action="MAILTO:info@ihs.dk" method="post" enctype="text/plain" class="css_form_box">
+                    <form action="" method="" enctype="text/plain" class="css_form_box">
 
                         <div class="css_formular_input_box">
-                            <input class="css_input_textbox" type="text" id="name" name="name" placeholder="Your name..">
+                            <input class="css_input_textbox css_tilmelding_input" type="text" id="name" name="name" placeholder="Dit navn">
                             <!--<label for="email" class="css_kontakt_formular_box">Email adresse</label>-->
-                            <input class="css_input_textbox" type="text" id="email" name="E-mail" placeholder="Your E-mail">
+                            <input class="css_input_textbox css_tilmelding_input" type="text" id="email" name="E-mail" placeholder="Din email">
 
-                            <input class="css_input_textbox" type="text" id="phone" name="phone" placeholder="Your Phone number">
+                            <input class="css_input_textbox css_tilmelding_input" type="text" id="phone" name="phone" placeholder="Dit telefonnummer">
 
-                            <input class="css_input_textbox" type="text" id="address" name="address" placeholder="Address">
+                            <input class="css_input_textbox css_tilmelding_input" type="text" id="address" name="address" placeholder="Din adresse">
+
+                            <input type="text" name="subject" placeholder="Emne" class="css_tilmelding_input">
+
+
+                            <textarea name="subject" placeholder="Din besked eller spørgsmål" style="height:100px" class="css_tilmelding_input"></textarea>
+
+                            <input type="submit" value="Send os en besked" class="cta-primary">
                         </div>
-                        <input type="text" name="subject" placeholder="Topic">
-
-
-                        <textarea name="subject" placeholder="Write something.." style="height:100px"></textarea>
-
-                        <input type="submit" value="Submit">
-
                     </form>
                 </div>
             </div>
@@ -126,7 +128,7 @@
                 </div>
             </div>
         </div>
-
+</section>
     </main>
 
     <!--FOOTER-->

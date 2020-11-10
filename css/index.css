@@ -10,7 +10,7 @@ svg,
 video {
     width: 100%;
     height: auto;
-    max-width: 1100px;
+    overflow: hidden;
 }
 
 .undertitel {
@@ -21,15 +21,29 @@ video {
 
 /*HOJSKOLE*/
 
+/*
 main {
     max-width: 1120px;
     padding: 20px;
     margin-bottom: 20px;
 }
+*/
 
 /***SPLASHSECTION***/
+.forside_header {
+    margin: 0;
+}
 
-.css_forside_splash_section {}
+.css_forside_splash_section {
+    /*    width: 100%;*/
+    /*    max-width: 1800px;*/
+    overflow-x: hidden;
+}
+
+.css_splash_video {
+    max-height: 75vh;
+    object-fit: cover;
+}
 
 .css_forside_splash_section {}
 
@@ -54,8 +68,8 @@ main {
 
 @media only screen and (min-width: 600px) {
     .css_forside_title {
-        top: 25%;
-        left: 10%;
+        top: 20%;
+        left: 20%;
     }
 }
 

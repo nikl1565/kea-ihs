@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Højskole|Idrætshøjskolen Sønderborg</title>
+    <title class="js_meta_title">Idrætshøjskolen Sønderborg</title>
+    <meta class="js_meta_description" name="description" content="">
+    <meta class="js_meta_tags" name="keywords" content="">
     <!-- Fonts -->
     <!--             Adobe fonts - bruges til al tekst på hjemmesiden -->
     <link rel="stylesheet" href="https://use.typekit.net/ypc2vza.css">
@@ -16,23 +18,27 @@
 </head>
 
 <body>
-    <header>
+    <header class="forside_header">
         <div class="css_maxwidth">
 
-            <div class="css_header_logo">
-                <a href="index.html">
-                    <img src="https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-content/uploads/2020/11/logo_mindre-1.png" alt="Logo for Idrætshøjskolen Sønderborg" class="css_header_logo_image">
-                </a>
+            <div class="css_header_mobile">
+                <div class="css_header_burger_icon js_header_burger_icon">☰</div>
+
+                <div class="css_header_logo">
+                    <a href="index.html">
+                        <img src="https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-content/uploads/2020/11/logo_mindre-1.png" alt="Logo for Idrætshøjskolen Sønderborg" class="css_header_logo_image">
+                    </a>
+                </div>
+
+                <div class="css_header_spacing"></div>
             </div>
 
-            <div class="css_header_burger_icon js_header_burger_icon">☰</div>
-
-            <nav class="js_globalmenu css_globalmenu css_globalmenu_hidden js_globalmenu_hidden">
-            </nav>
+            <nav class="js_globalmenu css_globalmenu css_globalmenu_hidden js_globalmenu_hidden"></nav>
         </div>
     </header>
 
-    <main class="css_maxwidth">
+    <!--    <main class="css_maxwidth">-->
+    <main>
 
         <section class="js_splash_section css_forside_splash_section">
             <div class="css_forside_splashfilter">
@@ -45,32 +51,13 @@
         </section>
 
 
-        <section class="js_forside_content">
+        <section class="js_forside_content css_maxwidth">
         </section>
 
 
         <template class="js_globalmenu_template">
             <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
         </template>
-
-        <script>
-            //Venter på DOMContent er loaded, starter hentData, opretter JSON-url som variabel.
-            document.addEventListener("DOMContentLoaded", hentData);
-            var url = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=forside";
-
-            async function hentData() {
-                const respons = await fetch(url);
-                const forside = await respons.json();
-                showForside(forside);
-            }
-
-            function showForside(forside) {
-                console.log(forside);
-
-                document.querySelector(".js_splash_video").src = forside[0].splash_section.guid;
-                document.querySelector(".js_forside_content").innerHTML = forside[0].content.rendered;
-            }
-        </script>
     </main>
 
     <!--FOOTER-->
@@ -134,6 +121,29 @@
         <!--END FOOTER COLUMN WRAPPER-->
     </footer>
     <!---->
+            <script>
+            //Venter på DOMContent er loaded, starter hentData, opretter JSON-url som variabel.
+            document.addEventListener("DOMContentLoaded", hentData);
+            var url = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=forside";
 
+            async function hentData() {
+                const respons = await fetch(url);
+                const forside = await respons.json();
+                showForside(forside);
+            }
+
+            function showForside(forside) {
+                console.log(forside);
+
+                document.querySelector(".js_splash_video").src = forside[0].splash_section.guid;
+                document.querySelector(".js_forside_content").innerHTML = forside[0].content.rendered;
+                //Dynamisk nedhæntet SEO-sektion.
+                document.querySelector(".js_meta_title").textContent =  forside[0].seo_titel;
+                document.querySelector(".js_meta_description").content =  forside[0].seo_beskrivelse;
+                document.querySelector(".js_meta_tags").content =  forside[0].seo_tag;
+            }
+
+        </script>
     <script src="js/global.js"></script>
-</body></html>
+</body>
+</html>
