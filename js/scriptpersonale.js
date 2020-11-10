@@ -29,7 +29,7 @@
             const respons = await fetch(urlPersonale);
             alle_ihs_personer = await respons.json();
             console.log(alle_ihs_personer);
-            visPersoner();
+            visPersoner(alle_ihs_personer);
         }
 
 
@@ -66,10 +66,12 @@
 
 
 
-        function visPersoner() {
+        function visPersoner(alle_ihs_personer) {
             const personerTemplate = document.querySelector(".js_personale_template");
 
+            // person_order er en field i personale pod'en i wp
 
+            alle_ihs_personer.sort((a, b) => a.person_order - b.person_order);
             alle_ihs_personer.forEach(person => {
 
                 const container = document.querySelector(`.js_kategori_personalecontainer[data-id="${person.categories[0]}"]`);
