@@ -75,6 +75,9 @@
 
                 let klon = fagTemplate.cloneNode(true).content;
                 klon.querySelector(".js_fag_titel").textContent = fag.title.rendered;
+                klon.querySelector(".js_fag_titel").addEventListener("click", function () {
+                    fagClick(fag.id);
+                });
 
                 klon.querySelector(".billede").src = fag.splash_thumbnail.guid;
                 klon.querySelector(".js_fag_billede").addEventListener("click", function () {

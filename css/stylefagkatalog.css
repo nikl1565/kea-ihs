@@ -40,6 +40,7 @@
 
  .billede {
      width: 100%;
+     cursor: pointer;
  }
 
  /*text*/
@@ -60,14 +61,18 @@
      max-width: 90%;
  }
 
+
  .css_fag_titel {
      color: white;
      background-color: #3a4a6d;
      text-transform: uppercase;
-    margin-top: 0px;
+     margin-top: 0px;
      padding: 10px;
      text-align: center;
      font-size: 2rem;
+
+
+     cursor: pointer;
  }
 
  h2 {
