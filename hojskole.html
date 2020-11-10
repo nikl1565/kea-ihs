@@ -24,7 +24,7 @@
 
 <body>
     <header>
-        <div class="css_header_width">
+        <div class="css_maxwidth">
 
             <div class="css_header_logo">
                 <a href="index.html">
@@ -38,24 +38,31 @@
             </nav>
         </div>
     </header>
-    <main class="max_width">
+    <main class="max_width css_two_column">
 
-        <aside>
-            <nav class="css_side_navigation js_side_navigation">
-            </nav>
+        <aside class="css_aside">
+            <div class="css_aside_content">
+                <p class="css_side_navigation_overskrift">Menu</p>
+                <nav class="css_side_navigation js_side_navigation">
+                </nav>
+            </div>
         </aside>
 
-        <section class="js_splash_section css_hojskole_splash_section">
-            <div class="css_hojskole_splashfilter">
-                <h1 class="js_hojskole_title h1_white">test</h1>
-            </div>
-        </section>
+        <div class="css_page_content">
+
+            <section class="js_splash_section css_hojskole_splash_section">
+                <div class="css_hojskole_splashfilter">
+                    <h1 class="js_hojskole_title h1_white"></h1>
+                </div>
+            </section>
 
 
 
-        <section class="js_hojskole_content css_hojskole_content">
+            <section class="js_hojskole_content css_hojskole_content">
 
-        </section>
+            </section>
+
+        </div>
 
         <template class="js_side_navigation_link_template">
 
@@ -163,12 +170,9 @@
                 document.querySelector(".js_meta_description").content =  hojskole[0].seo_beskrivelse;
                 document.querySelector(".js_meta_tags").content =  hojskole[0].seo_tag;
         }
-
     </script>
     <script src="js/vertikal_menu.js"></script>
     <script src="js/global.js"></script>
 
 
-</body>
-
-</html>
+</body></html>

@@ -65,6 +65,7 @@
 
                 // let kategori = alle_kategorier.find(kategori => kategori.id === fag.categories[0]);
                 // .element[data - id = "123456789"]
+                console.log('facilitet', facilitet);
 
                 const container = document.querySelector(`.js_kategori_fagcontainer[data-id="${facilitet.categories[0]}"]`);
 
