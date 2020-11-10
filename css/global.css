@@ -56,7 +56,9 @@ html {
     --a-font-color: #607bb7;
     --a-font-color-hover: #1742a7;
     --cta-primary-text-font-color: #ffffff;
+    --cta-primary-text-font-color-hover: #607bb7;
     --cta-secondary-text-font-color: #0c1f4b;
+    --cta-secondary-text-font-color-hover: #607bb7;
 
     /*    Font linjehøjde */
     --h1-font-line-height: 1.6;
@@ -246,6 +248,10 @@ a:hover {
     text-transform: uppercase;
 }
 
+.cta-primary:hover {
+    color: var(--cta-primary-text-font-color-hover);
+}
+
 .cta-secondary {
     display: inline-block;
     vertical-align: middle;
@@ -263,6 +269,10 @@ a:hover {
     color: var(--cta-secondary-text-font-color);
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.cta-secondary:hover {
+    color: var(--cta-secondary-text-font-color-hover);
 }
 
 /*         Header */
