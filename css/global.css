@@ -654,6 +654,23 @@ footer {
 .footer_link {
     text-decoration: none;
     color: var(--white);
+    padding: 0;
+}
+
+.footer-menu .list__item {
+    padding: 5px
+}
+
+.footer-menu .list__link,
+.footer-menu .list__link.has-submenu {
+    color: var(--white);
+    padding: 0;
+    font-size: var(--a-font-size);
+    line-height: var(--a-font-line-height);
+}
+
+.footer-menu .list__link-arrow {
+    stroke: var(--white);
 }
 
 /*SOCIAL MEDIA BOX*/

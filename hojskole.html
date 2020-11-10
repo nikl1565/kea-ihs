@@ -43,7 +43,7 @@
         <aside class="css_aside">
             <div class="css_aside_content">
                 <p class="css_side_navigation_overskrift">Menu</p>
-                <nav class="css_side_navigation js_side_navigation">
+                <nav class="css_side_navigation js_side_navigation" data-menu="hojskole">
                 </nav>
             </div>
         </aside>
@@ -106,6 +106,8 @@
             <!---->
             <div class="footercolumn">
                 <h3 class="footer_title">Information</h3>
+                <div class="footer-menu js-menu" data-menu="footer-information"></div>
+                <!--
                 <ul>
                     <li><a class="footer_link" href="kontakt.html">Kontakt os</a></li>
                     <li><a class="footer_link" href="om-os.html">Om IHS</a></li>
@@ -113,6 +115,7 @@
                     <li><a class="footer_link" href="hojskole.html">Højskole</a></li>
                     <li><a class="footer_link" href="tilmelding.html">Tilmelding</a></li>
                 </ul>
+-->
 
             </div>
             <!---->
@@ -166,9 +169,9 @@
             document.querySelector(".js_hojskole_title").textContent = hojskole[0].title.rendered;
             document.querySelector(".js_hojskole_content").innerHTML = hojskole[0].content.rendered;
 
-                document.querySelector(".js_meta_title").textContent =  hojskole[0].seo_titel;
-                document.querySelector(".js_meta_description").content =  hojskole[0].seo_beskrivelse;
-                document.querySelector(".js_meta_tags").content =  hojskole[0].seo_tag;
+            document.querySelector(".js_meta_title").textContent = hojskole[0].seo_titel;
+            document.querySelector(".js_meta_description").content = hojskole[0].seo_beskrivelse;
+            document.querySelector(".js_meta_tags").content = hojskole[0].seo_tag;
         }
     </script>
     <script src="js/vertikal_menu.js"></script>

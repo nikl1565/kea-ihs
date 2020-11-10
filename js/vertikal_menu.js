@@ -96,27 +96,61 @@
 
             console.log('createMenu');
 
-            // Hent menu
-            let menu = await getData(menuName, '');
+            // Hent array liste med menuer
+            let allMenus = await getData(menuName, '');
             console.log('menuName', menuName);
-            console.log('menuName', menu);
+            console.log('allMenus', allMenus);
 
-            // Find den rigtige menu
-            let findMenu = menu.find(menu => menu.name === pageName);
-            console.log(findMenu);
-            // Hent menu detaljer
+            // Hent alle menuer der skal vises på siden
+            let menusOnPage = document.querySelectorAll("[data-menu]");
 
+            menusOnPage = Array.prototype.slice.call(menusOnPage);
+            console.log('menus', menusOnPage);
 
-            let menuDetails = await getData(findMenu.taxonomy, findMenu.ID);
-            console.log('menuDetails', menuDetails);
+            for (let menu of menusOnPage) {
+                console.log(menu.dataset.menu);
+                console.log(menusOnPage);
 
-            if (menuDetails.items.length > 0) {
-                createMenu(menuDetails.items);
+                // Find den rigtige menu
+                let findMenu = allMenus.find(allmenus => allmenus.name === menu.dataset.menu);
+
+                // Hent menu detaljer
+                let menuDetails = await getData(findMenu.taxonomy, findMenu.ID);
+
+                if (menuDetails.items.length > 0) {
+                    createMenu(menuDetails, menu);
+                }
             }
+
+            let submenuButtons = document.querySelectorAll(".list__link.has-submenu");
+
+            submenuButtons.forEach(submenuButton => {
+                let buttonHeight = submenuButton.offsetHeight;
+                console.log(buttonHeight);
+                submenuButton.addEventListener("click", function (element) {
+                    // Hvad der er blevet klikket på
+                    let target = element.target;
+                    let targetSubmenu = submenuButton.parentNode.querySelector(".list__submenu");
+
+                    // Hvis det er vores pil, så stop a linket i at sende os til en anden side
+                    if (target.classList.contains("list__link-arrow")) {
+                        element.preventDefault();
+                        //                        if (targetSubmenu.classList.contains("is-open")) {
+                        //                            targetSubmenu.style.height = `0px`;
+                        //                        } else {
+                        //                            targetSubmenu.style.height = `${buttonHeight}px`;
+                        //                        }
+                        submenuButton.classList.toggle("is-open");
+                        submenuButton.parentNode.querySelector(".list__submenu").classList.toggle("is-open");
+                    }
+                    console.log(`Du klikkede på `, target);
+
+                });
+            });
 
         }
 
-        function createMenu(menuItems) {
+        function createMenu(menuDetails, menu) {
 
             function constructMenu(menuItems) {
                 console.log('constructMenu', menuItems);
@@ -144,6 +178,8 @@
                         if (categoryDetails.indtast_target_link != '') {
                             href = categoryDetails.indtast_target_link;
                         }
+                    } else if (typeLabel === 'Page') {
+                        href = `${menuItems[i]['object_slug']}.html`;
                     } else if (typeLabel === 'Custom Link') {
                         href = menuItems[i]['url'];
                     }
@@ -164,31 +200,8 @@
                 return nav_html;
             }
 
-            sideNavigationContainer.innerHTML = `<ul class="list">${constructMenu(menuItems)}</ul>`;
+            console.log('menuDetails', menuDetails)
+            console.log('menu', menu);
+            menu.innerHTML = `<ul class="list">${constructMenu(menuDetails.items)}</ul>`;
 
-            let submenuButtons = document.querySelectorAll(".list__link.has-submenu");
-
-            submenuButtons.forEach(submenuButton => {
-                let buttonHeight = submenuButton.offsetHeight;
-                console.log(buttonHeight);
-                submenuButton.addEventListener("click", function (element) {
-                    // Hvad der er blevet klikket på
-                    let target = element.target;
-                    let targetSubmenu = submenuButton.parentNode.querySelector(".list__submenu");
-
-                    // Hvis det er vores pil, så stop a linket i at sende os til en anden side
-                    if (target.classList.contains("list__link-arrow")) {
-                        element.preventDefault();
-                        //                        if (targetSubmenu.classList.contains("is-open")) {
-                        //                            targetSubmenu.style.height = `0px`;
-                        //                        } else {
-                        //                            targetSubmenu.style.height = `${buttonHeight}px`;
-                        //                        }
-                        submenuButton.classList.toggle("is-open");
-                        submenuButton.parentNode.querySelector(".list__submenu").classList.toggle("is-open");
-                    }
-                    console.log(`Du klikkede på `, target);
-
-                });
-            });
         }
