@@ -25,10 +25,11 @@ function start() {
 
         menupunkter.sort((a, b) => a.menu_order - b.menu_order);
 
+        console.log(menupunkter);
 
         menupunkter.forEach(menupunkt => {
 
-            if (menupunkt.parent == 0 && menupunkt.slug != "forside") {
+            if (menupunkt.parent == 0 && menupunkt.slug != "forside" && menupunkt.slug != "det-praktiske") {
                 const template = globalmenuTemplate.cloneNode(true);
 
                 template.querySelector(".js_globalmenu_menupunkt").textContent = menupunkt.title.rendered;

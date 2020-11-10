@@ -147,7 +147,7 @@
                     }
 
                     if (submenu != null) {
-                        nav_html += `<li class="list__item"><a class="list__link has-submenu" href="${href}">${title} <span class="list__link-arrow">⌄</span></a>`;
+                        nav_html += `<li class="list__item"><a class="list__link has-submenu" href="${href}">${title} <span class="list__link-arrow"></span></a>`;
                         nav_html += '<ul class="list__submenu">';
 
 
@@ -182,6 +182,7 @@
                         //                        } else {
                         //                            targetSubmenu.style.height = `${buttonHeight}px`;
                         //                        }
+                        submenuButton.classList.toggle("is-open");
                         submenuButton.parentNode.querySelector(".list__submenu").classList.toggle("is-open");
                     }
                     console.log(`Du klikkede på `, target);
