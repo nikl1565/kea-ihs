@@ -377,6 +377,7 @@ header {
     display: inline-block;
     font-size: 3.5rem;
     color: var(--primary-color);
+    cursor: pointer;
 }
 
 .css_globalmenu_menupunkt {
