@@ -105,9 +105,15 @@
             // Hent menu
             let menu = await getData(menuName, '');
             console.log('menuName', menuName);
+            console.log('menuName', menu);
 
+            // Find den rigtige menu
+            let findMenu = menu.find(menu => menu.name === pageName);
+            console.log(findMenu);
             // Hent menu detaljer
-            let menuDetails = await getData(menu[0].taxonomy, menu[0].ID);
+
+
+            let menuDetails = await getData(findMenu.taxonomy, findMenu.ID);
             console.log('menuDetails', menuDetails);
 
             if (menuDetails.items.length > 0) {
@@ -133,6 +139,8 @@
 
                     if (typeLabel === 'fag') {
                         href = `fagsingleview.html?id=${menuItems[i]['object_id']}`;
+                    } else if (typeLabel === 'facilitet') {
+
                     } else if (typeLabel === 'Category') {
                         let objectId = menuItems[i]['object_id'];
 

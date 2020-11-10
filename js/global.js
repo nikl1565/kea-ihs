@@ -29,7 +29,7 @@ function start() {
 
         menupunkter.forEach(menupunkt => {
 
-            if (menupunkt.parent == 0 && menupunkt.slug != "forside" && menupunkt.slug != "det-praktiske") {
+            if (menupunkt.parent == 0 && menupunkt.slug != "forside" && menupunkt.slug != "det-praktiske" && menupunkt.slug != 'fagkatalog') {
                 const template = globalmenuTemplate.cloneNode(true);
 
                 template.querySelector(".js_globalmenu_menupunkt").textContent = menupunkt.title.rendered;
