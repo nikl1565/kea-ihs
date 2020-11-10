@@ -1,6 +1,15 @@
 window.addEventListener("DOMContentLoaded", start);
 
+        let meta;
 
+        let pageUrl = window.location.pathname;
+        console.log(pageUrl);
+        let htmlName = pageUrl.substring(pageUrl.lastIndexOf('/') + 1).replace('.html', '');
+        console.log(htmlName);
+        const pageName = htmlName;
+
+        //henter url med SEO
+        const urlMeta = `https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=${pageName}`;
 
 function start() {
     //    console.log("nået start");
@@ -18,6 +27,15 @@ function start() {
         //        console.log(json);
         show(jsonData);
     }
+
+
+        async function hentMeta () {
+            const respons = await fetch(urlMeta);
+            meta = await respons.json();
+
+            console.log(meta);
+            getMeta();
+        }
 
     function show(menupunkter) {
         //        console.log("show menupunkter");
@@ -54,5 +72,12 @@ function start() {
 
     }
 
+    hentMeta();
     fetchData();
+}
+
+function getMeta () {
+            document.querySelector(".js_meta_title").textContent =  meta[0].seo_titel;
+            document.querySelector(".js_meta_description").content =  meta[0].seo_beskrivelse;
+            document.querySelector(".js_meta_tags").content =  meta[0].seo_tag;
 }
