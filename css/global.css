@@ -206,7 +206,8 @@ h3 {
     text-transform: var(--text-transform-uppercase);
 }
 
-p {
+p,
+label {
     font-family: var(--font-family);
     font-weight: var(--p-font-weight);
     font-size: var(--p-font-size);
