@@ -8,6 +8,10 @@ main {
     background-color: #F7F7F7;
 }
 
+.kontakt_background_wrapper {
+    max-width: 1120px;
+    background: var(--main-color);
+}
 
 /********************************************/
 
@@ -41,6 +45,10 @@ main {
     padding: 10px;
     /*    border: 1px solid red;*/
 
+}
+
+.css_grid_title {
+    padding: 50px 0 0 0;
 }
 
 /********************************************/
@@ -108,12 +116,6 @@ textarea {
     margin: 6px 6px 10px 6px;
 
     resize: vertical;
-}
-
-input[type=submit] {
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
 }
 
 
