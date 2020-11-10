@@ -21,7 +21,7 @@
             const respons = await fetch(urlKategorier);
             alle_kategorier = await respons.json();
             console.log(alle_kategorier);
-            visKategorier();
+            visKategorier(alle_kategorier);
         }
 
         //funktion der henter JSON/Google Sheet data, starter loopet
@@ -34,11 +34,13 @@
 
 
 
-        function visKategorier() {
+        function visKategorier(alle_kategorier) {
 
             const container = document.querySelector(".js_liste");
             const kategoriTemplate = document.querySelector(".js_kategori_template");
             //           document.querySelector(".js_kategori_template h2").dataset.id = "alle";
+
+            alle_kategorier.sort((a, b) => a.order - b.order);
 
             alle_kategorier.forEach(kategori => {
                 let klon = kategoriTemplate.cloneNode(true).content;
@@ -82,7 +84,7 @@
         }
 
 
-        document.querySelector("#close").addEventListener("click", () => popup.style.display = "none");
+        document.querySelector("#js_close").addEventListener("click", () => popup.style.display = "none");
 
         function visDetaljer(facilitet) {
             console.log(facilitet);
