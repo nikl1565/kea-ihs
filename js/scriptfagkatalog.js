@@ -11,16 +11,19 @@
         //henter fag ned
         const urlFag = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/fag?per_page=100";
 
+
         //const popup = document.querySelector("#popup");
 
         function start() {
             hentKategorier();
         }
 
+
         async function hentKategorier() {
             const respons = await fetch(urlKategorier);
             alle_kategorier = await respons.json();
             console.log(alle_kategorier);
+
             visKategorier();
         }
 

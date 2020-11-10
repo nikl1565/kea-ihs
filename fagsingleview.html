@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SINGLEVIEW</title>
+    <title class="js_meta_title">Fagkatalog | Idrætshøjskolen Sønderborg</title>
+    <meta class="js_meta_description" name="description" content="">
+    <meta class="js_meta_tags" name="keywords" content="">
 
     <!--    Fonts -->
     <!--             Adobe fonts - bruges til al tekst på hjemmesiden -->
@@ -152,6 +154,10 @@
             fag = await jsonData.json();
             //console.log("LOADING DONE",Fag);
             //            showDishes();
+
+            document.querySelector(".js_meta_title").textContent =  fag.fag_meta_titel;
+            document.querySelector(".js_meta_description").content =  fag.fag_meta_beskrivelse;
+            document.querySelector(".js_meta_tags").content =  fag.fag_meta_tag;
 
             document.querySelector(".js_splash_section").style.backgroundImage = `url(${fag.splash_section.guid})`;
             document.querySelector(".js_fag_titel").textContent = fag.title.rendered;

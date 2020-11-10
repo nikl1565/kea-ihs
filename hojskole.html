@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Højskole | Idrætshøjskolen Sønderborg</title>
+    <title class="js_meta_title">Idrætshøjskolen Sønderborg</title>
+    <meta class="js_meta_description" name="description" content="">
+    <meta class="js_meta_tags" name="keywords" content="">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/hojskole.css">
@@ -156,6 +158,10 @@
             document.querySelector(".js_splash_section").style.backgroundImage = `url(${hojskole[0].splash_section.guid})`;
             document.querySelector(".js_hojskole_title").textContent = hojskole[0].title.rendered;
             document.querySelector(".js_hojskole_content").innerHTML = hojskole[0].content.rendered;
+
+                document.querySelector(".js_meta_title").textContent =  hojskole[0].seo_titel;
+                document.querySelector(".js_meta_description").content =  hojskole[0].seo_beskrivelse;
+                document.querySelector(".js_meta_tags").content =  hojskole[0].seo_tag;
         }
 
     </script>

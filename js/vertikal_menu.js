@@ -4,12 +4,6 @@
 
         *****/
 
-        let pageUrl = window.location.pathname;
-        console.log(pageUrl);
-        let htmlName = pageUrl.substring(pageUrl.lastIndexOf('/') + 1).replace('.html', '');
-        console.log(htmlName);
-        const pageName = htmlName;
-
         /*****
 
         Globale variabler
