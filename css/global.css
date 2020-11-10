@@ -31,6 +31,7 @@ html {
     --h1-forside-ihs-font-weight: 900;
     --h2-font-weight: 900;
     --h3-font-weight: 700;
+    --h4-font-weight: 600;
     --p-font-weight: 400;
 
     /*    Font størrelser*/
@@ -40,6 +41,7 @@ html {
     --h1-forside-ihs-font-size: 5rem;
     --h2-font-size: 2.7rem;
     --h3-font-size: 2.2rem;
+    --h4-font-size: 1.8rem;
     --p-font-size: 1.7rem;
     --a-font-size: 1.7rem;
     /*             Denne  størrese skal jo nok overskrives nogle steder med noget mindre */
@@ -52,6 +54,7 @@ html {
     --h1-forside-ihs-font-color: #fff;
     --h2-font-color: #0c1f4b;
     --h3-font-color: #0c1f4b;
+    --h4-font-color: #0c1f4b;
     --p-font-color: #0c1f4b;
     --a-font-color: #607bb7;
     --a-font-color-hover: #1742a7;
@@ -66,6 +69,7 @@ html {
     --h1-forside-ihs-font-line-height: 1.6;
     --h2-font-line-height: 1.6;
     --h3-font-line-height: 1.6;
+    --h4-font-line-height: 1.6;
     --p-font-line-height: 1.6;
     --a-font-line-height: 1.6;
 
@@ -147,6 +151,8 @@ main {
 /* Style tile til tekst og knapper */
 
 h1 {
+    margin: 20px 0;
+
     font-family: var(--font-family);
     font-weight: var(--h1-font-weight);
     font-size: var(--h1-font-size);
@@ -180,11 +186,11 @@ h1 {
 
 @media only screen and (min-width: 900px) {
     .forside-h1-velkommen {
-        font-size: 5rem;
+        font-size: 7rem;
     }
 
     .forside-h1-ihs {
-        font-size: 7rem;
+        font-size: 9rem;
     }
 }
 
@@ -214,6 +220,8 @@ p {
     color: var(--p-font-color);
 }
 
+
+
 a {
     font-family: var(--font-family);
     color: var(--a-font-color);
@@ -230,14 +238,19 @@ a:hover {
     color: var(--tertiary-color);
 }
 
+
+/*         Knapper */
 .cta-primary {
     display: inline-block;
     vertical-align: middle;
+    margin: 20px 30px 20px 0px;
+    cursor: pointer;
 
     background-color: var(--cta-primary-background-color);
     border-radius: var(--cta-primary-border-radius);
     box-shadow: var(--cta-primary-box-shadow);
     padding: var(--cta-primary-padding);
+    border: none;
 
     /*    Tekst */
     font-family: var(--font-family);
@@ -255,6 +268,8 @@ a:hover {
 .cta-secondary {
     display: inline-block;
     vertical-align: middle;
+    margin: 20px 30px 20px 0px;
+    cursor: pointer;
 
     background-color: var(--cta-secondary-background-color);
     border: var(--cta-secondary-border);
@@ -275,6 +290,50 @@ a:hover {
     color: var(--cta-secondary-text-font-color-hover);
 }
 
+/*        Tilmeldingsformular */
+.css_tilmelding_label {
+    background-color: #000 color: #0C1F4B;
+    /*
+    font-size: 14px;
+    padding-top: 15px;
+*/
+}
+
+.css_tilmelding_input {
+    color: #3D4A6A;
+    border-radius: 4px;
+    border: 2px var(--primary-color) solid;
+    padding: 10px;
+    width: 100%;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: var(--font-family);
+    font-weight: var(--p-font-weight);
+    font-size: 1.5rem;
+    line-height: var(--p-font-line-height);
+    color: var(--tertiary-color);
+}
+
+input[type=text],
+textarea {
+    font-family: var(--font-family);
+    font-weight: var(--p-font-weight);
+    font-size: 1.5rem;
+    line-height: var(--p-font-line-height);
+    color: var(--primary-color);
+}
+
+h4,
+.css_tilmelding_label {
+    font-family: var(--font-family);
+    font-weight: var(--h4-font-weight);
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-font-line-height);
+    color: var(--h4-font-color);
+}
+
 /*         Header */
 header {
     background-color: var(--global-menu-background-color);
@@ -285,20 +344,33 @@ header {
 }
 
 .css_header_width {
-    max-width: 1120px;
+    /*    ! */
+    max-width: 1200px;
     margin: 0 auto;
     height: 100%;
 
 }
 
+.css_header_mobile {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
 .css_header_logo {
     display: flex;
-    justify-content: center;
+    /*    ! */
+    /*    justify-content: center;*/
 }
 
 .css_header_logo_image {
-    width: 100px;
-    display: inline-block
+    width: 140px;
+    display: inline-block;
+}
+
+.css_header_spacing {
+    width: 31.5px;
 }
 
 .css_header_burger_icon {
@@ -338,28 +410,41 @@ header {
         padding-bottom: 15px;
     }
 
+    .css_header_width {
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+    }
+
+    .css_header_spacing {
+        display: none;
+    }
+
     .css_header_burger_icon {
         display: none;
     }
 
     .css_globalmenu {
         display: block;
+        margin: 0 auto;
     }
 
     .css_header_logo {
         padding: 20px 0;
-        display: block;
+        margin: 0 auto;
+        /*        ! */
+        /*        display: block;*/
     }
 
     .css_header_logo_image {
-        width: 10vw;
+        width: 180px;
     }
 
 
     .css_globalmenu_menupunkt {
         padding: 15px 20px 0 0px;
         margin: 0 2px;
-        border: 0px solid black;
+        border: none;
         border-radius: 10px 10px 0px 0px;
         background-color: white;
         display: inline-block;

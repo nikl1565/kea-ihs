@@ -11,8 +11,10 @@
 }
 
 .css_tilmelding_titel {
+/*
     color: #101F48;
     font-size: 28.5px;
+*/
     margin-bottom: 15px
 }
 
@@ -21,43 +23,13 @@
     color: #3D4A6A;
     border-radius: 4px;
     border-radius: 4px;
-    border: 2px #000 solid;
+    border: 2px var(--primary-color) solid;
     padding: 8px;
     margin-bottom: 20px;
+    margin-top: 50px;
 
 }
 
-
-.css_tilmelding_label {
-    background-color: #000 color: #0C1F4B;
-    font-size: 14px;
-    padding-top: 15px;
-}
-
-
-.css_tilmelding_input {
-    color: #3D4A6A;
-    border-radius: 4px;
-    border: 2px #000 solid;
-    padding: 10px;
-    width: 100%;
-
-
-}
-
-
-
-.css_tilmelding_cta {
-    background-color: #0C1F4B;
-    color: #fff;
-    border-radius: 4px;
-    border: 2px #000 solid;
-    padding: 10px;
-    margin-top: 18px;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 2px 2px 2px grey;
-}
 
 .tilmelding_formular_placering {
     display: block;
