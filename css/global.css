@@ -186,11 +186,11 @@ h1 {
 
 @media only screen and (min-width: 900px) {
     .forside-h1-velkommen {
-        font-size: 5rem;
+        font-size: 7rem;
     }
 
     .forside-h1-ihs {
-        font-size: 7rem;
+        font-size: 9rem;
     }
 }
 
