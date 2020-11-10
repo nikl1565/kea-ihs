@@ -41,11 +41,12 @@
     <main class="css_maxwidth">
 
         <section class="css_tilmelding css_maxwidth">
-            <h1 class="css_tilmelding_titel">Tilmeld dig til en uforgelmmelig oplevelse!</h1>
+            <h1 class="css_tilmelding_titel">Tilmeld eller book rundvisning</h1>
+            <p>Her kan du booke en rundvisning eller tilmelde dig et højskoleforløb eller et kursus.</p>
 
             <section class="css_tilmelding_formular">
                 <form action="#">
-                    <select id="valg" class="css_tilmelding_filter" name="valg">
+                    <select id="valg" class="css_tilmelding_filter css_tilmelding_label" name=" valg">
                         <option value="" disabled selected>Vælg booking, forløb eller kursus</option>
                         <optgroup label="Book Rundvisning">
                             <option value="book_rundvisning">Book Rundvisning</option>
@@ -88,11 +89,11 @@
                         <div class="css_tilmelding_flex">
                             <label for="gender" class="tilmelding_formular_placering css_tilmelding_label">Køn</label>
                             <input class="css_tilmelding_kryds" type="radio" id="mand" name="gender" value="Mand">
-                            <label for="mand">Mand</label>
+                            <label for="mand" class="css_tilmelding_label">Mand</label>
                             <input type="radio" id="kvinde" name="gender" value="Kvinde">
-                            <label for="kvinde">Kvinde</label>
+                            <label for="kvinde" class="css_tilmelding_label">Kvinde</label>
                             <input type="radio" id="andet" name="gender" value="Anden">
-                            <label for="andet">Andet</label>
+                            <label for="andet" class="css_tilmelding_label">Andet</label>
                         </div>
                     </div>
 
@@ -137,7 +138,7 @@
                         </div>
                     </div>
 
-                    <input class="css_tilmelding_cta" type="submit" value="Tilmeld mig!">
+                    <input class="css_tilmelding_cta cta-primary" type="submit" value="Tilmeld mig!">
 
 
 
@@ -232,4 +233,6 @@
 
     <script src="js/tilmelding.js"></script>
     <script src="js/global.js"></script>
-</body></html>
+</body>
+
+</html>
