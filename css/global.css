@@ -408,11 +408,13 @@ header {
     text-decoration: none;
 }
 
+.list__link.has-submenu.is-active,
 .css_globalmenu_menupunkt.is-active {
     border-bottom: 3px solid var(--primary-color);
     border-radius: 0;
 }
 
+.list__link.has-submenu.is-active:hover,
 .css_globalmenu_menupunkt.is-active:hover {
     border-color: var(--global-menu-font-color-hover);
 }
@@ -467,8 +469,9 @@ header {
     }
 
 
-    .css_globalmenu_menupunkt {
-        padding: 10px 15px;
+    .css_globalmenu_menupunkt,
+    .css_header_hojskole > ul > li > a.list__link {
+        padding: 10px 15px !important;
         margin: 0 2px;
         border: none;
         border-radius: 10px;
