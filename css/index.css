@@ -14,7 +14,8 @@ video {
 }
 
 .undertitel {
-    text-align: center
+    text-align: center;
+    margin-top: 30px;
 }
 
 /*GLOBAL*/
@@ -115,7 +116,14 @@ main {
 
 .css_index_blok {
     flex-basis: 400px;
+    margin-top: 20px;
 }
+
+.wp-block-video {
+    margin-top: 14px;
+
+}
+
 
 /***INSTA***/
 
@@ -134,17 +142,33 @@ main {
 /**** BUTTON ****/
 
 .css_forside_button_link {
-    margin-top: 30px;
+    margin-top: 31px;
 }
 
 .css_hojskole_button_grouped {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 60px;
 }
 
 .wp-block-buttons {
     display: flex;
     justify-content: center;
+}
+
+/*
+.cta-secondary {
+    margin-right: 20px;
+}
+
+.cta-primary {
+    margin-left: 20px;
+}
+*/
+
+
+.wp-block-group__inner-container {
+    margin-bottom: 40px;
+
 }
 
 /**** BUTTON ****/
