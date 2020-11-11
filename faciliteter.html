@@ -46,42 +46,24 @@
         </div>
     </header>
 
-    <main class="css_maxwidth">
+    <main class="css_maxwidth css_two_column">
 
-        <section id="popup">
-
-            <article class="css_popup_max_width">
-                <p id="js_close" class="css_close">x</p>
-                <img src="" alt="" class="billede js_fag_billede">
-                <h2 class="js_fag_titel"></h2>
-                <p class="js_facilitet_tekst"></p>
-            </article>
-
-        </section>
-
-        <h1 class="css_grid_title">Faciliteter</h1>
-
-        <section class="js_liste">
-        </section>
-
-        <template class="js_kategori_template">
-            <div class="css_kategori">
-                <h2 class="js_kategori_titel"></h2>
-                <div class="js_kategori_fagcontainer fag"></div>
+        <aside class="css_aside">
+            <div class="css_aside_content">
+                <p class="css_side_navigation_overskrift">Om os Menu</p>
+                <nav class="css_side_navigation js_side_navigation" data-menu="om-os">
+                </nav>
             </div>
-        </template>
+        </aside>
 
+        <div class="css_page_content css_utility_white_background">
 
-        <template class="js_fag_template">
-            <article class="css_fag">
-                <img src="" alt="" class="billede js_fag_billede">
-                <h3 class="js_fag_titel css_fag_titel"></h3>
-            </article>
-        </template>
+            <h1 class="css_grid_title">Faciliteter</h1>
 
-        <template class="js_globalmenu_template">
-            <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
-        </template>
+            <section class="js_liste">
+            </section>
+
+        </div>
 
     </main>
 
@@ -149,6 +131,37 @@
         <!--END FOOTER COLUMN WRAPPER-->
     </footer>
     <!---->
+
+    <section id="popup">
+
+        <article class="css_popup_max_width">
+            <p id="js_close" class="css_close">x</p>
+            <img src="" alt="" class="billede js_fag_billede">
+            <h2 class="js_fag_titel"></h2>
+            <p class="js_facilitet_tekst"></p>
+        </article>
+
+    </section>
+
+    <template class="js_kategori_template">
+        <div class="css_kategori">
+            <h2 class="js_kategori_titel"></h2>
+            <div class="js_kategori_fagcontainer fag"></div>
+        </div>
+    </template>
+
+
+    <template class="js_fag_template">
+        <article class="css_fag">
+            <img src="" alt="" class="billede js_fag_billede">
+            <h3 class="js_fag_titel css_fag_titel"></h3>
+        </article>
+    </template>
+
+    <template class="js_globalmenu_template">
+        <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
+    </template>
+
     <template class="js_side_navigation_link_template">
 
         <a class="css_side_navigation_link js_side_navigation_link" href="#"></a>

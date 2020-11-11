@@ -7,6 +7,8 @@ console.log(pageUrl);
 let htmlName = pageUrl.substring(pageUrl.lastIndexOf('/') + 1).replace('.html', '');
 console.log(htmlName);
 const pageName = htmlName;
+const menuPageName = pageUrl.substring(pageUrl.lastIndexOf('/') + 1);
+console.log('menuPageName', menuPageName);
 
 //henter url med SEO
 const urlMeta = `https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?slug=${pageName}`;
@@ -17,7 +19,6 @@ function start() {
     const globalmenuContainer = document.querySelector(".js_globalmenu");
     const globalmenuTemplate = document.querySelector(".js_globalmenu_template").content;
     const jsonUrl = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages";
-
     document.querySelector(".js_header_burger_icon").addEventListener("click", toggleHeaderBurgerIcon);
 
     async function fetchData() {
@@ -56,6 +57,15 @@ function start() {
                 globalmenuContainer.appendChild(template);
             }
         });
+
+        console.log('globalMenuContainer', globalmenuContainer);
+        const globalMenuItems = globalmenuContainer.querySelector(`a[href="${menuPageName}"]`);
+
+        if (globalMenuItems != null) {
+            globalMenuItems.classList.add("is-active");
+        }
+
+        console.log('globalMenuItems', globalMenuItems);
     }
 
     function toggleHeaderBurgerIcon() {
@@ -82,3 +92,5 @@ function getMeta() {
     document.querySelector(".js_meta_description").content = meta[0].seo_beskrivelse;
     document.querySelector(".js_meta_tags").content = meta[0].seo_tag;
 }
+
+/*****  *****/
