@@ -408,6 +408,17 @@ header {
     text-decoration: none;
 }
 
+.list__link.has-submenu.is-active,
+.css_globalmenu_menupunkt.is-active {
+    border-bottom: 3px solid var(--primary-color);
+    border-radius: 0;
+}
+
+.list__link.has-submenu.is-active:hover,
+.css_globalmenu_menupunkt.is-active:hover {
+    border-color: var(--global-menu-font-color-hover);
+}
+
 .css_globalmenu_menupunkt:hover,
 .list__link.has-submenu:hover,
 .list__link:hover {
@@ -424,7 +435,7 @@ header {
 @media only screen and (min-width: 1000px) {
     header {
         margin-bottom: 40px;
-        padding-bottom: 15px;
+        padding-bottom: 20px;
     }
 
     .css_header_width {
@@ -458,16 +469,17 @@ header {
     }
 
 
-    .css_globalmenu_menupunkt {
-        padding: 15px 20px 0 0px;
+    .css_globalmenu_menupunkt,
+    .css_header_hojskole > ul > li > a.list__link {
+        padding: 10px 15px !important;
         margin: 0 2px;
         border: none;
-        border-radius: 10px 10px 0px 0px;
+        border-radius: 10px;
         background-color: white;
         display: inline-block;
     }
 
-    .list__link-arrow {
+    .css_header_hojskole .list__link-arrow {
         display: none;
     }
 
@@ -478,10 +490,16 @@ header {
         border-radius: 10px 10px 0px 0px;
         background-color: white;
         display: inline-block;
+        height: 42px;
     }
 
     .css_header_hojskole > ul > li > ul {
         display: none;
+    }
+
+    .css_header_hojskole .list__link,
+    .css_header_hojskole .list__link.has-submenu {
+        margin: 0;
     }
 
 }
@@ -504,6 +522,7 @@ header {
     font-size: var(--h3-font-size);
     line-height: var(--h3-font-line-height);
     margin: 0;
+    text-transform: var(--text-transform-uppercase);
 }
 
 .list__link {
@@ -598,6 +617,7 @@ header {
     background-color: #f7f7f7;
     /*            background: rgba(255, 0, 0, 0.4);*/
     display: none;
+    padding-top: 45px;
 }
 
 .css_popup_max_width {
@@ -742,6 +762,22 @@ footer {
     width: 300px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/**********************************************/
+
+
+
+/******************UTILITIES*******************/
+
+.css_utility_transparent_background {
+    background-color: transparent;
+}
+
+.css_utility_white_background {
+    background-color: var(--white);
+    padding: 20px;
+    flex-grow: 1;
 }
 
 /**********************************************/

@@ -91,24 +91,24 @@
 
         async function getMenu(menuName) {
             categories = await getData(urlRouteCategories, parameterGetOneHundred);
-            console.log('Categories', categories);
-
-            console.log('createMenu');
+            //            console.log('Categories', categories);
+            //
+            //            console.log('createMenu');
 
             // Hent array liste med menuer
             let allMenus = await getData(menuName, '');
-            console.log('menuName', menuName);
-            console.log('allMenus', allMenus);
+            //            console.log('menuName', menuName);
+            //            console.log('allMenus', allMenus);
 
             // Hent alle menuer der skal vises på siden
             let menusOnPage = document.querySelectorAll("[data-menu]");
 
             menusOnPage = Array.prototype.slice.call(menusOnPage);
-            console.log('menus', menusOnPage);
+            //            console.log('menus', menusOnPage);
 
             for (let menu of menusOnPage) {
-                console.log(menu.dataset.menu);
-                console.log(menusOnPage);
+                //                console.log(menu.dataset.menu);
+                //                console.log(menusOnPage);
 
                 // Find den rigtige menu
                 let findMenu = allMenus.find(allmenus => allmenus.name === menu.dataset.menu);
@@ -125,7 +125,7 @@
 
             submenuButtons.forEach(submenuButton => {
                 let buttonHeight = submenuButton.offsetHeight;
-                console.log(buttonHeight);
+                //                console.log(buttonHeight);
                 submenuButton.addEventListener("click", function (element) {
                     // Hvad der er blevet klikket på
                     let target = element.target;
@@ -152,7 +152,7 @@
         function createMenu(menuDetails, menu) {
 
             function constructMenu(menuItems) {
-                console.log('constructMenu', menuItems);
+                //                console.log('constructMenu', menuItems);
 
                 var nav_html = '';
 
@@ -172,7 +172,7 @@
                         let objectId = menuItems[i]['object_id'];
 
                         let categoryDetails = categories.find(category => category.id === objectId);
-                        console.log('categoryDetails', categoryDetails);
+                        //                        console.log('categoryDetails', categoryDetails);
 
                         if (categoryDetails.indtast_target_link != '') {
                             href = categoryDetails.indtast_target_link;
@@ -199,8 +199,8 @@
                 return nav_html;
             }
 
-            console.log('menuDetails', menuDetails)
-            console.log('menu', menu);
+            //            console.log('menuDetails', menuDetails)
+            //            console.log('menu', menu);
             menu.innerHTML = `<ul class="list">${constructMenu(menuDetails.items)}</ul>`;
 
         }

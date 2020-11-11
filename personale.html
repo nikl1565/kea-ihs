@@ -48,48 +48,23 @@
         </div>
     </header>
 
-    <main class="css_maxwidth">
+    <main class="css_maxwidth css_two_column">
 
-        <section id="popup">
-
-            <article class="css_popup_max_width">
-                <!--                <div class="css_button_fixed">-->
-                <p id="js_close" class="css_close">x</p>
-                <!--                </div>-->
-                <!--                <img id="js_close" class="css_close" src="img/luk.svg">-->
-                <img src="" alt="" class="billede js_personale_billede">
-                <h2 class="js_personale_navn"></h2>
-                <h3 class="js_personale_titel"></h3>
-                <p class="js_personale_tekst"></p>
-            </article>
-
-        </section>
-
-        <h1 class="css_grid_title">Personale</h1>
-
-        <section class="js_liste">
-        </section>
-
-        <template class="js_kategori_template">
-            <div class="css_kategori">
-                <h2 class="js_kategori_titel"></h2>
-                <div class="js_kategori_personalecontainer fag"></div>
+        <aside class="css_aside">
+            <div class="css_aside_content">
+                <p class="css_side_navigation_overskrift">Om os Menu</p>
+                <nav class="css_side_navigation js_side_navigation" data-menu="om-os">
+                </nav>
             </div>
-        </template>
+        </aside>
 
+        <div class="css_page_content css_utility_white_background">
 
-        <template class="js_personale_template">
-            <article class="css_fag">
-                <img src="" alt="" class="billede js_personale_billede">
-                <h3 class="js_personale_navn"></h3>
-                <h4 class="js_personale_titel css_personale_titel"></h4>
-            </article>
-        </template>
+            <h1 class="css_grid_title">Personale</h1>
 
-        <template class="js_globalmenu_template">
-            <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
-        </template>
-
+            <section class="js_liste">
+            </section>
+        </div>
 
     </main>
 
@@ -158,6 +133,21 @@
     </footer>
     <!---->
 
+    <section id="popup">
+
+        <article class="css_popup_max_width">
+            <!--                <div class="css_button_fixed">-->
+            <p id="js_close" class="css_close">x</p>
+            <!--                </div>-->
+            <!--                <img id="js_close" class="css_close" src="img/luk.svg">-->
+            <img src="" alt="" class="billede js_personale_billede">
+            <h2 class="js_personale_navn"></h2>
+            <h3 class="js_personale_titel"></h3>
+            <p class="js_personale_tekst"></p>
+        </article>
+
+    </section>
+
     <template class="js_side_navigation_link_template">
 
         <a class="css_side_navigation_link js_side_navigation_link" href="#"></a>
@@ -170,6 +160,25 @@
 
     <template class="js_side_navigation_list_item_template">
         <li class="css_side_navigation_list_item js_side_navigation_list_item"></li>
+    </template>
+
+    <template class="js_kategori_template">
+        <div class="css_kategori">
+            <h2 class="js_kategori_titel"></h2>
+            <div class="js_kategori_personalecontainer fag"></div>
+        </div>
+    </template>
+
+    <template class="js_personale_template">
+        <article class="css_fag">
+            <img src="" alt="" class="billede js_personale_billede">
+            <h3 class="js_personale_navn"></h3>
+            <h4 class="js_personale_titel css_personale_titel"></h4>
+        </article>
+    </template>
+
+    <template class="js_globalmenu_template">
+        <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
     </template>
 
     <script src="js/scriptpersonale.js"></script>

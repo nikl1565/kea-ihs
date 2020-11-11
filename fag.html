@@ -61,31 +61,30 @@
         </div>
     </header>
 
-    <main class="css_maxwidth">
-        <template class="js_globalmenu_template">
-            <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
-        </template>
+    <main class="css_maxwidth css_two_column">
 
-        <!--
-    <section class="ret">
-        <h2></h2>
-        <div></div>
-        <img src="" alt="">
-        <p id="short_text"></p>
-        <p id="price"></p>
-    </section>
--->
-        <section class="js_splash_section css_splash_section">
-            <div class="css_hojskole_splashfilter">
-                <h1 class="js_fag_titel css_fag_single_titel h1_white"></h1>
+        <aside class="css_aside">
+            <div class="css_aside_content">
+                <p class="css_side_navigation_overskrift">Højskole Menu</p>
+                <nav class="css_side_navigation js_side_navigation" data-menu="hojskole">
+                </nav>
             </div>
-        </section>
+        </aside>
 
-        <article class="css_fag">
-            <iframe class="js_vimeo_embed css_video_embed" title="vimeo-player" src="" width="256" height="144" frameborder="0" allowfullscreen></iframe>
-            <p class="js_fag_beskrivelse css_fag_beskrivelse"></p>
-            <!--            <div class="fag_galleri"></div>-->
-        </article>
+        <div class="css_page_content css_utility_white_background">
+
+            <section class="js_splash_section css_splash_section">
+                <div class="css_hojskole_splashfilter">
+                    <h1 class="js_fag_titel css_fag_single_titel h1_white"></h1>
+                </div>
+            </section>
+
+            <article class="css_fag">
+                <iframe class="js_vimeo_embed css_video_embed" title="vimeo-player" src="" width="256" height="144" frameborder="0" allowfullscreen></iframe>
+                <p class="js_fag_beskrivelse css_fag_beskrivelse"></p>
+                <!--            <div class="fag_galleri"></div>-->
+            </article>
+        </div>
 
     </main>
     <!--FOOTER-->
@@ -167,6 +166,10 @@
         <li class="css_side_navigation_list_item js_side_navigation_list_item"></li>
     </template>
 
+    <template class="js_globalmenu_template">
+        <a href="#" class="js_globalmenu_menupunkt css_globalmenu_menupunkt"></a>
+    </template>
+
     <script>
         let urlParams = new URLSearchParams(window.location.search);
         let id = urlParams.get("id");
@@ -196,5 +199,4 @@
         }
     </script>
     <script src="js/global.js"></script>
-    <script src="js/vertikal_menu.js"></script>
 </body></html>
