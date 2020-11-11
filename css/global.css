@@ -384,10 +384,22 @@ header {
     display: block;
 }
 
+.css_header_hojskole .list__link,
+.css_header_hojskole .list__link.has-submenu {
+    display: flex;
+    margin: 3vw 0 0 8vw;
+    font-family: var(--font-family);
+    font-size: var(--global-menu-font-size);
+    color: var(--global-menu-font-color);
+    text-transform: var(--text-transform-uppercase);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    padding: 0;
+}
+
 .css_globalmenu_menupunkt {
     display: block;
     margin: 3vw 0 3vw 8vw;
-
     font-family: var(--font-family);
     font-size: var(--global-menu-font-size);
     color: var(--global-menu-font-color);
@@ -453,6 +465,23 @@ header {
         border-radius: 10px 10px 0px 0px;
         background-color: white;
         display: inline-block;
+    }
+
+    .list__link-arrow {
+        display: none;
+    }
+
+    .css_header_hojskole {
+        padding: 15px 20px 0 0px;
+        margin: 0 2px;
+        border: none;
+        border-radius: 10px 10px 0px 0px;
+        background-color: white;
+        display: inline-block;
+    }
+
+    .css_header_hojskole > ul > li > ul {
+        display: none;
     }
 
 }

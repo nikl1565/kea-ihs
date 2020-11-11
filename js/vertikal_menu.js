@@ -35,7 +35,6 @@
         // pages, categories and posts data
         let pages;
         let categories;
-        let fag;
         let personale;
         let faciliteter;
 

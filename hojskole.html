@@ -26,15 +26,24 @@
     <header>
         <div class="css_maxwidth">
 
-            <div class="css_header_logo">
-                <a href="index.html">
-                    <img src="https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-content/uploads/2020/11/logo_mindre-1.png" alt="Logo for Idrætshøjskolen Sønderborg" class="css_header_logo_image">
-                </a>
+            <div class="css_header_mobile">
+                <div class="css_header_burger_icon js_header_burger_icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg></div>
+
+                <div class="css_header_logo">
+                    <a href="index.html">
+                        <img src="https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-content/uploads/2020/11/logo_mindre-1.png" alt="Logo for Idrætshøjskolen Sønderborg" class="css_header_logo_image">
+                    </a>
+                </div>
+
+                <div class="css_header_spacing"></div>
             </div>
 
-            <div class="css_header_burger_icon js_header_burger_icon">☰</div>
-
             <nav class="js_globalmenu css_globalmenu css_globalmenu_hidden js_globalmenu_hidden">
+                <div class="css_header_hojskole" data-menu="hovedmenu"></div>
             </nav>
         </div>
     </header>
@@ -64,7 +73,7 @@
 
         </div>
 
-        <template class="js_side_navigation_link_template">
+        <template> class="js_side_navigation_link_template">
 
             <a class="css_side_navigation_link js_side_navigation_link" href="#"></a>
 
@@ -152,6 +161,21 @@
         <!--END FOOTER COLUMN WRAPPER-->
     </footer>
     <!---->
+
+    <template class="js_side_navigation_link_template">
+
+        <a class="css_side_navigation_link js_side_navigation_link" href="#"></a>
+
+    </template>
+
+    <template class="js_side_navigation_list_template">
+        <ul class="css_side_navigation_liste js_side_navigation_list"></ul>
+    </template>
+
+    <template class="js_side_navigation_list_item_template">
+        <li class="css_side_navigation_list_item js_side_navigation_list_item"></li>
+    </template>
+
     <script>
         //Venter på DOMContent er loaded, starter hentData, opretter JSON-url som variabel.
         document.addEventListener("DOMContentLoaded", hentData);
