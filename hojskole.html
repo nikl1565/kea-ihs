@@ -26,15 +26,24 @@
     <header>
         <div class="css_maxwidth">
 
-            <div class="css_header_logo">
-                <a href="index.html">
-                    <img src="https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-content/uploads/2020/11/logo_mindre-1.png" alt="Logo for Idrætshøjskolen Sønderborg" class="css_header_logo_image">
-                </a>
+            <div class="css_header_mobile">
+                <div class="css_header_burger_icon js_header_burger_icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg></div>
+
+                <div class="css_header_logo">
+                    <a href="index.html">
+                        <img src="https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-content/uploads/2020/11/logo_mindre-1.png" alt="Logo for Idrætshøjskolen Sønderborg" class="css_header_logo_image">
+                    </a>
+                </div>
+
+                <div class="css_header_spacing"></div>
             </div>
 
-            <div class="css_header_burger_icon js_header_burger_icon">☰</div>
-
             <nav class="js_globalmenu css_globalmenu css_globalmenu_hidden js_globalmenu_hidden">
+                <div class="css_header_hojskole" data-menu="hovedmenu"></div>
             </nav>
         </div>
     </header>
@@ -43,7 +52,7 @@
         <aside class="css_aside">
             <div class="css_aside_content">
                 <p class="css_side_navigation_overskrift">Menu</p>
-                <nav class="css_side_navigation js_side_navigation">
+                <nav class="css_side_navigation js_side_navigation" data-menu="hojskole">
                 </nav>
             </div>
         </aside>
@@ -64,7 +73,7 @@
 
         </div>
 
-        <template class="js_side_navigation_link_template">
+        <template> class="js_side_navigation_link_template">
 
             <a class="css_side_navigation_link js_side_navigation_link" href="#"></a>
 
@@ -106,6 +115,8 @@
             <!---->
             <div class="footercolumn">
                 <h3 class="footer_title">Information</h3>
+                <div class="footer-menu js-menu" data-menu="footer-information"></div>
+                <!--
                 <ul>
                     <li><a class="footer_link" href="kontakt.html">Kontakt os</a></li>
                     <li><a class="footer_link" href="om-os.html">Om IHS</a></li>
@@ -113,6 +124,7 @@
                     <li><a class="footer_link" href="hojskole.html">Højskole</a></li>
                     <li><a class="footer_link" href="tilmelding.html">Tilmelding</a></li>
                 </ul>
+-->
 
             </div>
             <!---->
@@ -149,6 +161,21 @@
         <!--END FOOTER COLUMN WRAPPER-->
     </footer>
     <!---->
+
+    <template class="js_side_navigation_link_template">
+
+        <a class="css_side_navigation_link js_side_navigation_link" href="#"></a>
+
+    </template>
+
+    <template class="js_side_navigation_list_template">
+        <ul class="css_side_navigation_liste js_side_navigation_list"></ul>
+    </template>
+
+    <template class="js_side_navigation_list_item_template">
+        <li class="css_side_navigation_list_item js_side_navigation_list_item"></li>
+    </template>
+
     <script>
         //Venter på DOMContent er loaded, starter hentData, opretter JSON-url som variabel.
         document.addEventListener("DOMContentLoaded", hentData);
@@ -166,9 +193,9 @@
             document.querySelector(".js_hojskole_title").textContent = hojskole[0].title.rendered;
             document.querySelector(".js_hojskole_content").innerHTML = hojskole[0].content.rendered;
 
-                document.querySelector(".js_meta_title").textContent =  hojskole[0].seo_titel;
-                document.querySelector(".js_meta_description").content =  hojskole[0].seo_beskrivelse;
-                document.querySelector(".js_meta_tags").content =  hojskole[0].seo_tag;
+            document.querySelector(".js_meta_title").textContent = hojskole[0].seo_titel;
+            document.querySelector(".js_meta_description").content = hojskole[0].seo_beskrivelse;
+            document.querySelector(".js_meta_tags").content = hojskole[0].seo_tag;
         }
     </script>
     <script src="js/vertikal_menu.js"></script>

@@ -35,7 +35,6 @@
         // pages, categories and posts data
         let pages;
         let categories;
-        let fag;
         let personale;
         let faciliteter;
 
@@ -96,75 +95,31 @@
 
             console.log('createMenu');
 
-            // Hent menu
-            let menu = await getData(menuName, '');
+            // Hent array liste med menuer
+            let allMenus = await getData(menuName, '');
             console.log('menuName', menuName);
-            console.log('menuName', menu);
+            console.log('allMenus', allMenus);
 
-            // Find den rigtige menu
-            let findMenu = menu.find(menu => menu.name === pageName);
-            console.log(findMenu);
-            // Hent menu detaljer
+            // Hent alle menuer der skal vises på siden
+            let menusOnPage = document.querySelectorAll("[data-menu]");
 
+            menusOnPage = Array.prototype.slice.call(menusOnPage);
+            console.log('menus', menusOnPage);
 
-            let menuDetails = await getData(findMenu.taxonomy, findMenu.ID);
-            console.log('menuDetails', menuDetails);
+            for (let menu of menusOnPage) {
+                console.log(menu.dataset.menu);
+                console.log(menusOnPage);
 
-            if (menuDetails.items.length > 0) {
-                createMenu(menuDetails.items);
-            }
+                // Find den rigtige menu
+                let findMenu = allMenus.find(allmenus => allmenus.name === menu.dataset.menu);
 
-        }
+                // Hent menu detaljer
+                let menuDetails = await getData(findMenu.taxonomy, findMenu.ID);
 
-        function createMenu(menuItems) {
-
-            function constructMenu(menuItems) {
-                console.log('constructMenu', menuItems);
-
-                var nav_html = '';
-
-                for (let i = 0; i < menuItems.length; i++) {
-                    let title = menuItems[i]['title'];
-                    let href = `${menuItems[i]['title']}.html`;
-                    href = href.toLowerCase();
-                    let submenu = menuItems[i]['children'];
-                    let typeLabel = menuItems[i]['type_label'];
-                    let objectType = menuItems[i]['object'];
-
-                    if (typeLabel === 'fag') {
-                        href = `fagsingleview.html?id=${menuItems[i]['object_id']}`;
-                    } else if (typeLabel === 'facilitet') {
-
-                    } else if (typeLabel === 'Category') {
-                        let objectId = menuItems[i]['object_id'];
-
-                        let categoryDetails = categories.find(category => category.id === objectId);
-                        console.log('categoryDetails', categoryDetails);
-
-                        if (categoryDetails.indtast_target_link != '') {
-                            href = categoryDetails.indtast_target_link;
-                        }
-                    } else if (typeLabel === 'Custom Link') {
-                        href = menuItems[i]['url'];
-                    }
-
-                    if (submenu != null) {
-                        nav_html += `<li class="list__item"><a class="list__link has-submenu" href="${href}">${title} <span class="list__link-arrow"></span></a>`;
-                        nav_html += '<ul class="list__submenu">';
-
-
-                        nav_html += constructMenu(submenu);
-                        nav_html += '</ul>';
-                    } else {
-                        // Link til fagsingleview.html hvis det er en post, som har post typen "fag".
-                        nav_html += `<li class="list__item"><a class="list__link" href="${href}">${title}</a>`;
-                    }
-                    nav_html += '</li>';
+                if (menuDetails.items.length > 0) {
+                    createMenu(menuDetails, menu);
                 }
-                return nav_html;
             }
-
-            sideNavigationContainer.innerHTML = `<ul class="list">${constructMenu(menuItems)}</ul>`;
 
             let submenuButtons = document.querySelectorAll(".list__link.has-submenu");
 
@@ -191,4 +146,61 @@
 
                 });
             });
+
+        }
+
+        function createMenu(menuDetails, menu) {
+
+            function constructMenu(menuItems) {
+                console.log('constructMenu', menuItems);
+
+                var nav_html = '';
+
+                for (let i = 0; i < menuItems.length; i++) {
+                    let title = menuItems[i]['title'];
+                    let href = `${menuItems[i]['title']}.html`;
+                    href = href.toLowerCase();
+                    let submenu = menuItems[i]['children'];
+                    let typeLabel = menuItems[i]['type_label'];
+                    let objectType = menuItems[i]['object'];
+
+                    if (typeLabel === 'fag') {
+                        href = `fag.html?id=${menuItems[i]['object_id']}`;
+                    } else if (typeLabel === 'facilitet') {
+
+                    } else if (typeLabel === 'Category') {
+                        let objectId = menuItems[i]['object_id'];
+
+                        let categoryDetails = categories.find(category => category.id === objectId);
+                        console.log('categoryDetails', categoryDetails);
+
+                        if (categoryDetails.indtast_target_link != '') {
+                            href = categoryDetails.indtast_target_link;
+                        }
+                    } else if (typeLabel === 'Page') {
+                        href = `${menuItems[i]['object_slug']}.html`;
+                    } else if (typeLabel === 'Custom Link') {
+                        href = menuItems[i]['url'];
+                    }
+
+                    if (submenu != null) {
+                        nav_html += `<li class="list__item"><a class="list__link has-submenu" href="${href}">${title} <span class="list__link-arrow"></span></a>`;
+                        nav_html += '<ul class="list__submenu">';
+
+
+                        nav_html += constructMenu(submenu);
+                        nav_html += '</ul>';
+                    } else {
+                        // Link til fagsingleview.html hvis det er en post, som har post typen "fag".
+                        nav_html += `<li class="list__item"><a class="list__link" href="${href}">${title}</a>`;
+                    }
+                    nav_html += '</li>';
+                }
+                return nav_html;
+            }
+
+            console.log('menuDetails', menuDetails)
+            console.log('menu', menu);
+            menu.innerHTML = `<ul class="list">${constructMenu(menuDetails.items)}</ul>`;
+
         }

@@ -374,16 +374,32 @@ header {
 }
 
 .css_header_burger_icon {
-    display: inline-block;
-    font-size: 3.5rem;
     color: var(--primary-color);
     cursor: pointer;
+    vertical-align: middle;
+    display: block;
+}
+
+.css_header_burger_icon > svg {
+    display: block;
+}
+
+.css_header_hojskole .list__link,
+.css_header_hojskole .list__link.has-submenu {
+    display: flex;
+    margin: 3vw 0 0 8vw;
+    font-family: var(--font-family);
+    font-size: var(--global-menu-font-size);
+    color: var(--global-menu-font-color);
+    text-transform: var(--text-transform-uppercase);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    padding: 0;
 }
 
 .css_globalmenu_menupunkt {
     display: block;
     margin: 3vw 0 3vw 8vw;
-
     font-family: var(--font-family);
     font-size: var(--global-menu-font-size);
     color: var(--global-menu-font-color);
@@ -427,7 +443,7 @@ header {
 
     .css_globalmenu {
         display: block;
-        margin: 0 auto;
+        text-align: center;
     }
 
     .css_header_logo {
@@ -449,6 +465,23 @@ header {
         border-radius: 10px 10px 0px 0px;
         background-color: white;
         display: inline-block;
+    }
+
+    .list__link-arrow {
+        display: none;
+    }
+
+    .css_header_hojskole {
+        padding: 15px 20px 0 0px;
+        margin: 0 2px;
+        border: none;
+        border-radius: 10px 10px 0px 0px;
+        background-color: white;
+        display: inline-block;
+    }
+
+    .css_header_hojskole > ul > li > ul {
+        display: none;
     }
 
 }
@@ -549,8 +582,9 @@ header {
         background-color: var(--main-color);
         min-height: 200px;
         padding: 20px;
-  }
+    }
 }
+
 /**********POP UP***********/
 
 #popup {
@@ -649,6 +683,23 @@ footer {
 .footer_link {
     text-decoration: none;
     color: var(--white);
+    padding: 0;
+}
+
+.footer-menu .list__item {
+    padding: 5px
+}
+
+.footer-menu .list__link,
+.footer-menu .list__link.has-submenu {
+    color: var(--white);
+    padding: 0;
+    font-size: var(--a-font-size);
+    line-height: var(--a-font-line-height);
+}
+
+.footer-menu .list__link-arrow {
+    stroke: var(--white);
 }
 
 /*SOCIAL MEDIA BOX*/

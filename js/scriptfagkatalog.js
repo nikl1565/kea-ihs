@@ -99,6 +99,6 @@
 
         function fagClick(id) {
             console.log(id);
-            location.href = "fagsingleview.html?id=" + id;
+            location.href = "fag.html?id=" + id;
             klon.querySelector(".js_fag_beskrivelse").textContent = fag.fag_om_beskrivelse;
         }
