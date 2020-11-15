@@ -20,7 +20,7 @@ async function start() {
     getMenu(pageName);
 
     const globalmenuTemplate = document.querySelector(".js_globalmenu_template").content;
-    const jsonUrl = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages";
+    const jsonUrl = "https://sljfineart.com/kea/sem-2/ihs-09-cms/wordpress/wp-json/wp/v2/pages?per_page=100";
     document.querySelector(".js_header_burger_icon").addEventListener("click", toggleHeaderBurgerIcon);
 
     async function fetchData() {
