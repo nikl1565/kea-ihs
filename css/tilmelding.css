@@ -5,13 +5,13 @@
 
 .css_tilmelding {
     max-width: 1200px;
-    margin: 100px auto;
+    margin: 0 auto;
     padding-top: 60px;
 
 }
 
 .css_tilmelding_titel {
-/*
+    /*
     color: #101F48;
     font-size: 28.5px;
 */
