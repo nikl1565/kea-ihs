@@ -44,6 +44,9 @@
             //           document.querySelector(".js_kategori_template h2").dataset.id = "alle";
             //Som udgangspunkt er filtreringen sat til 'alle' og derfor vises alle elementer
             //Alt efter hvor man klikker sig hen i filtreringen er det kun de relevante elementer der vises
+
+            alle_kategorier.sort((a, b) => a.order - b.order);
+
             alle_kategorier.forEach(kategori => {
                 let klon = kategoriTemplate.cloneNode(true).content;
 

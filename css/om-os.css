@@ -1,25 +1,6 @@
-/*GLOBAL*/
-img,
-svg,
-video {
-    width: 100%;
-    max-width: 1100px;
-}
-
-/*GLOBAL*/
-
-/*HOJSKOLE*/
-
-main {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 20px;
-    margin-bottom: 20px;
-}
-
 /***SPLASHSECTION***/
 
-.css_hojskole_splash_section {
+.css_om_os_splash_section {
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -27,7 +8,7 @@ main {
     z-index: -1;
 }
 
-.css_hojskole_splashfilter {
+.css_om_os_splashfilter {
     background: rgba(0, 0, 0, 0.4);
     padding-top: 200px;
     height: 100%;
@@ -36,8 +17,6 @@ main {
 }
 
 /***SPLASHSECTION***/
-
-
 
 /**TEXT**/
 
@@ -48,25 +27,12 @@ h1 {
 
 /**TEXT**/
 
-/***VIDEO***/
-
-.css_hojskole_splashvideo {}
-
-/***VIDEO***/
 
 /**** BUTTON ****/
 
-/*
-.css_hojskole_button_link {
-    margin-top: 30px;
-}
-*/
-
-.css_hojskole_button_grouped {
+.css_om_os_button_grouped {
     text-align: center;
     margin-top: 30px;
 }
 
 /**** BUTTON ****/
-
-/*HOJSKOLE*/
