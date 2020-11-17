@@ -79,6 +79,7 @@ async function start() {
     fetchData();
 }
 
+
 function getMeta() {
     document.querySelector(".js_meta_title").textContent = meta[0].seo_titel;
     document.querySelector(".js_meta_description").content = meta[0].seo_beskrivelse;
@@ -92,6 +93,19 @@ function getMeta() {
 get Menu
 
 *****/
+/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("menu_transition").style.top = "0";
+    document.getElementById("menu_transition").style.boxShadow = "0px 0px 3px rgba(155, 155, 155, 0.2)";
+  } else {
+    document.getElementById("menu_transition").style.top = "-150px";
+    document.getElementById("menu_transition").style.boxShadow = "0px 0px 5px rgba(155, 155, 155, 0.2)";
+  }
+   prevScrollpos = currentScrollPos;
+}
 
 /*****
 
