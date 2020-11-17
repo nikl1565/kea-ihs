@@ -335,12 +335,14 @@ h4,
 }
 
 /*         Header */
-header {
+#menu_transition {
     background-color: var(--global-menu-background-color);
     position: sticky;
     top: 0;
     margin-bottom: 20px;
     z-index: 1;
+
+   transition: top 0.4s; /*Transition effect*/
 }
 
 .css_header_width {
