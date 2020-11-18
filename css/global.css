@@ -342,7 +342,8 @@ h4,
     margin-bottom: 20px;
     z-index: 1;
 
-   transition: top 0.4s; /*Transition effect*/
+    transition: top 0.4s;
+    /*Transition effect*/
 }
 
 .css_header_width {
@@ -380,6 +381,8 @@ h4,
     cursor: pointer;
     vertical-align: middle;
     display: block;
+    height: 36px;
+    width: 36px;
 }
 
 .css_header_burger_icon > svg {
